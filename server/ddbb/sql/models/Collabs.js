@@ -1,8 +1,8 @@
 const { DataTypes} = require('sequelize');
 const sequelize = require('../index');
 
-const CollabsModel = sequelize.define('users', {
-    id: {
+const CollabsModel = sequelize.define('collabs', {
+    user_id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
@@ -12,7 +12,35 @@ const CollabsModel = sequelize.define('users', {
         unique: true,
         allowNull: false
     },
-    name_: {
+    surname: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+    },
+
+    about_me: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+    },
+    langauges: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+    },
+
+    phone: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+    },
+
+    studies: {
         type: DataTypes.STRING,
         unique: true,
         allowNull: false
@@ -23,27 +51,54 @@ const CollabsModel = sequelize.define('users', {
         unique: true,
         allowNull: false
     },
-    email: {
+
+    age: {
         type: DataTypes.STRING,
         unique: true,
         allowNull: false
     },
-   
+
+    emotional_support: {
+        type: DataTypes.INTEGER,
+        unique: true,
+        allowNull: false
+    },
+
+    legal_support: {
+        type: DataTypes.INTEGER,
+        unique: true,
+        allowNull: false
+    },
+
+    collab_individual: {
+        type: DataTypes.BOOLEAN,
+        unique: true,
+        allowNull: false
+    },
+
+    collab_institution: {
+        type: DataTypes.BOOLEAN,
+        unique: true,
+        allowNull: false
+    },
+
+    job: {
+        type: DataTypes.BOOLEAN,
+        unique: true,
+        allowNull: false
+    },
+
     password_: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    
-    type_education: {
-        type: DataTypes.STRING,
+
+    banned_users: {
+        type: DataTypes.JSON,
         allowNull: true
     },
-    institution: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    logo: {
-        type: DataTypes.STRING,
+    favs: {
+        type: DataTypes.JSON,
         allowNull: true
     }
 }, {
