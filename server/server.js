@@ -21,6 +21,4 @@ app.use("/", router);
 
 
 // Opening Server
-app.listen(PORT || 3002, () => {
-    console.log(`Server started at http://127.0.0.1:${PORT}`);
-});
+app.listen(3000|| 3002,);
