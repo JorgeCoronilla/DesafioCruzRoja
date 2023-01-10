@@ -1,30 +1,89 @@
-#DROP DATABASE teleQuizz;
+#DROP DATABASE dbTest;
     CREATE DATABASE dbTest;
     USE dbTest;
     CREATE TABLE users(
-        id INT AUTO_INCREMENT,
-        user_name VARCHAR(100) UNIQUE,
+        user_id INT AUTO_INCREMENT,
+        user_name VARCHAR(50),
+        surname VARCHAR(50),
+        about_me VARCHAR(250),
 		langauges VARCHAR(50),
-        email VARCHAR(50),
+        email VARCHAR(50) UNIQUE,
+        phone VARCHAR(20),
+        studies VARCHAR(50),
+        country VARCHAR(30),
+        age VARCHAR(3),
+        emotional_support INT,
+        legal_support INT,
+        collab_individual BOOLEAN,
+        collab_institution BOOLEAN,
+        job BOOLEAN,
         password_ CHAR(64) NOT NULL,
-        role_ VARCHAR(50),
-        PRIMARY KEY(id)
+        banned_users JSON,
+		favs JSON,
+        PRIMARY KEY(user_id)
     ); 
     
 CREATE TABLE collabs(
-        id INT AUTO_INCREMENT,
-        user_name VARCHAR(100) UNIQUE,
+       user_id INT AUTO_INCREMENT,
+        user_name VARCHAR(50),
+        surname VARCHAR(50),
+        about_me VARCHAR(250),
 		langauges VARCHAR(50),
-        email VARCHAR(50),
+        email VARCHAR(50) UNIQUE,
+        phone VARCHAR(20),
+        studies VARCHAR(50),
+        country VARCHAR(30),
+        age VARCHAR(3),
+        emotional_support INT,
+        legal_support INT,
+        collab_individual BOOLEAN,
+        collab_institution BOOLEAN,
+        job BOOLEAN,
         password_ CHAR(64) NOT NULL,
-        role_ VARCHAR(50),
-        skills VARCHAR(50),
+        banned_users JSON,
+		favs JSON,
+        PRIMARY KEY(user_id)
+    ); 
+    
+    CREATE TABLE messages(
+        id INT AUTO_INCREMENT,
+        fk_user_id_sender INT,
+        fk_user_id_recipient INT,
+		title VARCHAR(50),
+        message VARCHAR(250),
+        date_ DATETIME,
+        PRIMARY KEY(id),
+		FOREIGN KEY (fk_user_id_sender) REFERENCES users(user_id),
+        FOREIGN KEY (fk_user_id_recipient) REFERENCES users(user_id)
+    ); 
+    
+    CREATE TABLE reviews(
+        id INT AUTO_INCREMENT,
+        fk_user_id_sender INT,
+        fk_user_id_recipient INT,
+		title VARCHAR(50),
+        review VARCHAR(250),
+        stars INT, 
+        date_ DATETIME,
+        PRIMARY KEY(id),
+		FOREIGN KEY (fk_user_id_sender) REFERENCES users(user_id),
+        FOREIGN KEY (fk_user_id_recipient) REFERENCES users(user_id)
+    ); 
+    
+ CREATE TABLE frequent_questions(
+        id INT AUTO_INCREMENT,
+        question INT,
+        date_ DATETIME,
         PRIMARY KEY(id)
     ); 
-
-
-
-insert into users VALUES (null, 'Jorge Coronilla', 'Spanish, English, Greek', 'jorge@gmail.com', '$2a$08$pEUVH3MZ1xerNnGwmid4sOwEWEcIykmQByyj5zQzAk5/XY1gPTD5a', 'Director');
-insert into users VALUES (null, 'Gerardo Mir', 'Spanish, English, Catalan', 'gerardo@gmail.com', '$2a$08$FyHTlLvNbgaPR8OE0L2dC..HXsrUzpgydDdHOzwPfUrInhmNOUuGO', 'Director');
-
-select * from users;
+    
+     CREATE TABLE answers(
+        id INT AUTO_INCREMENT,
+        question INT,
+        date_ DATETIME,
+        fk_user_id_user INT,
+        fk_frequent_questions_id INT,
+        PRIMARY KEY(id),
+        FOREIGN KEY (fk_frequent_questions_id) REFERENCES frequent_questions(id),
+        FOREIGN KEY (fk_user_id_user) REFERENCES users(user_id)
+    );

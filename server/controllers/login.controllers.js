@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const sendemail = require('../controllers/email.controller');
 
 
-const Collabs = {}
+const Login = {}
 
 
-module.exports = { Collabs }
+module.exports = { Login }
