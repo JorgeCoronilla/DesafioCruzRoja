@@ -7,6 +7,7 @@ import { Home } from './components/home';
 import { Profile } from './components/profile';
 import { Welcome } from './components/welcome';
 import { ChangePass } from './components/welcome/changePass';
+import { Register } from './components/welcome/register';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

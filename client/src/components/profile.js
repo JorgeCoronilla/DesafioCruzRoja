@@ -1,7 +1,11 @@
 import React from 'react'
+import { CreateProfileContext } from './providers/createProfileContext'
 
 export const Profile = () => {
-  return (
-    <div>profile</div>
-  )
+    return (
+        <CreateProfileContext>
+            <div>profile</div>
+        </CreateProfileContext>
+
+    )
 }
