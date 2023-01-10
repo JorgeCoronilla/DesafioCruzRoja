@@ -2,11 +2,11 @@ import React, {useContext} from 'react'
 import { CreateWelcomeContext } from '../providers/createWelcomeContex'
 
 export const Cover = () => {
-    
+
     const { setDisplay } = useContext(CreateWelcomeContext);
-    const loginLink = () => { setDisplay("login") }
-    const signinLink = () => { setDisplay("signin") }
-   
+    
+   const loginLink = () => { setDisplay("login") }
+   const signinLink = () => { setDisplay("sign-in") }
  
   return (
     <div>

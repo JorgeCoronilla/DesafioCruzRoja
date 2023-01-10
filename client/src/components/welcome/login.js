@@ -1,16 +1,18 @@
 import React, {useContext}  from 'react'
+import { defaultFetch } from '../../helpers/defaultHelpers';
+import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
+import { Alert } from '../modals/alert';
 
 export const Login = () => {
 
-    const { setDisplay } = useContext(CreateWelcomeContext);
-   
+    const { setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext);
+    const cookies = new Cookies();
+    const navigate = useNavigate();
     const recoverPass = () => {setDisplay("forgot");}
 
-    const sendLogin = async e => {}
     //Login
-    /*
-
     const sendLogin = async e => {
         e.preventDefault();
 
@@ -32,12 +34,13 @@ export const Login = () => {
                 },3000)
             }
         });
-        localStorage.setItem("currentQuiz", "none")
     }
 
-*/
   return (
     <div>
+         {showAlert &&
+        <Alert message={message}/>
+        }
          <div className='formContainer'>
                     <form onSubmit={sendLogin}>
                         <div>
