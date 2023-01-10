@@ -1,10 +1,6 @@
 const { DataTypes} = require('sequelize');
 const sequelize = require('../index');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5105901bea5c73a9de28a4bd6f76c7d67dc70670
 const UserModel = sequelize.define('users', {
     user_id: {
         type: DataTypes.INTEGER,
