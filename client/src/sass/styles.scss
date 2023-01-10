@@ -1,2 +1,266 @@
 //General
 @import "./generalStyles.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+    background-color: #F9F9F9;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    padding: 0 8%;
+}
+
+.container h3,
+h2 {
+    margin-left: 1%;
+}
+
+h4 {
+    font-weight: 300;
+}
+
+.food-container,
+.expiration,
+.close-container {
+    padding: 0 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.myfood-container {
+    padding: 0 2%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty {
+    /* border: 2px dashed rgba(68, 66, 66, 0.469); */
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 3rem 0;
+}
+
+.down {
+    animation: bounce 2s ease 0s 1 normal forwards;
+    margin: 2rem 0 0;
+}
+
+.expiration {
+    justify-content: space-between;
+}
+
+.card {
+    background: #fff;
+    padding: 15px;
+    width: 150px;
+    height: auto;
+    margin: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+    border-width: 0;
+}
+
+form {
+    width: 22rem;
+    margin: 1rem auto 0;
+}
+
+.form-header,
+.login-header,
+.close {
+    margin: 1rem auto 0;
+    width: 24rem;
+}
+
+.login-header {
+    margin-top: 10%;
+}
+
+.login-block h1,
+.login-block h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.form-container .count {
+    padding: 0.25rem 0;
+    text-align: center;
+    color: #fff;
+    background: #333;
+    border-radius: 4px;
+}
+
+.form-block div,
+.form-block select {
+    margin-top: 5px;
+    margin-bottom: 1.5rem;
+    width: inherit;
+}
+
+.form-block input[type="submit"],
+.form-block input[type="date"],
+.form-block input[type="number"],
+.form-block input[type="text"],
+.form-block input[type="password"],
+.form-block select,
+.form-block textarea {
+    padding: 0 0.5rem;
+    width: inherit;
+    height: 2rem;
+    border-radius: 15px;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 40px rgb(0 0 0 / 3%);
+    margin-top: 10px;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.form-block textarea {
+    height: 5rem;
+}
+
+.form-block input[type="submit"] {
+    height: 2.5rem;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    background: #319723;
+    cursor: pointer;
+}
+
+.form-container p {
+    margin-top: 0.5rem;
+    color: #ff9900;
+}
+
+.form-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+button,
+.img-right {
+    cursor: pointer;
+}
+
+.radio {
+    width: 50%;
+    display: inline-flex;
+    float: right;
+}
+
+.thumb {
+    background: #fff;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+    border-width: 0;
+}
+
+.name-block {
+    padding: 0 3%;
+}
+
+.fresco,
+.brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.exdate {
+    font-size: 30px;
+}
+
+.logo-center {
+    display: block;
+    margin: auto;
+}
+
+.img-right {
+    float: right;
+    margin-right: 11px;
+}
+
+.error-message {
+    color: red;
+}
+
+@keyframes bounce {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateY(-45px);
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateY(-24px);
+    }
+
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateY(-12px);
+    }
+
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateY(-6px);
+    }
+
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateY(-4px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+        animation-timing-function: ease-out;
+        transform: translateY(0px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Media queries */
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .container {
+        padding: 0 5%;
+    }
+
+    .login-header {
+        margin-top: 25%;
+    }
+
+    .empty {
+        padding: 3rem;
+    }
+
+}
