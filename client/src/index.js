@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Account } from './components/account';
 import { Error404 } from './components/error404';
 import { Home } from './components/home';
+import { Profile } from './components/profile';
+import { Welcome } from './components/welcome';
+import { ChangePass } from './components/welcome/changePass';
+import { Register } from './components/welcome/register';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +18,18 @@ root.render(
         <Routes>
 
           {/*Inicio y registro*/}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Welcome />} />
+          <Route path="/register/:token" element={<Register/>} />
+          <Route path="/change-pass/:token" element={<ChangePass/>} />
+
+          {/*Home*/}
+          <Route path="/home" element={<Home />} />
+
+          {/*Perfil*/}
+          <Route path="/profile" element={<Profile />} />
+
+          {/*Cuenta*/}
+          <Route path="/account" element={<Account />} />
 
           {/*Error 404*/}
           <Route path="*" element={<Error404 />} />
