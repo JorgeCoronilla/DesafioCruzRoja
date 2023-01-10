@@ -20,13 +20,12 @@ export const Welcome = () => {
                 {display === "login" &&
                     <Login />
                 }
-                {display === "signin" &&
+                {display === "sign-in" &&
                     <Cover />
                 }
                 {display === "forgot" &&
                     <ForgotPass />
                 }
-
             </div>
         </CreateWelcomeContext.Provider>
 
