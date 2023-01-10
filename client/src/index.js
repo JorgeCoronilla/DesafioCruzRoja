@@ -7,8 +7,8 @@ import { Home } from './components/home';
 import { Profile } from './components/profile';
 import { Welcome } from './components/welcome';
 import { ChangePass } from './components/welcome/changePass';
-
-import { Register } from './components/welcome/register';
+import { SignIn } from './components/welcome/Signin';
+import { Register } from './components/welcome/Register';
 
 
 
@@ -23,7 +23,7 @@ root.render(
           <Route path="/" element={<Welcome />} />
           <Route path="/register/:token" element={<Register/>} />
           <Route path="/change-pass/:token" element={<ChangePass/>} />
-
+          <Route path="/sign-in/" element={<SignIn/>} />
           {/*Home*/}
           <Route path="/home" element={<Home />} />
 

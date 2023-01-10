@@ -2,10 +2,7 @@
 
 const { Sequelize } = require('sequelize');
 
-const pool = new Sequelize(
-    process.env.DATABASE,
-    process.env.USER,
-    process.env.PASS, {
+const pool = new Sequelize('dbTest', 'root','rootroot', {
     host: process.env.HOST,
     dialect: 'mysql',
     pool: {

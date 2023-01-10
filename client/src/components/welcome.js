@@ -6,12 +6,13 @@ import { Login } from './welcome/login';
 
 
 export const Welcome = () => {
-
+    const [message, setMessage] = useState("");
+    const [showAlert, setShowAlert]= useState("");
     const [display, setDisplay] = useState("main");
 
     return (
 
-        <CreateWelcomeContext.Provider value={{ display, setDisplay }}>
+        <CreateWelcomeContext.Provider value={{ display, setDisplay, message, setMessage, showAlert, setShowAlert }}>
             <div>
                 {display === "main" &&
                     <Cover />
