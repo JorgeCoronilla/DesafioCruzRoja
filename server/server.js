@@ -1,5 +1,4 @@
 //imports
-
 const express = require('express');
 const app = express();
 require('dotenv').config();
@@ -21,4 +20,6 @@ app.use("/", router);
 
 
 // Opening Server
-app.listen(3000|| 3002,);
+app.listen(PORT || 3002, () => {
+    console.log(`Server started at http://127.0.0.1:${PORT}`);
+});
