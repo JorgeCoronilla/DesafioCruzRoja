@@ -24,7 +24,7 @@ export const Login = () => {
             if (res.validation) {
                 localStorage.setItem("user", JSON.stringify(res.user));
                 cookies.set('session', res.token, { path: '/' });
-                navigate("/dash");
+                navigate("/home");
             }   else {
                 setMessage("Contraseña o email incorrecto/s")
                 setShowAlert(true)
