@@ -1,12 +1,15 @@
 var nodemailer = require('nodemailer');
 
+USER =  process.env.USER;
+PASS =  process.env.PASS;
+
 smtpConfig =  {
     host: 'smtp.gmail.com',
     port: 587,
     secure: false,
     auth: {
-        user: "telequizz@gmail.com",
-        pass:"uhuititwzyldojoo"
+        user: USER,
+        pass: PASS
     }
 }
 

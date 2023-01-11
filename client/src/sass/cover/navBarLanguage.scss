@@ -1,0 +1,54 @@
+.navBarCoverLanguage {
+    display:flex;
+    flex-direction: row;
+    background-color: white;
+    color:#19274C;
+    width: 390px;
+    height: 56px;
+    border-bottom: 1px solid #E6E8EF;
+}
+
+.navBarCoverLanguage p {
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 20px;
+    margin: 20px 24px;
+}
+
+.navBarCoverLanguage h6 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #19274C;
+    position: absolute;
+    width: 59px;
+    left: 165px;
+    top: -18px;
+}
+
+.laguageRow {
+    display:flex;
+    flex-direction: row;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+color: #19274C;
+margin-left:  48px;
+justify-content: space-between;
+padding: 0;
+}
+
+.laguageRow p {
+    margin-right: 24px;
+}
+.rowLine {
+    width: 360px;
+    height: 0;
+    border: none;
+    border-bottom: 1px solid #E6E8EF;
+    margin:0;
+}

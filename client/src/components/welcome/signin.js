@@ -3,10 +3,9 @@ import { defaultFetch } from '../helpers/defaultFetch';
 import { useNavigate } from 'react-router-dom'
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
-import { Login } from './login';
 
 export const SignIn = () => {
-    const [ display, setDisplay, message, setMessage, showAlert, setShowAlert ] = useContext(CreateWelcomeContext)
+    const { display, setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
     const [recover, setRecover] = useState(false);
     const recoverPass = () => { setRecover(true); }

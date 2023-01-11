@@ -7,9 +7,8 @@ import { Home } from './components/home';
 import { Profile } from './components/profile';
 import { Welcome } from './components/welcome';
 import { ChangePass } from './components/welcome/changePass';
-import { SignIn } from './components/welcome/Signin';
 import { Register } from './components/welcome/Register';
-
+import './sass/styles.scss'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,7 +22,7 @@ root.render(
           <Route path="/" element={<Welcome />} />
           <Route path="/register/:token" element={<Register/>} />
           <Route path="/change-pass/:token" element={<ChangePass/>} />
-          <Route path="/sign-in/" element={<SignIn/>} />
+          
           {/*Home*/}
           <Route path="/home" element={<Home />} />
 
