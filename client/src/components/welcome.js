@@ -9,6 +9,7 @@ import { SignIn } from './welcome/Signin';
 import { ForgotPass } from './welcome/forgotPass';
 import { CategoryFinder } from './home/categoryFinder';
 import { SlideEmotional } from './home/slideEmotional';
+import { CatMenu } from './welcome/catMenu'
 
 
 export const Welcome = () => {
@@ -37,7 +38,9 @@ export const Welcome = () => {
                 {display === "languages" &&
                     <NavBarLanguages />
                 }
-
+                { display === "catMenu" &&
+                    <CatMenu />
+                }
                 {display === "login" &&
                     <Login />
                 }
