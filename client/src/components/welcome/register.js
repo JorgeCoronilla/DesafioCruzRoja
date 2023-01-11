@@ -6,9 +6,12 @@ import { Alert } from '../modals/alert';
 export const Register = () => {
     const [message, setMessage] = useState();
     const [showAlert, setShowAlert] = useState();
+
     const [email, setEmail] = useState();
     const navigate = useNavigate();
     const { token } = useParams();
+    const [message, setMessage] = useState();
+    const [showAlert, setShowAlert] = useState()
 
     //Comprueba si el toke de la url es válido
     useEffect(() => {
@@ -92,7 +95,7 @@ export const Register = () => {
 
                 </div>
             </div>
-            <div className='form-container'>
+            <div className='formContainer'>
                 <form onSubmit={insertUser}>
                     <div>
                         <label>Nombre</label>

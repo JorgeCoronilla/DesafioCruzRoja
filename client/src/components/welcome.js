@@ -8,6 +8,7 @@ import { NavBarMenu } from './welcome/navBarMenu';
 import { SignIn } from './welcome/Signin';
 import { ForgotPass } from './welcome/forgotPass';
 
+
 export const Welcome = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
