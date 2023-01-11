@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { defaultFetch } from '../helpers/defaultFetch';
-import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 import { Alert } from '../modals/alert';
 
 export const Register = () => {
-    // const { setDisplay } = useContext(CreateWelcomeContext);
+    const [message, setMessage] = useState();
+    const [showAlert, setShowAlert] = useState();
+
     const [email, setEmail] = useState();
     const navigate = useNavigate();
     const { token } = useParams();
@@ -24,7 +25,6 @@ export const Register = () => {
                     setShowAlert(true)
                     setTimeout(() => {
                         setShowAlert(false);
-                        navigate("/")
                     }, 3000)
                 }
             })
@@ -71,7 +71,6 @@ export const Register = () => {
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
-                    // navigate("/")
                 }, 3000)
             }
 

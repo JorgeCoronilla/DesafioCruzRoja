@@ -7,7 +7,7 @@ import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
 export const ChangePass = () => {
 
-    const { display, setDisplay, message, setMessage, showAlert, setShowAlert
+    const { message, setMessage, showAlert, setShowAlert
     } = useContext(CreateWelcomeContext);
 
     const { token } = useParams();

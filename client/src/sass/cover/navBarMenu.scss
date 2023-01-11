@@ -1,0 +1,101 @@
+.navBarMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    color:#19274C;
+    width: 390px;
+    height: 56px;
+    border-bottom: 1px solid #E6E8EF;
+}
+
+.navBarMenu h6 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #19274C;
+    margin: 18px 24px;
+}
+
+.navBarMenu p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #19274C;
+    margin: 18px 18px;
+}
+
+.signinBtn {
+    position: absolute;
+    width: 342px;
+    height: 48px;
+    left: 24px;
+    top: 72px;
+
+    background: #E04848;
+    border-radius: 20px;
+    width: 342px;
+    height: 48px;
+    background: #E04848;
+    border-radius: 20px;
+    border: none;
+    color: white;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.loginBtn {
+    background-color: white;
+    width: 342px;
+    height: 48px;
+    border: #E04848 solid 1.5px;
+    color: #E04848;
+    border-radius: 20px;
+    margin: 10px auto;
+    position: absolute;
+    width: 342px;
+    height: 48px;
+    left: 24px;
+    top: 144px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.menuOptions {
+    position: absolute;
+    width: 360px;
+    height: 0px;
+    left: 15px;
+    top: 217px;
+}
+
+.menuOptions hr {
+    width: 360px;
+    height: 0px;
+    left: 15px;
+    top: 217px;
+    border-bottom: 0.5px solid #E6E8EF;
+    margin-bottom: 18px;
+}
+
+.menuOptions p {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+color: #19274C;
+margin: 0 55px 27px;
+}

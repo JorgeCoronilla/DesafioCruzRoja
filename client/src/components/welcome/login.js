@@ -28,7 +28,6 @@ export const Login = () => {
             }   else {
                 setMessage("Contraseña o email incorrecto/s")
                 setShowAlert(true)
-    
                 setTimeout(()=>{ 
                     setShowAlert(false);
                 },3000)
