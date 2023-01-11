@@ -7,6 +7,8 @@ import { NavBarLanguages } from './welcome/navBarLanguages';
 import { NavBarMenu } from './welcome/navBarMenu';
 import { SignIn } from './welcome/Signin';
 import { ForgotPass } from './welcome/forgotPass';
+import { CategoryFinder } from './home/categoryFinder';
+import { SlideEmotional } from './home/slideEmotional';
 
 
 export const Welcome = () => {
@@ -22,7 +24,8 @@ export const Welcome = () => {
                 {display === "main" &&
                     <div>
                         <NavBarCover />
-                        <Cover />
+                        <CategoryFinder/>
+                        <SlideEmotional />
                         <SignIn />
                     </div>
                 }

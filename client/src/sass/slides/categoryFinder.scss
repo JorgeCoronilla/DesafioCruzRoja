@@ -1,0 +1,105 @@
+
+.homeSection1 h3,
+label {
+  margin-left: 2%;
+}
+
+.homeSection1 h2 {
+  color: #fff;
+  margin-left: 2rem;
+}
+
+.homeSection1 h2 {
+  font-weight: 300;
+}
+
+.homeSection1 {
+  width: inherit;
+  height: 565px;
+  background-image: url(../../../public/cruz-roja-madrid-norte.jpg);
+  /* 'Photo by Priscilla Du Preez on Unsplash' */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.catContainer {
+  background: #929292;
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  margin: 10px;
+  border-radius: 15px;
+  border-width: 0;
+  padding: 3rem 1rem;
+}
+
+.homeContainer {
+  width: 25rem;
+  margin:0 auto;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.submitContainer {
+  display: grid;
+  grid-template-columns: 12% auto 15%;
+  background-color: #FAFAFA;
+  margin: 25px auto 0;
+  width: 342px;
+  border: 0px;
+  height: 64px;
+  border-radius: 15px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: #19274C;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.handsicon, .submitText, .findicon {
+   justify-content: center;
+   align-items: center; 
+   display: flex;
+}
+.findicon {
+  background-color: #E04848;
+  padding: 0.7rem 1.3rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+ 
+}
+
+.buttonContainer button {
+  height: 3rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  background: #F52F3D;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 190px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+// /* Media queries */
+// /* Medium devices (tablets, less than 992px) */
+// @media (max-width: 991.98px) {
+  
+// }

@@ -1,0 +1,16 @@
+.slideContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: start;
+    background: #F0F0F0;
+    padding: 0 2%;
+    margin: 0 auto;
+    width: 25rem;
+}
+
+.splide01-slide02,
+.splide01-slide02,
+.splide01-slide03 {
+    width: inherit;
+}

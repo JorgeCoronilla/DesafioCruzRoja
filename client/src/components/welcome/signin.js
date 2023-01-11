@@ -1,14 +1,13 @@
-import React, {useContext , useState } from 'react'
+import React, {useContext } from 'react'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { useNavigate } from 'react-router-dom'
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
 export const SignIn = () => {
-    const { display, setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
+    const { message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
-    const [recover, setRecover] = useState(false);
-    const recoverPass = () => { setRecover(true); }
+
 
     const sigInSub = async e => {
         e.preventDefault();
@@ -44,7 +43,6 @@ export const SignIn = () => {
                 }
             <div className="register-header">
                 <div className="register-block">
-                    {/* <img className="logo-center" src="https://www2.cruzroja.es/o/cruzroja-web-theme/images/CR-ES-Horizontal-RGB-recortada.png" width="250" alt="" /> */}
                     <h2>Confirmación de correo</h2>
                     <h4>Regístrate para obtener tu cuenta</h4>
 
@@ -57,7 +55,7 @@ export const SignIn = () => {
                         <input type="email" required name="email" minLength="5" maxLength="40" />
                     </div>
                 
-                    <input type="submit" value="Registrarse" />
+                    <button type="submit" value="Registrarse" >Hazte miembro</button>
                 </form>
             </div>
         </div>

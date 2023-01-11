@@ -10,8 +10,7 @@ export const Register = () => {
     const [email, setEmail] = useState();
     const navigate = useNavigate();
     const { token } = useParams();
-    const [message, setMessage] = useState();
-    const [showAlert, setShowAlert] = useState()
+ 
 
     //Comprueba si el toke de la url es válido
     useEffect(() => {
