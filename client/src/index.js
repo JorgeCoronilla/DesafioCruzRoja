@@ -23,7 +23,7 @@ root.render(
           <Route path="/" element={<Welcome />} />
           <Route path="/register/:token" element={<Register/>} />
           <Route path="/change-pass/:token" element={<ChangePass/>} />
-          <Route path="/sign-in/" element={<SignIn/>} />
+          {/* <Route path="/sign-in/" element={<SignIn/>} /> */}
           {/*Home*/}
           <Route path="/home" element={<Home />} />
 

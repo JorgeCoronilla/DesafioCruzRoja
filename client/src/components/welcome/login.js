@@ -24,7 +24,7 @@ export const Login = () => {
             if (res.validation) {
                 localStorage.setItem("user", JSON.stringify(res.user));
                 cookies.set('session', res.token, { path: '/' });
-                navigate("/dash");
+                navigate("/home");
             }   else {
                 setMessage("Contraseña o email incorrecto/s")
                 setShowAlert(true)
@@ -37,14 +37,14 @@ export const Login = () => {
     }
 
   return (
-    <div>
+    <div className='login-block'>
          {showAlert &&
         <Alert message={message}/>
         }
          <div className='formContainer'>
                     <form onSubmit={sendLogin}>
                         <div>
-                            <h5>Login</h5>
+                            <h2>Login</h2>
                             </div>
                         <div>
                             <input type="email" name='email' placeholder='Correo electrónico' required minLength="5" maxLength="40"></input>
@@ -52,7 +52,8 @@ export const Login = () => {
                         <div> <input type="password" name='pass' required placeholder='Contraseña'minLength="4" maxLength="12"></input></div>
                         <div><button type="submit">Log in</button></div>
                     </form>
-                    <p onClick={recoverPass}>¿Olvidaste tu contraseña? Recupérala aquí.</p>
+
+                    <h4 onClick={recoverPass}>¿Olvidaste tu contraseña? Recupérala aquí.</h4>
                 </div>
     </div>
   )

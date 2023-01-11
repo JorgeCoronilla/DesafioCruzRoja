@@ -5,10 +5,12 @@ import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 import { Alert } from '../modals/alert';
 
 export const Register = () => {
-    const { setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext);
+    // const { setDisplay } = useContext(CreateWelcomeContext);
     const [email, setEmail] = useState();
     const navigate = useNavigate();
     const { token } = useParams();
+    const [message, setMessage] = useState();
+    const [showAlert, setShowAlert] = useState()
 
     //Comprueba si el toke de la url es válido
     useEffect(() => {
@@ -69,7 +71,7 @@ export const Register = () => {
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
-                    navigate("/")
+                    // navigate("/")
                 }, 3000)
             }
 
@@ -94,7 +96,7 @@ export const Register = () => {
 
                 </div>
             </div>
-            <div className='form-container'>
+            <div className='formContainer'>
                 <form onSubmit={insertUser}>
                     <div>
                         <label>Nombre</label>

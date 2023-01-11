@@ -3,6 +3,7 @@ import { CreateWelcomeContext } from './providers/createWelcomeContex'
 import { Cover } from './welcome/cover';
 import { ForgotPass } from './welcome/forgotPass';
 import { Login } from './welcome/login';
+import { SignIn } from './welcome/Signin';
 
 
 export const Welcome = () => {
@@ -21,7 +22,7 @@ export const Welcome = () => {
                     <Login />
                 }
                 {display === "sign-in" &&
-                    <Cover />
+                    <SignIn />
                 }
                 {display === "forgot" &&
                     <ForgotPass />

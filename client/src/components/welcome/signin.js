@@ -6,7 +6,7 @@ import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 import { Login } from './login';
 
 export const SignIn = () => {
-    const [ display, setDisplay, message, setMessage, showAlert, setShowAlert ] = useContext(CreateWelcomeContext)
+    const { display, setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
     const [recover, setRecover] = useState(false);
     const recoverPass = () => { setRecover(true); }
@@ -45,13 +45,13 @@ export const SignIn = () => {
                 }
             <div className="register-header">
                 <div className="register-block">
-                    <img className="logo-center" src="https://www2.cruzroja.es/o/cruzroja-web-theme/images/CR-ES-Horizontal-RGB-recortada.png" width="250" alt="" />
+                    {/* <img className="logo-center" src="https://www2.cruzroja.es/o/cruzroja-web-theme/images/CR-ES-Horizontal-RGB-recortada.png" width="250" alt="" /> */}
                     <h2>Confirmación de correo</h2>
                     <h4>Regístrate para obtener tu cuenta</h4>
 
                 </div>
             </div>
-            <div className='form-container'>
+            <div className='formContainer'>
                 <form onSubmit={sigInSub}>
                     <div>
                         <label>Email</label>
