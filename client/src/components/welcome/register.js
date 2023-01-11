@@ -96,7 +96,7 @@ export const Register = () => {
 
                 </div>
             </div>
-            <div className='form-container'>
+            <div className='formContainer'>
                 <form onSubmit={insertUser}>
                     <div>
                         <label>Nombre</label>
