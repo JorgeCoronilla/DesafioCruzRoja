@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { defaultFetch } from '../helpers/defaultFetch';
+import { GrClose } from 'react-icons/gr'
 import { Alert } from '../modals/alert';
-
+import { Timeline } from './timeline';
 export const Register = () => {
     const [message, setMessage] = useState();
     const [showAlert, setShowAlert] = useState();
@@ -84,13 +85,13 @@ export const Register = () => {
 
     return (
 
-        <div>
-            {showAlert && <Alert message={message} />}
+        <div className='register-container'>
+            {/* {showAlert && <Alert message={message} />} */}
             <div className="register-header">
                 <div className="register-block">
-                    <img className="logo-center" src="https://www2.cruzroja.es/o/cruzroja-web-theme/images/CR-ES-Horizontal-RGB-recortada.png" width="250" alt="" />
-                    <h2>Registro</h2>
-                    <h3>Email verificado!!</h3>
+                    
+                    <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
+                    <div className='GrCloseBig'><GrClose/></div>
 
                 </div>
             </div>

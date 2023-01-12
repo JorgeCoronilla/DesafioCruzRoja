@@ -1,29 +1,28 @@
 import React, { useState } from 'react'
-import { CreateWelcomeContext } from './providers/createWelcomeContex'
-import { Cover } from './welcome/cover';
-import { Login } from './welcome/login';
+import { CreateRegisterContext } from './providers/createRegisterContext'
+// import { Cover } from './welcome/cover';
+// import { Login } from './welcome/login';
 import { NavBarCover } from './welcome/navBarCover';
 import { NavBarLanguages } from './welcome/navBarLanguages';
 import { NavBarMenu } from './welcome/navBarMenu';
 import { SignIn } from './welcome/signin';
-import { ForgotPass } from './welcome/forgotPass';
+// import { ForgotPass } from './welcome/forgotPass';
 import { CategoryFinder } from './home/categoryFinder';
 import { SlideEmotional } from './home/slideEmotional';
-import { CatMenu } from './welcome/catMenu'
+// import { CatMenu } from './welcome/catMenu'
 import { SlideLegal } from './home/slideLegal';
-import { PopRegister } from './welcome/popRegister';
+// import { PopRegister } from './welcome/popRegister';
+import { Register } from './register/register'
 
-
-export const Welcome = () => {
+export const RegisterLanding = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
-    const [display, setDisplay] = useState("main");
+    const [display, setDisplay] = useState("register");
 
     return (
 
-        <CreateWelcomeContext.Provider value={{ display, setDisplay, message, setMessage, showAlert, setShowAlert }}>
+        <CreateRegisterContext.Provider value={{ display, setDisplay, message, setMessage, showAlert, setShowAlert }}>
             <div>
-
                 {display === "main" &&
                     <div>
                         <NavBarCover />
@@ -31,6 +30,11 @@ export const Welcome = () => {
                         <SlideEmotional />
                         <SlideLegal />
                         <SignIn />
+                    </div>
+                }
+                {display === "register" &&
+                    <div>
+                        <Register />
                     </div>
                 }
                 {display === "menu" &&
@@ -41,24 +45,8 @@ export const Welcome = () => {
                 {display === "languages" &&
                     <NavBarLanguages />
                 }
-                { display === "catMenu" &&
-                    <CatMenu />
-                }
-                {display === "login" &&
-                    <Login />
-                }
-                {display === "sign-in" &&
-                    <SignIn />
-                }
-                {
-                display === "pop" &&
-                    <PopRegister />
-                }
-                {display === "forgot" && 
-                    <ForgotPass/>
-                }
             </div>
-        </CreateWelcomeContext.Provider>
+        </CreateRegisterContext.Provider>
 
     )
 }

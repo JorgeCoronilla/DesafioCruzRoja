@@ -1,0 +1,107 @@
+.timeline {
+    list-style-type: none;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.li {
+    transition: all 200ms ease-in;
+}
+
+.timestamp {
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 100;
+    width: 22%;
+}
+
+.status1, .status2, status3 {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #00000040;
+    position: relative;
+    transition: all 200ms ease-in;
+}
+.status1 p, status2 p, status3 p {
+    font-weight: 700;
+    font-size: 12px;
+    color: #000;
+}
+
+.status1:before {
+    content: "1";
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #374095;
+    position: absolute;
+    top: -15px;
+    left: 0%;
+    transition: all 200ms ease-in;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 4px #E1FAFF;
+}
+.status2:before {
+    content: "2";
+    color: #374095;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #374095;
+    position: absolute;
+    top: -15px;
+    left: 0%;
+    transition: all 200ms ease-in;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 4px #E1FAFF;
+}
+.status3:before {
+    content: "3";
+    color: #374095;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: -15px;
+    left: 0%;
+    transition: all 200ms ease-in;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), inset 0px 1px 4px #E1FAFF;
+}
+.li.complete .status {
+    border-top: 2px solid #66DC71;
+}
+
+.li.complete .status:before {
+    background-color: #66DC71;
+    border: none;
+    transition: all 200ms ease-in;
+}
+
+.li.complete .status h4 {
+    color: #66DC71;
+}
+
+// @media (min-device-width: 320px) and (max-device-width: 700px) {
+//     .li {
+//         transition: all 200ms ease-in;
+//         display: flex;
+//         width: inherit;
+//     }
+
+//     .timestamp {
+//         width: 100px;
+//     }
+
+//     .status:before {
+//         left: -8%;
+//         top: 30%;
+//         transition: all 200ms ease-in;
+//     }
+// }
