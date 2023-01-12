@@ -15,7 +15,7 @@ export const NavBarCover = () => {
         <div>
                 <div className='navBarCover'>
                     <div><p onClick={navMenu1}>&#9776;</p></div>
-                    <div><h6>Inmi</h6>Inmi</div>
+                    <div><h6>Inmi</h6></div>
                     <div><img onClick={languages} src={spain} alt="Spanish flag" /></div>
                 </div>
             

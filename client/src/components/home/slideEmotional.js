@@ -5,9 +5,14 @@ export const SlideEmotional = () => {
   return (
     <div>
 
-<div className='slideContainer'>
-        <h2>Recomendados en ayuda emocional</h2>
-        <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+      <div className='slideContainer emotional'>
+        <div className='slideTitle'>
+          <h2>Recomendados en ayuda emocional</h2>
+        </div>
+        <div className='slideText'>
+          <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+        </div>
+
         <Splide
           options={{
             type: 'loop',
@@ -34,7 +39,8 @@ export const SlideEmotional = () => {
             <img className='thumbnail' src="image3.jpg" alt="user 3" />
           </SplideSlide>
         </Splide>
-      </div> 
-    </div>
+
+      </div>
+    </div >
   )
 }

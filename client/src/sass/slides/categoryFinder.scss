@@ -7,10 +7,7 @@ label {
 .homeSection1 h2 {
   color: #fff;
   margin-left: 2rem;
-}
-
-.homeSection1 h2 {
-  font-weight: 300;
+  font-weight: bold;
 }
 
 .homeSection1 {
@@ -38,8 +35,7 @@ label {
 }
 
 .homeContainer {
-  width: 25rem;
-  margin:0 auto;
+  width: 390px;
   display: flex;
   align-content: center;
   flex-wrap: wrap;

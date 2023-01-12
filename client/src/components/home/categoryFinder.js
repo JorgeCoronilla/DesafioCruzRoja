@@ -1,6 +1,11 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 export const CategoryFinder = () => {
+
+    const { setDisplay } = useContext(CreateWelcomeContext);
+    const openCatMenu = () => {
+        setDisplay("pop");
+    }
     return (
         <div>
             <div className='homeContainer'>
@@ -9,7 +14,7 @@ export const CategoryFinder = () => {
                     <div className='submitContainer'>
                         <div className='handsicon'></div>
                         <div className='submitText'>¿En qué necesitas ayuda?</div>
-                        <div className='findicon'></div>
+                        <div onClick={openCatMenu}className='findicon'></div>
                     </div>
                 </div>
             </div>
