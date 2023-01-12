@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
-
+import { GrClose } from 'react-icons/gr'
 export const CatMenu = () => {
 
     const { setDisplay } = useContext(CreateWelcomeContext);
@@ -9,12 +9,11 @@ export const CatMenu = () => {
     return (
         <div>
             <div className='catMenu'>
-                <p className='catMenuTitle'>Necesito ayuda en</p>
-                <div><span onClick={close}>&#10005;</span></div>
+                <div className='catMenuTitle'><p >Necesito ayuda en</p></div> 
+                <div><span onClick={close}><GrClose /></span></div>
             </div>
             <div>
                 <div className='catMenuOptions'>
-                <hr/>
                     <div>
                         <img />
                         <p>Soporte emocional</p>

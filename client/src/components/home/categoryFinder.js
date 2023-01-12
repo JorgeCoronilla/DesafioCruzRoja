@@ -4,7 +4,7 @@ export const CategoryFinder = () => {
 
     const { setDisplay } = useContext(CreateWelcomeContext);
     const openCatMenu = () => {
-        setDisplay("catMenu");
+        setDisplay("pop");
     }
     return (
         <div>

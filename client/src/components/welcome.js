@@ -10,6 +10,8 @@ import { ForgotPass } from './welcome/forgotPass';
 import { CategoryFinder } from './home/categoryFinder';
 import { SlideEmotional } from './home/slideEmotional';
 import { CatMenu } from './welcome/catMenu'
+import { SlideLegal } from './home/slideLegal';
+import { PopRegister } from './welcome/popRegister';
 
 
 export const Welcome = () => {
@@ -27,6 +29,7 @@ export const Welcome = () => {
                         <NavBarCover />
                         <CategoryFinder/>
                         <SlideEmotional />
+                        <SlideLegal />
                         <SignIn />
                     </div>
                 }
@@ -47,7 +50,10 @@ export const Welcome = () => {
                 {display === "sign-in" &&
                     <SignIn />
                 }
-
+                {
+                display === "pop" &&
+                    <PopRegister />
+                }
                 {display === "forgot" && 
                     <ForgotPass/>
                 }
