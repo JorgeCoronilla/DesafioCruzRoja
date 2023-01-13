@@ -5,7 +5,7 @@ import { Login } from './welcome/login';
 import { NavBarCover } from './welcome/navBarCover';
 import { NavBarLanguages } from './welcome/navBarLanguages';
 import { NavBarMenu } from './welcome/navBarMenu';
-import { SignIn } from './welcome/Signin';
+import { SignIn } from './welcome/signin';
 import { ForgotPass } from './welcome/forgotPass';
 import { CategoryFinder } from './home/categoryFinder';
 import { SlideEmotional } from './home/slideEmotional';

@@ -7,7 +7,7 @@ import { Home } from './components/home';
 import { Profile } from './components/profile';
 import { Welcome } from './components/welcome';
 import { ChangePass } from './components/welcome/changePass';
-import { Register } from './components/welcome/Register';
+import { RegisterLanding } from './components/registerLanding';
 import './sass/styles.scss'
 
 
@@ -20,7 +20,7 @@ root.render(
 
           {/*Inicio y registro*/}
           <Route path="/" element={<Welcome />} />
-          <Route path="/register/:token" element={<Register/>} />
+          <Route path="/registro/:token" element={<RegisterLanding/>} />
           <Route path="/change-pass/:token" element={<ChangePass/>} />
 
           {/*Home*/}
