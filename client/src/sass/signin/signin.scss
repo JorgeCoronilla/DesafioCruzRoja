@@ -1,8 +1,12 @@
-.formContainer {
+.signinContainer {
     background-color: #F0F0F0;
+    height:fit-content;
+    margin-bottom: 0;
+    color:#19274C;
+    margin-top: -22 px;
 }
 
-.formContainer button {
+.signinContainer button {
 width: 342px;
 height: 48px;
 margin-left: 23px;
@@ -15,9 +19,31 @@ font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 20px;
+margin-bottom: 40px;
 /* identical to box height */
 
 text-align: center;
 
 color: #FAFAFA;
+}
+
+.signinContainer h4 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+    padding: 60px 45px 30px;
+}
+
+
+
+.signinContainer input {
+width: 332px;
+height: 48px;
+background: #FBFBFB;
+border: 1.5px solid #DBDBDB;
+border-radius: 10px;
+margin: 0 23px 15px;
 }

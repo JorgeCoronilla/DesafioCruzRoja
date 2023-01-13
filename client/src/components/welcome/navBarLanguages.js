@@ -3,109 +3,110 @@ import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
 export const NavBarLanguages = () => {
     const { setDisplay } = useContext(CreateWelcomeContext);
-    const close = () => {setDisplay("main")}
+    const close = () => { setDisplay("main") }
 
-  return (
-    <div>
+    return (
+        <div>
             <div>
-                    <div className='navBarCoverLanguage'>
-                        <div><p onClick={close}> &#10094;</p></div>
-                        <div><h6>Idioma</h6></div>
-                    </div>
-
+                <div className='navBarCoverLanguage'>
+                    <div><p onClick={close}> &#10094;</p></div>
+                    <div><h6>Idioma</h6></div>
+                </div>
+                <div className='languagesContainer'>
                     <div className='languages'>
                         <div className='laguageRow'>
                             <div>
-                                <p>Español</p>   
+                                <p>Español</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>English</p>   
+                                <p>English</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Árabe (العربية)</p>   
+                                <p>Árabe (العربية)</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Rumano (Română)</p>   
+                                <p>Rumano (Română)</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Italiano</p>   
+                                <p>Italiano</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Chino</p>   
+                                <p>Chino</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Alemán</p>   
+                                <p>Alemán</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Francés</p>   
+                                <p>Francés</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Portugués</p>   
+                                <p>Portugués</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                         <div className='laguageRow'>
                             <div>
-                                <p>Ucraniano</p>   
+                                <p>Ucraniano</p>
                             </div>
                             <div>
                                 <p>M</p>
                             </div>
                         </div>
-                        <hr className='rowLine'/>
+                        <hr className='rowLine' />
                     </div>
                 </div>
-    </div>
-  )
+            </div>
+        </div>
+    )
 }
