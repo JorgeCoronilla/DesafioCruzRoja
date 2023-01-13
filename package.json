@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@splidejs/react-splide": "^0.7.12",
-    "react-icons": "^4.7.1"
+    "prop-types": "^15.8.1"
   }
 }

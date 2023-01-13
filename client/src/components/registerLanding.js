@@ -13,20 +13,22 @@ import { SlideEmotional } from './home/slideEmotional';
 import { SlideLegal } from './home/slideLegal';
 // import { PopRegister } from './welcome/popRegister';
 import { Register } from './register/register'
+import { ProfileRegister } from './register/profileRegister'
+
 
 export const RegisterLanding = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
     const [display, setDisplay] = useState("register");
-
+    const [userData, setUserData] = useState("")
     return (
 
-        <CreateRegisterContext.Provider value={{ display, setDisplay, message, setMessage, showAlert, setShowAlert }}>
+        <CreateRegisterContext.Provider value={{ display, setDisplay, message, setMessage, showAlert, setShowAlert, userData, setUserData }}>
             <div>
                 {display === "main" &&
                     <div>
                         <NavBarCover />
-                        <CategoryFinder/>
+                        <CategoryFinder />
                         <SlideEmotional />
                         <SlideLegal />
                         <SignIn />
@@ -35,6 +37,11 @@ export const RegisterLanding = () => {
                 {display === "register" &&
                     <div>
                         <Register />
+                    </div>
+                }
+                {display === "profile" &&
+                    <div>
+                        <ProfileRegister />
                     </div>
                 }
                 {display === "menu" &&

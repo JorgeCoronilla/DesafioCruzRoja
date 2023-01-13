@@ -1,3 +1,7 @@
+
+.popContainer {
+    width: 390px;;
+}
 .popReg {
     display: flex;
     flex-direction: column;
@@ -25,6 +29,9 @@
 .emptySpace {
     background-color: #DFE1F5;
     height: 300px ;
+}
+.popText {
+    width: 300px;
 }
 .whiteSpace {
     background-color: #fff;

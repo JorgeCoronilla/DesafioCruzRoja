@@ -1,37 +1,36 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { GrClose } from 'react-icons/gr'
 import { Alert } from '../modals/alert';
 import { Timeline } from './timeline';
 import { CreateRegisterContext } from '../providers/createRegisterContext';
-import defaultUser from '../../media/default-avatar.jpg'
 
-export const Register = () => {
-    
-    const { setDisplay, message, setMessage, showAlert, setShowAlert} = useContext(CreateRegisterContext);
+export const ProfileRegister = () => {
+    const { setDisplay, message, setMessage, showAlert, setShowAlert, userData, setUserData } = useContext(CreateRegisterContext);
     const [email, setEmail] = useState();
+    const navigate = useNavigate();
     const { token } = useParams();
+ 
 
-    // Comprueba si el token de la url es válido
-    useEffect(() => {
-        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
-            .then((res) => {
-                if (res.mensaje) {
-                    setEmail(res.email);
-                    console.log(res);
-                } else {
-                    setMessage("El enlace es incorrecto o ha expirado")
-                    setShowAlert(true)
-                    setTimeout(() => {
-                        setShowAlert(false);
-                    }, 3000)
-                    
-                }
-            })
+    // //Comprueba si el toke de la url es válido
+    // useEffect(() => {
+    //     defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+    //         .then((res) => {
+    //             if (res.mensaje) {
+    //                 setEmail(res.email);
+    //                 console.log(res);
+    //             } else {
+    //                 setMessage("El enlace es incorrecto o ha expirado")
+    //                 setShowAlert(true)
+    //                 setTimeout(() => {
+    //                     setShowAlert(false);
+    //                 }, 3000)
+    //             }
+    //         })
 
-    }, [])
-    setEmail("gofthet@gmail.com")
+    // }, [])
+
     //Inserta el nuevo usuario
     const insertUser = async e => {
         e.preventDefault();
@@ -40,29 +39,11 @@ export const Register = () => {
             console.log(email);
             var newUser = {
                 jwt: token,
-                user_name: e.target.name_.value,
-                email: email,
-                password_: e.target.pass.value,
-                user_surname: e.target.surname_.value, 
-                about_me: "", 
-                year_birth: "", 
-                gender: "", 
-                country: "", 
-                mother_tongue: "", 
-                years_in: "", 
-                working: "", 
-                studies: "", 
-                support_type: "",
-                expert: false, 
-                area: "", 
-                pic: defaultUser
-            }
-                
-                // user_name : e.target.name_.value,
+                user_name : e.target.name_.value,
                 // surname : "",
                 // about_me : "",
                 // langauges: "",
-                // email : email,
+                email : email,
                 // phone : "",
                 // studies : "",
                 // country : "",
@@ -72,17 +53,17 @@ export const Register = () => {
                 // collab_individual : false,
                 // collab_institution : false,
                 // job : false,
-                // password_ : e.target.pass.value,
+                password_ : e.target.pass.value,
                 // banned_users : {},
-            //     // favs : {}
-            // }
+                // favs : {}
+            }
             const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
             if (res.mensaje) {
                 setMessage("Registro correcto, gracias")
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
-                    setDisplay("profile")
+                    navigate("/")
                 }, 3000)
 
             } else {
@@ -104,22 +85,22 @@ export const Register = () => {
 
     return (
 
-        <div className='register-container'>
+        <div className='profile-container'>
+            
+            <div className="profile-header">
+                
+                    
+                    <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
+                    <div className='GrCloseBig'><GrClose/></div>
 
-            <div className="register-header">
-                <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
-                <div className='GrCloseBig'><GrClose /></div>
+            
             </div>
-            <div><Timeline /></div>
+            <div><Timeline/></div>
             <div className='formContainer'>
-                <form onSubmit={insertUser}>
+                {/* <form onSubmit={insertUser}>
                     <div>
                         <label>Nombre</label>
-                        <input type="text" name='name_' required minLength="5" maxLength="50" />
-                    </div>
-                    <div>
-                        <label>Apellidos</label>
-                        <input type="text" name='surname_' required minLength="5" maxLength="50" />
+                        <input type="text" name='name_' required minLength="5" maxLength="40" />
                     </div>
                     <div>
                         <label>Password</label>
@@ -133,7 +114,7 @@ export const Register = () => {
                         {showAlert && <Alert message={message} />}
                     </div>
                     <input className='contButton' type="submit" value="Confirmar registro" />
-                </form>
+                </form> */}
             </div>
         </div>
     )

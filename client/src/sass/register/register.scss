@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 
 .register-container {
-    padding: 50px;
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .regTitle h1 {
@@ -40,4 +43,16 @@ input[type="password"] {
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
+}
+.contButton {
+    border-radius: 20px;
+    border: 0;
+    width: 342px;
+    height: 48px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    background: #E04848;
+    color: #fff;
 }
