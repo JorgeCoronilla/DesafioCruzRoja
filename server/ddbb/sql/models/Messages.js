@@ -9,27 +9,31 @@ const MessagesModel = sequelize.define('messages', {
     },
     fk_user_id_sender: {
         type: DataTypes.INTEGER,
-        unique: true,
         allowNull: false
     },
     fk_user_id_recipient: {
         type: DataTypes.INTEGER,
-        unique: true,
         allowNull: false
     },
 
-    title: {
-        type: DataTypes.STRING,
-        unique: true,
+    fk_channel_id: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     message: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false
-    }
+    },
+    created_At: {
+        field: 'createdat',
+        type: DataTypes.DATE,
+    },
+    updated_At: {
+        field: 'updatedat',
+        type: DataTypes.DATE,
+    },
 }, {
-    timestamps: false
+    timestamps: true
 });
 
 module.exports = MessagesModel

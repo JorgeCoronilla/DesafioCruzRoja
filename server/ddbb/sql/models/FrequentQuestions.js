@@ -9,12 +9,10 @@ const FQuestionsModel = sequelize.define('messages', {
     },
     question: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false
     },
     fk_user_id: {
         type: DataTypes.INTEGER,
-        unique: true,
         allowNull: false
     }
 }, {

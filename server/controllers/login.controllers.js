@@ -16,12 +16,12 @@ const Login = {
                 id: user.id,
             }
             console.log(compare);
+            console.log(user.user_id);
 
             if (compare) {
                 const token = jwt.sign({
-                    id: user.id,
-                    user_name: user.user_name,
-                    email: user.email
+                    id: user.user_id,
+                    user_name: user.user_name
                 }, process.env.JWT_SECRET_KEY, { expiresIn: '4h' })
                 res.json({ validation: true, token, user: userData })
 
@@ -50,7 +50,7 @@ const Login = {
     },
     change_pass: async (req, res) => {
         const { password_, token } = req.body
-       // var passHash = await bcryptjs.hash(password_, 8);
+        var passHash = await bcryptjs.hash(password_, 8);
         try {
             jwt.verify(token, process.env.JWT_SECRET_KEY, (error, authData) => {
                 if (error) {
