@@ -3,14 +3,24 @@
     flex-flow: row wrap;
     align-items: flex-start;
     justify-content: start;
-    background: #F0F0F0;
-    padding: 0 2%;
-    margin: 0 auto;
+    padding: 0;
     width: 390px;
 }
-
+.slideContainer.emotional {
+    background: #F5F5F5;
+}
+.slideContainer.legal {
+    background-color: #fff;
+}
 .splide01-slide02,
 .splide01-slide02,
 .splide01-slide03 {
     width: inherit;
+}
+.slideTitle, .slideText, .slide {
+    padding: 0 4%;
+}
+.splide {
+    width: 90%;
+    padding: 0 4%;
 }
