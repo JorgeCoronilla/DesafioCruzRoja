@@ -8,6 +8,9 @@ const pool = new Sequelize(
     process.env.PASS, {
     host: process.env.HOST,
     dialect: 'mysql',
+    define: {
+        timestamps: true
+    },
     pool: {
         max: 100,
         min: 0,

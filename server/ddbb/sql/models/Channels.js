@@ -1,13 +1,12 @@
 const { DataTypes} = require('sequelize');
 const sequelize = require('../index');
 
-const ReviewsModel = sequelize.define('messages', {
+const ChannelsModel = sequelize.define('channels', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
-    
     fk_user_id_sender: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -16,24 +15,17 @@ const ReviewsModel = sequelize.define('messages', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    title: {
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false
+    created_At: {
+        field: 'createdat',
+        type: DataTypes.DATE,
     },
-
-    review: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-
-    stars: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+    updated_At: {
+        field: 'updatedat',
+        type: DataTypes.DATE,
     },
 
 }, {
-    timestamps: false
+    timestamps: true
 });
 
-module.exports = ReviewsModel
+module.exports = ChannelsModel

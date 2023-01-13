@@ -1,0 +1,13 @@
+
+.profile{
+display: flex;
+flex-direction: column;
+}
+
+.profilePic {
+    width: 184px;
+    height: 175px;
+    border-radius: 20px;
+    margin: 90px auto;
+    display: block;
+}
