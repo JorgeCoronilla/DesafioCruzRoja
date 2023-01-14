@@ -34,6 +34,7 @@ const Register = {
                 .catch(err => {
                     if (err) {
                         console.log(err)
+                            console.log("ENTRA")
                         res.json({ mensaje: false })
                     }
                 })

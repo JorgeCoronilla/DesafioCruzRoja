@@ -35,6 +35,9 @@ root.render(
           {/*Error 404*/}
           <Route path="*" element={<Error404 />} />
 
+
+          <Route path="/test" element={<Profile />} />
+
         </Routes>
       </div>
     </BrowserRouter>
