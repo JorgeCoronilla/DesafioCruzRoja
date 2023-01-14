@@ -1,3 +1,11 @@
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
 h1{}
 h2{}
 div {
@@ -12,4 +20,7 @@ body {
     background-color: white;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
+    color: #132A68;
 }
+
+

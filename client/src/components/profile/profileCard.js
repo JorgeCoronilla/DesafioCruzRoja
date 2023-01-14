@@ -9,33 +9,51 @@ export const ProfileCard = () => {
   const profileId = parseInt(localStorage.getItem('currentProfileId'))
 
   const firstMessage = () => {
-   
-   defaultFetch(`http://localhost:3001/msg/create_channel`, "post",
-    {token: session, recipient:profileId})
-    .then((res) => {
-        localStorage.setItem('currentChannelId', res.channelID)
-        setShowCard("firstContact");
-    })
+
+    defaultFetch(`http://localhost:3001/msg/check_channel`, "post",
+      { currentProfileId: profileId, token: session })
+      .then((res) => {
+        if (res) {
+          localStorage.setItem('currentChannelId', res.id)
+          setShowCard("firstContact");
+        } else {
+          defaultFetch(`http://localhost:3001/msg/create_channel`, "post",
+            { token: session, recipient: profileId })
+            .then((res) => {
+              localStorage.setItem('currentChannelId', res.channelID)
+              setShowCard("firstContact");
+            })
+        }
+      })
   }
 
-
+const list = () =>{
+  console.log("Entra")
+  setShowCard("list");
+}
   return (
     <div>
       <div className='profile'>
-       <img className='profilePic' src={user.pic} alt="user 1" />
-        <p>{user.user_name}</p>
-        <p><span>22 reseñas</span></p>
+        <div className='profileCont1'>
 
-        <div className='profileBtns'>
-          <button className='registerBtn' >55 personas han recibido su ayuda</button>
-          <button className='registerBtn' onClick={firstMessage}>enviar mensaje</button>
+
+          <img className='profilePic' src={user.pic} alt="user 1" />
+          <h3>{user.user_name}</h3>
+          <h5>22 reseñas Verificado</h5>
+
+          <div className='profileBtns'>
+            
+            <button className='loginBtn' onClick={list}>55 personas han recibido su ayuda</button>
+            <button className='signinBtn2' onClick={firstMessage}>enviar mensaje</button>
+
+          </div>
         </div>
 
         <div className='aboutMe'>
           <h4>Acerca de mí</h4>
-          <p>{user.about_me}</p>
+          <h6>{user.about_me}</h6>
+          <p>Habla árabe</p>
         </div>
-        <p>Habla árabe</p>
       </div>
     </div>
   )

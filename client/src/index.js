@@ -9,11 +9,12 @@ import { Welcome } from './components/welcome';
 import { ChangePass } from './components/welcome/changePass';
 import { RegisterLanding } from './components/registerLanding';
 import './sass/styles.scss'
+import { CardOnList } from './components/profile/cardOnList';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
     <BrowserRouter>
       <div>
         <Routes>
@@ -37,10 +38,11 @@ root.render(
 
 
           <Route path="/test" element={<Profile />} />
+          <Route path="/list" element={<CardOnList />} />
 
         </Routes>
       </div>
     </BrowserRouter>
-  </React.StrictMode>
+
 );
 

@@ -7,6 +7,7 @@ import { ProfileNavBar2 } from './profile/ProfileNavBar2';
 import { ProfileNavBar3 } from './profile/profileNavBar3';
 import { CreateProfileContext } from './providers/createProfileContext'
 import Cookies from 'universal-cookie';
+import { CardOnList } from './profile/cardOnList';
 
 export const Profile = () => {
     const cookies = new Cookies();
@@ -16,6 +17,7 @@ export const Profile = () => {
     const [user, setUser] = useState();
     const [currentUser, setCurrentUser] = useState();
     const [channelId, setChannelId] = useState();
+    const [usersList, setUserList] = useState();
 
     useEffect(() => {
         const idq = 2;
@@ -26,21 +28,25 @@ export const Profile = () => {
         defaultFetch(`http://localhost:3001/get_user`, "post",
             user)
             .then((res) => {
-                console.log(res);
                 setUser(res)
             })
 
-            defaultFetch(`http://localhost:3001/get_current_user`, "post",
-            {token: session})
+        defaultFetch(`http://localhost:3001/get_current_user`, "post",
+            { token: session })
             .then((res) => {
-                console.log(res);
                 setCurrentUser(res)
+            })
+
+        defaultFetch(`http://localhost:3001/get_users`, "post",
+            user)
+            .then((res) => {
+                setUserList(res)
             })
     }, [])
 
 
     return (
-        <CreateProfileContext.Provider value={{ showCard, setShowCard, user, setUser, channelId, setChannelId, currentUser }}>
+        <CreateProfileContext.Provider value={{ showCard, setShowCard, user, setUser, channelId, setChannelId, currentUser, usersList }}>
             {(showCard === "firstView" && user) &&
                 <div>
                     <ProfileNavBar />
@@ -52,6 +58,12 @@ export const Profile = () => {
                     <ProfileNavBar2 />
                     <ProfileNavBar3 />
                     <Firstcontact />
+                </div>
+            }
+            {(showCard === "list" && user) &&
+                <div>
+                    <ProfileNavBar />
+                    <CardOnList />
                 </div>
             }
         </CreateProfileContext.Provider>

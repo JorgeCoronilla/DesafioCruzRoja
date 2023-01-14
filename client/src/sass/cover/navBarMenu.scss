@@ -30,16 +30,11 @@
 }
 
 .signinBtn {
-    position: absolute;
+    margin: 12px 24px;
     width: 342px;
     height: 48px;
-    left: 24px;
-    top: 72px;
-
     background: #E04848;
     border-radius: 20px;
-    width: 342px;
-    height: 48px;
     background: #E04848;
     border-radius: 20px;
     border: none;
@@ -52,19 +47,16 @@
     line-height: 20px;
 }
 
-.loginBtn {
-    background-color: white;
+.signinBtn2 {
+    margin: 0px 24px;
     width: 342px;
     height: 48px;
-    border: #E04848 solid 1.5px;
-    color: #E04848;
+    background: #E04848;
     border-radius: 20px;
-    margin: 10px auto;
-    position: absolute;
-    width: 342px;
-    height: 48px;
-    left: 24px;
-    top: 144px;
+    background: #E04848;
+    border-radius: 20px;
+    border: none;
+    color: white;
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -73,6 +65,25 @@
     line-height: 20px;
 }
 
+
+.loginBtn {
+    background-color: white;
+    width: 342px;
+    height: 48px;
+    border: #E04848 solid 1.5px;
+    color: #E04848;
+    border-radius: 20px;
+    margin: 12px 24px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.loginSigninNtn{
+    padding-top: 12px;
+}
 .menuOptions {
     position: absolute;
     width: 360px;

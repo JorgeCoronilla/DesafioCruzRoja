@@ -8,9 +8,8 @@ export const ProfileNavBar = () => {
   return (
     <div>
     <div className='profileNavBar'>
-        <div><p >&#9776;</p></div>
         <div><h6>Inmi</h6></div>
-        <div><p>P</p></div>
+        <div><p >&#9776;</p></div>
     </div>
 
 </div>
