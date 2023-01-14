@@ -8,28 +8,27 @@ const sendemail = require('../controllers/email.controllers');
 const Register = {
     register: async (req, res) => {
         try {
-            console.log(req.body.email)
+            
             var passHash = await bcryptjs.hash(req.body.password_, 8)
             let newUser = {
+                
                 user_name: req.body.user_name,
                 email: req.body.email,
                 password_: passHash,
-                surname : "",
-                about_me : "",
-                langauges: "",
-                phone : "",
-                studies : "",
-                country : "",
-                age : "",
-                emotional_support : 0,
-                legal_support : 0,
-                collab_individual : false,
-                collab_institution : false,
-                job : false,
-                banned_users : {},
-                favs : {}
+                user_surname: req.body.user_surname, 
+                about_me:`about_me`, 
+                year_birth: 1979, 
+                gender: `gender`, 
+                country:`country`, 
+                mother_tongue: `mother_tongue`, 
+                years_in: `years_in`, 
+                working: `working`, 
+                studies: `studies`, 
+                support_type: `support_type`,
+                expert: false, 
+                area: `area`, 
+                pic: `pic`
             }
-
             UserModel.create(newUser)
                 .then((data) => { res.json({ mensaje: true }) })
                 .catch(err => {

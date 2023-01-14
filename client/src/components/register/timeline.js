@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import HorizontalTimeline from 'react-horizontal-timeline';
+
 
 export const Timeline = () => {
     const [value, setValue] = useState(0);

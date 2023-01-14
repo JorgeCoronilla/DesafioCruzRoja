@@ -46,7 +46,7 @@ label {
 
 .submitContainer {
   display: grid;
-  grid-template-columns: 12% auto 15%;
+  grid-template-columns: auto 15%;
   background-color: #FAFAFA;
   margin: 25px auto 0;
   width: 342px;
@@ -60,17 +60,18 @@ label {
   padding: 0.5rem;
   box-sizing: border-box;
 }
-.handsicon, .submitText, .findicon {
+ .submitText, .findicon {
    justify-content: center;
    align-items: center; 
    display: flex;
 }
 .findicon {
   background-color: #E04848;
-  padding: 0.7rem 1.3rem;
+  // padding: 0.7rem 1.3rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
- 
+  color: #fff;
+  font-size: 24px;
 }
 
 .buttonContainer button {

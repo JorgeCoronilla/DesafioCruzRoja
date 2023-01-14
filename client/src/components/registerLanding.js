@@ -19,7 +19,7 @@ import { ProfileRegister } from './register/profileRegister'
 export const RegisterLanding = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
-    const [display, setDisplay] = useState("register");
+    const [display, setDisplay] = useState("profile");
     const [userData, setUserData] = useState("")
     return (
 
