@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 export const Firstcontact = () => {
     const cookies = new Cookies();
     var session = cookies.get("session");
-    const { showCard, setShowCard, user, setChannelId } = useContext(CreateProfileContext);
+    const { showCard, setShowCard, user, setChannelId, currentUser } = useContext(CreateProfileContext);
     const [messages, setMessages] = useState();
     const [refresh, setRefresh] = useState(false);
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
@@ -52,20 +52,25 @@ export const Firstcontact = () => {
                     <div className='oldMessages'>
                         {messages.map((message, index) => {
                             return (
-                                <div>
+                                <div key={index}>
+
                                     {message.fk_user_id_sender===user.user_id &&
                                     <div>
+                                         <p>Profile user</p>
                                     <p>{message.message}</p>
                                     <p>{message.fk_user_id_sender}</p>
                                     </div>
                                    
                                     }
                                     <div>
-                                        
-                                    </div>
+                                    {message.fk_user_id_sender===currentUser.user_id &&
                                     <div>
+                                        <p>Current user</p>
+                                    <p>{message.message}</p>
                                     <p>{message.fk_user_id_sender}</p>
-                                        <p>{message.message}</p>
+                                    </div>
+                                   
+                                    }
                                     </div>
                                 </div>)
                         }

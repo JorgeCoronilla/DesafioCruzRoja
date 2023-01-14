@@ -11,7 +11,7 @@ import Cookies from 'universal-cookie';
 export const Profile = () => {
     const cookies = new Cookies();
     const [showCard, setShowCard] = useState("firstView");
-    const [profileId, setProfileId] = useState(3);
+    const [profileId, setProfileId] = useState();
     var session = cookies.get("session");
     const [user, setUser] = useState();
     const [currentUser, setCurrentUser] = useState();
@@ -19,8 +19,9 @@ export const Profile = () => {
 
     useEffect(() => {
         const idq = 2;
+        setProfileId(idq)
         localStorage.setItem('currentProfileId', JSON.stringify(idq))
-        let user = { id: profileId, token: session }
+        let user = { id: idq, token: session }
         console.log(session)
         defaultFetch(`http://localhost:3001/get_user`, "post",
             user)
@@ -39,7 +40,7 @@ export const Profile = () => {
 
 
     return (
-        <CreateProfileContext.Provider value={{ showCard, setShowCard, user, setUser, channelId, setChannelId }}>
+        <CreateProfileContext.Provider value={{ showCard, setShowCard, user, setUser, channelId, setChannelId, currentUser }}>
             {(showCard === "firstView" && user) &&
                 <div>
                     <ProfileNavBar />
