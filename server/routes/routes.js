@@ -17,10 +17,12 @@ router.post("/register", RegisterController.Register.register)
 
 //User
 router.post("/get_user", UserController.User.getUser)
+router.post("/get_users", UserController.User.getUsers)
 router.post("/get_current_user", UserController.User.getCurrentUser)
 
 //Messages
 router.post("/msg/create_channel", MessagesController.Message.createChannel)
+router.post("/msg/check_channel", MessagesController.Message.checkChannel)
 router.post("/msg/create_message", MessagesController.Message.createMessage)
 router.post("/msg/read_messages", MessagesController.Message.readMessages)
 router.get("/msg/read_channels", MessagesController.Message.readChannels)

@@ -98,15 +98,46 @@ const Message = {
     },
 
     readChannels: async (req, res) => {
-        console.log(req.body.id)
-        try {
-            const user = await ChannelsModel.findOne({ where: { user_id: req.body.id } })
-            console.log(user);
-            res.json(user)
+        let token = req.body.token;
+        let userID
+        jwt.verify(token, process.env.JWT_SECRET_KEY, (error, user) => {
+            if (error) {
+                console.log("Error del token")
+                res.json({ validation: false })
+            } else { 
+                userID = user.id }
+        })
+        if (userID){
+            try {
+                const messages = await MessagesModel.findAll({ where: { fk_channel_id: req.body.channelId  } })
+                console.log(messages)
+                res.json(messages)
+            } catch (error) {
+                console.log(error)
+                res.json({ mensaje: false })
+            }
+        }
+    },
 
-        } catch (error) {
-            console.log(error)
-            res.json({ mensaje: false })
+    checkChannel: async (req, res) => {
+        let token = req.body.token;
+        let userID
+        jwt.verify(token, process.env.JWT_SECRET_KEY, (error, user) => {
+            if (error) {
+                console.log("Error del token")
+                res.json({ validation: false })
+            } else { 
+                userID = user.id }
+        })
+        if (userID){
+            try {
+                const messages = await ChannelsModel.findOne({ where: { fk_user_id_sender: userID, fk_user_id_recipient: req.body.currentProfileId  } })
+                console.log(messages)
+                res.json(messages)
+            } catch (error) {
+                console.log(error)
+                res.json({ mensaje: false })
+            }
         }
     },
 
