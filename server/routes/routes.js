@@ -15,7 +15,7 @@ router.post("/sign-in", RegisterController.Register.signin)
 router.post("/check-email", RegisterController.Register.emailChecker)
 router.post("/register", RegisterController.Register.register)
 
-router.post("/registerProf", UserController.User.inRegUpdate2)
+// router.post("/registerProf", UserController.User.inRegUpdate2)
 
 
 //User
