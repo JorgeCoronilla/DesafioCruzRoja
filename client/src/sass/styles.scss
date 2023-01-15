@@ -1,17 +1,29 @@
 //General
 @import "./generalStyles.scss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import "./signin/signin.scss";
+
+//Home
+@import "./slides/slides.scss";
+@import "./slides/categoryFinder.scss";
+@import "./cover/catMenu.scss";
+@import "./cover/popRegister.scss";
 @import "./cover/navBarCover.scss";
 @import "./cover/navBarMenu.scss";
 @import "./cover/navBarLanguage.scss";
-@import "./signin/signin.scss";
-@import "./slides/slides.scss";
-@import "./slides/categoryFinder.scss";
-@import "./profile/profile.scss";
-@import "./profile/profileNavBar.scss";
-@import "./cover/catMenu.scss";
-@import "./cover/popRegister.scss";
+
+//Register
 @import "./register/register.scss";
 @import "./register/timeline.scss";
+<<<<<<< HEAD
+
+//Profile
+@import "./profile/messages.scss";
+@import "./profile/cardOnList.scss";
+@import "./profile/inbox.scss";
+@import "./profile/profile.scss";
+@import "./profile/profileNavBar.scss";
+=======
 @import "./register/profileRegister.scss";
 @import "./register/prefsRegister.scss"
+>>>>>>> beccbf68ea9e26cf1d7b495fe0daaf87a0e5c069

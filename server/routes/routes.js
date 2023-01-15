@@ -20,13 +20,16 @@ router.post("/registerProf", UserController.User.inRegUpdate2)
 
 //User
 router.post("/get_user", UserController.User.getUser)
+router.post("/get_users", UserController.User.getUsers)
 router.post("/get_current_user", UserController.User.getCurrentUser)
 
 //Messages
 router.post("/msg/create_channel", MessagesController.Message.createChannel)
+router.post("/msg/check_channel", MessagesController.Message.checkChannel)
 router.post("/msg/create_message", MessagesController.Message.createMessage)
 router.post("/msg/read_messages", MessagesController.Message.readMessages)
-router.get("/msg/read_channels", MessagesController.Message.readChannels)
+router.post("/msg/read_channels", MessagesController.Message.readChannels)
+router.post("/msg/read_inactive_channels", MessagesController.Message.readInActChannels)
 router.post("/msg/check_banned",  MessagesController.Message.bannedUsers)
 router.post("/msg/ban_user",  MessagesController.Message.banUser)
 

@@ -36,54 +36,60 @@ export const Firstcontact = () => {
     return (
         <div>
             <div className='messagesBox'>
-                <div>  <img className='profilePic' src={user.pic} alt="user 1" /></div>
-                <div><p>22 reseñas</p>
-                    <p>Verificado</p>
+                <div className='msgProfile'>
+                    <img className='messagePic' src={user.pic} alt="user 1" />
+                    <div>
+                    <p>* 22 reseñas</p>
+                    </div>
+                   
                 </div>
-                <div>
-                    <button>Añadir a favoritos</button>
-                    <button>Escribir reseña</button>
+                <div className='msgProfile   '>
+                    <button className='msgBtn1'>Añadir a favoritos</button>
+                    <button className='msgBtn2'>Escribir reseña</button>
                 </div>
-                <div className='inBox'>
-                    <div className='myMessage'></div>
-                    <div className='inComing'></div>
-                </div>
+
+                <div className='messagesChain'>
                 {messages &&
                     <div className='oldMessages'>
                         {messages.map((message, index) => {
                             return (
                                 <div key={index}>
 
-                                    {message.fk_user_id_sender===user.user_id &&
-                                    <div>
-                                         <p>Profile user</p>
-                                    <p>{message.message}</p>
-                                    <p>{message.fk_user_id_sender}</p>
-                                    </div>
-                                   
+                                    {message.fk_user_id_sender === user.user_id &&
+                                        <div className='msgContainer'>
+                                            <p className='msgTime'>Hace 3 días</p>
+                                            <div className='textPicBox'>
+                                            <p className='recMsg'>{message.message}</p>
+                                            <img className='textPic' src={user.pic} alt="user 1" />
+                                            </div>
+                                        </div>
+
                                     }
                                     <div>
-                                    {message.fk_user_id_sender===currentUser.user_id &&
-                                    <div>
-                                        <p>Current user</p>
-                                    <p>{message.message}</p>
-                                    <p>{message.fk_user_id_sender}</p>
-                                    </div>
-                                   
-                                    }
+                                        {message.fk_user_id_sender === currentUser.user_id &&
+                                            <div className='msgContainer'>
+                                                <p className='msgTime'>Hace 2 días</p>
+                                                <div className='textPicBox'>
+                                                <img className='textPic' src={currentUser.pic} alt="user 1" />
+                                                <p className='sentMsg'>{message.message}</p>
+                                                </div>
+                                            </div>
+
+                                        }
                                     </div>
                                 </div>)
                         }
                         )}
                     </div>
                 }
-                <div className='newMessage'>
+               </div>
+            </div>
+            <div className='newMessage'>
                     <form onSubmit={sendMessage}>
                         <input name='message' />
-                        <button type='submit'>Enviar</button>
+                        <button type='submit'>-></button>
                     </form>
                 </div>
-            </div>
         </div>
     )
 }

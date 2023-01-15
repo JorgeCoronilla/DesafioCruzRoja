@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
+<<<<<<< HEAD
+=======
 
+>>>>>>> beccbf68ea9e26cf1d7b495fe0daaf87a0e5c069
 
 export const Timeline = () => {
     const [value, setValue] = useState(0);

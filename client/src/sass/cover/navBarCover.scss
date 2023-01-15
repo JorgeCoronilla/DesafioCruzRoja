@@ -8,6 +8,10 @@
     height: 56px;
 }
 
+.rightElements{
+    display: flex;
+    flex-direction: row ;
+}
 .navBarCover h6 {
     font-family: 'Montserrat';
     font-style: normal;
@@ -15,9 +19,22 @@
     font-size: 16px;
     line-height: 20px;
     color: #19274C;
-    margin-top: 18px;
+    margin: 14px 16px;
 }
 
+.rightElements button {
+    width: 65px;
+    height: 32px;
+    border: none;    
+    background: #E04848;
+    border-radius: 10px;
+    margin: 12px;
+    font-weight: 600;
+font-size: 12px;
+line-height: 15px;
+color: #FFFFFF;
+
+}
 .navBarCover p {
     font-family: 'Montserrat';
     font-style: normal;
@@ -27,11 +44,11 @@
     width: 18px;
     height: 11,67px;
     color: #19274C;
-    margin: 20px 18px;
+    margin:    18px 18px 18px;
 }
 
 .navBarCover img {
     width: 28px;
     height: 17px;
-    margin: 18px 18px;
+    margin: 18px 12px;
 }
