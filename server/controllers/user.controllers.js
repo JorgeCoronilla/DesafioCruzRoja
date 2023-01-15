@@ -1,22 +1,22 @@
 const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-const sendemail = require('../controllers/email.controller');
+const UserModel = require('../ddbb/sql/models/User');
+// const sendemail = require('../controllers/email.controller');
 
 
 const User = {
-    update: async (req, res) => {
-       
+    inRegUpdate2: async (req, res) => {
         try {
-             
+            let userId =  req.body.id
             let newData = {
-                name_: req.body.name_,
-                country: req.body.country,
-                email: req.body.email,
-                type_education: req.body.type_education,
-                institution: req.body.institution
+                year_birth: req.body.year_birth, 
+                gender: req.body.gender, 
+                mother_tongue: req.body.mother_tongue, 
+                working: req.body.working, 
+                years_in: req.body.year_in,
+                area: req.body.area, 
             }
-            let user = await UserModel.update( newData , { where: { email: req.body.email } })
-            console.log(user)
+            let user = await UserModel.update( newData , { where: { user_id: userId } })
             res.json({ mensaje: true })
            
         } catch (error) {

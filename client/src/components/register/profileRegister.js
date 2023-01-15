@@ -9,15 +9,13 @@ import Select from 'react-select'
 
 export const ProfileRegister = () => {
     const { setDisplay, message, setMessage, showAlert, setShowAlert, userData, setUserData } = useContext(CreateRegisterContext);
-    const [email, setEmail] = useState();
+    const [ email, setEmai ] = useState();
     const { token } = useParams();
-    const { birthdate, setBirthdate } = useState();
-    const { gender, setGender } = useState();
-    const { region, setRegion } = useState();
-    const { language, setlanguage } = useState();
-    const { working, setWorking } = useState();
-    const { inSpain, setInSpain } = useState();
-
+    const [ gender, setGender ] = useState();
+    const [ region, setRegion ] = useState();
+    const [ language, setLanguage ] = useState();
+    const [ working, setWorking ] = useState();
+    const [ inSpain, setInSpain ] = useState();
 
     // //Comprueba si el toke de la url es válido
     // useEffect(() => {
@@ -36,58 +34,68 @@ export const ProfileRegister = () => {
     //         })
 
     // }, [])
-
-    //Inserta el nuevo usuario
-    const updateUser = async e => {
-        e.preventDefault();
-        console.log(e.target.confirmPass.value);
-        if (e.target.pass.value === e.target.confirmPass.value) {
-            console.log(email);
-            var newUser = {
-                jwt: token,
-                user_name: e.target.name_.value,
-                // surname : "",
-                // about_me : "",
-                // langauges: "",
-                email: email,
-                // phone : "",
-                // studies : "",
-                // country : "",
-                // age : "",
-                // emotional_support : 0,
-                // legal_support : 0,
-                // collab_individual : false,
-                // collab_institution : false,
-                // job : false,
-                password_: e.target.pass.value,
-                // banned_users : {},
-                // favs : {}
-            }
-            const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
-            if (res.mensaje) {
-                setMessage("Registro correcto, gracias")
-                setShowAlert(true)
-                setTimeout(() => {
-                    setShowAlert(false);
-                    setDisplay("preferences")
-                }, 3000)
-
-            } else {
-                setMessage("Ha habido un error, inténtelo de nuevo")
-                setShowAlert(true)
-                setTimeout(() => {
-                    setShowAlert(false);
-                }, 3000)
-            }
-
-        } else {
-            setMessage("Las contraseñas no coinciden")
-            setShowAlert(true)
-            setTimeout(() => {
-                setShowAlert(false);
-            }, 3000)
-        }
+    const handleRegion = (select) => {
+        setRegion(select.value)
     }
+    const handleGender = (select) => {
+        setGender(select.value)
+    }
+    const handleLanguage = (select) => {
+        let selectedOptions = JSON.stringify(select.map(e => {
+           return e.value
+        }))
+        setLanguage(JSON.stringify(selectedOptions))
+    }
+    //Inserta el nuevo usuario
+    // const updateUser = async e => {
+    //     e.preventDefault();
+    //     // if (e.target.pass.value === e.target.confirmPass.value) {
+    //         console.log(email);
+    //         var newUser = {
+    //             jwt: token,
+    //             // user_name: e.target.name_.value,
+    //             // email: email,
+    //             // password_: e.target.pass.value,
+    //             // user_surname: e.target.surname_.value, 
+    //             // about_me: "", 
+    //             year_birth: e.target.birth.value, 
+    //             gender: gender, 
+    //             // country: "", 
+    //             mother_tongue: language.toString(), 
+    //             // years_in: "", 
+    //             working: working, 
+    //             // studies: "", 
+    //             // support_type: "",
+    //             expert: false, 
+    //             area: region, 
+    //             // pic: defaultUser
+    //         } 
+    //         console.log(newUser)
+            // const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
+            // if (res.mensaje) {
+            //     setMessage("Registro correcto, gracias")
+            //     setShowAlert(true)
+            //     setTimeout(() => {
+            //         setShowAlert(false);
+            //         setDisplay("preferences")
+            //     }, 3000)
+
+            // } else {
+            //     setMessage("Ha habido un error, inténtelo de nuevo")
+            //     setShowAlert(true)
+            //     setTimeout(() => {
+            //         setShowAlert(false);
+            //     }, 3000)
+            // }
+
+        // } else {
+        //     setMessage("Las contraseñas no coinciden")
+        //     setShowAlert(true)
+        //     setTimeout(() => {
+        //         setShowAlert(false);
+        //     }, 3000)
+    //     // }
+    // }
     const optionsGender = [
         { value: 'femenino', label: 'Femenino' },
         { value: 'masculino', label: 'Masculino' },
@@ -115,9 +123,9 @@ export const ProfileRegister = () => {
         { value: 'Frances', label: 'Frances' },
         { value: 'Otro', label: 'Otro' }
     ]
-    const handleChange = () => {
-        console.log("hey!")
-    }
+    
+    console.log(language)
+    
     return (
 
         <div className='profileContainer'>
@@ -127,35 +135,36 @@ export const ProfileRegister = () => {
 
                 <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
                 <div className='GrCloseBig'><GrClose /></div>
-
-
             </div>
             <div><Timeline /></div>
             <div className='formContainer'>
-                <form onSubmit={updateUser}>
+                <form>
                     <div>
                         <label>¿Cuál es tu año de nacimento?</label>
-                        <input type="text" name='birth' required minLength="4" maxLength="4" />
+                        <input type="text" name='birth' required minLength="4" maxLength="4"/>
                     </div>
                     <div>
                         <label>Género</label>
                         <Select options={optionsGender}
                             placeholder="Selecciona género"
-                            components={{ IndicatorSeparator: () => null }} />
-
+                            components={{ IndicatorSeparator: () => null }}
+                            onChange={handleGender} />
                     </div>
                     <div>
                         <label>¿De qué región eres</label>
                         <Select options={optionsRegion}
                             placeholder="Selecciona región"
-                            components={{ IndicatorSeparator: () => null }} />
-
+                            components={{ IndicatorSeparator: () => null }} 
+                            onChange={handleRegion}/>
                     </div>
                     <div>
                         <label>¿Cuál es tu lengua materna?</label>
                         <Select options={optionsLng}
-                            placeholder="Selecciona idioma" isMulti
-                            components={{ IndicatorSeparator: () => null }} />
+                            placeholder="Selecciona idioma" 
+                            isMulti
+                            onChange={handleLanguage}
+                            components={{ IndicatorSeparator: () => null }}
+                            getOptionValue={option => option.value} />
                     </div>
                     <div className='checkContainer'>
                         <label>¿Trabajas?</label>
@@ -163,10 +172,10 @@ export const ProfileRegister = () => {
                             <label>Sí</label>
                             
                                 <input
-                                    type="checkbox"
-                                    name="work"
-                                    value="Yes"
-                                    onChange={handleChange}
+                                     type="checkbox"
+                                     name="work"
+                                     checked={working === "Yes"}
+                                     onChange={() => setWorking("Yes")}
                                 />
                         
                         </div>
@@ -175,8 +184,8 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                value="No"
-                                onChange={handleChange}
+                                checked={working === "No"}
+                                onChange={() => setWorking("No")}
                             />
 
                         </div>
@@ -185,8 +194,8 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                value="No answer"
-                                onChange={handleChange}
+                                checked={working === "No answer"}
+                                onChange={() => setWorking("No answer")}
                             />
                         </div>
                     </div>
@@ -197,8 +206,8 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                value="Menos de 6 meses"
-                                onChange={handleChange}
+                                checked={inSpain === "Less than 6 months"}
+                                onChange={() => setInSpain("Less than 6 months")}
                             />
 
                         </div>
@@ -207,8 +216,8 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                value="De 6 meses a 1 año"
-                                onChange={handleChange}
+                                checked={inSpain === "from 6 to 12 months"}
+                                onChange={() => setInSpain("from 6 to 12 months")}
                             />
 
                         </div>
@@ -217,8 +226,8 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                value="De 1 año a 2 años"
-                                onChange={handleChange}
+                                checked={inSpain === "from 12 to 24 months"}
+                                onChange={() => setInSpain("from 12 to 24 months")}
                             />
                         </div>
                         <div className='checkBlock'>
@@ -226,8 +235,8 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                value="Mas de dos años"
-                                onChange={handleChange}
+                                checked={inSpain === "more than 24 months"}
+                                onChange={() => setInSpain("more than 24 months")}
                             />
                         </div>
                     </div>
