@@ -2,7 +2,7 @@ const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const UserModel = require('../ddbb/sql/models/User');
 
-const sendemail = require('../controllers/email.controller');
+// const sendemail = require('../controllers/email.controller');
 
 const User = {
     getUser: async (req, res) => {
@@ -84,7 +84,6 @@ const User = {
 
         }
 
-<<<<<<< HEAD
     },
     getUsers: async (req, res) => {
         let token = req.body.token;
@@ -128,9 +127,6 @@ const User = {
 
         }
 
-    }
-=======
-
     },
     inRegUpdate2: async (req, res) => {
         try {
@@ -150,7 +146,7 @@ const User = {
             res.json({mensaje: false})
             console.log(error)
         }
->>>>>>> beccbf68ea9e26cf1d7b495fe0daaf87a0e5c069
+    }
 }
 
 
