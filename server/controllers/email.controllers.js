@@ -65,7 +65,7 @@ const email = {
                                       Para terminar de configurar tu cuenta y empezar a usar Quizzo, confirma que
                                       tenemos tu correo electrónico correcto.</p>
                                   <div style="margin-top:28px"><a
-                                          href="http://127.0.0.1:3000/register/${jwt}"
+                                          href="http://127.0.0.1:3000/registro/${jwt}"
                                           style="box-sizing:border-box;border-radius:3px;border-width:0;border:none;display:inline-flex;font-style:normal;font-size:inherit;height:2.28571429em;line-height:2.28571429em;margin:0;outline:none;padding:0 12px;text-align:center;vertical-align:middle;white-space:nowrap;text-decoration:none;background:#6b8f24c8;color:#ffffff"
                                           target="_blank"
                                           >Verifica tu correo electrónico</a></div>

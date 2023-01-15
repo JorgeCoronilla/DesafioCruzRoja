@@ -13,23 +13,23 @@ export const Register = () => {
     const [email, setEmail] = useState("gofthet@gmail.com");
     const { token } = useParams();
     // Comprueba si el token de la url es válido
-    // useEffect(() => {
-    //     defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
-    //         .then((res) => {
-    //             if (res.mensaje) {
-    //                 setEmail(res.email);
-    //                 console.log(res);
-    //             } else {
-    //                 setMessage("El enlace es incorrecto o ha expirado")
-    //                 setShowAlert(true)
-    //                 setTimeout(() => {
-    //                     setShowAlert(false);
-    //                 }, 3000)
+    useEffect(() => {
+        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+            .then((res) => {
+                if (res.mensaje) {
+                    setEmail(res.email);
+                    console.log(res);
+                } else {
+                    setMessage("El enlace es incorrecto o ha expirado")
+                    setShowAlert(true)
+                    setTimeout(() => {
+                        setShowAlert(false);
+                    }, 3000)
                     
-    //             }
-    //         })
+                }
+            })
     
-    // }, [])
+    }, [])
     
     //Inserta el nuevo usuario
     const insertUser = async e => {
@@ -57,40 +57,21 @@ export const Register = () => {
                 area: "", 
                 pic: defaultUser
             }
-                
-                // user_name : e.target.name_.value,
-                // surname : "",
-                // about_me : "",
-                // langauges: "",
-                // email : email,
-                // phone : "",
-                // studies : "",
-                // country : "",
-                // age : "",
-                // emotional_support : 0,
-                // legal_support : 0,
-                // collab_individual : false,
-                // collab_institution : false,
-                // job : false,
-                // password_ : e.target.pass.value,
-                // banned_users : {},
-            //     // favs : {}
-            // }
             const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
             if (res.mensaje) {
-                setMessage("Registro correcto, gracias")
+                setMessage("A continuación rellenaremos tu perfil")
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
                     setDisplay("profile")
-                }, 3000)
+                }, 2000)
 
             } else {
                 setMessage("Ha habido un error, inténtelo de nuevo")
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
-                }, 3000)
+                }, 2000)
             }
 
         } else {
@@ -123,11 +104,11 @@ export const Register = () => {
                     </div>
                     <div>
                         <label>Password</label>
-                        <input type="password" name="pass" minLength="4" maxLength="12" required />
+                        <input type="password" name="pass" required minLength="4" maxLength="12"  />
                     </div>
                     <div>
                         <label>Confirmar password</label>
-                        <input type="password" name="confirmPass" minLength="4" maxLength="12" required />
+                        <input type="password" name="confirmPass" required minLength="4" maxLength="12" />
                     </div>
                     <div className='messageBox'>
                         {showAlert && <Alert message={message} />}

@@ -130,7 +130,7 @@ const User = {
     },
     inRegUpdate2: async (req, res) => {
         try {
-            let userId =  req.body.id
+            let email =  req.body.email
             let newData = {
                 year_birth: req.body.year_birth, 
                 gender: req.body.gender, 
@@ -139,7 +139,21 @@ const User = {
                 years_in: req.body.year_in,
                 area: req.body.area, 
             }
-            let user = await UserModel.update( newData , { where: { user_id: userId } })
+            let user = await UserModel.update( newData , { where: { email: email } })
+            res.json({ mensaje: true })
+           
+        } catch (error) {
+            res.json({mensaje: false})
+            console.log(error)
+        }
+    },
+    inRegUpdate3: async (req, res) => {
+        try {
+            let email =  req.body.email
+            let newData = {
+                support_type: req.body.support_type
+            }
+            let user = await UserModel.update( newData , { where: { email: email } })
             res.json({ mensaje: true })
            
         } catch (error) {
