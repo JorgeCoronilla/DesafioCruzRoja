@@ -10,32 +10,32 @@ import defaultUser from '../../media/default-avatar.jpg'
 export const Register = () => {
     
     const { setDisplay, message, setMessage, showAlert, setShowAlert} = useContext(CreateRegisterContext);
-    const [email, setEmail] = useState();
+    const [email, setEmail] = useState("gofthet@gmail.com");
     const { token } = useParams();
-
     // Comprueba si el token de la url es válido
-    useEffect(() => {
-        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
-            .then((res) => {
-                if (res.mensaje) {
-                    setEmail(res.email);
-                    console.log(res);
-                } else {
-                    setMessage("El enlace es incorrecto o ha expirado")
-                    setShowAlert(true)
-                    setTimeout(() => {
-                        setShowAlert(false);
-                    }, 3000)
+    // useEffect(() => {
+    //     defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+    //         .then((res) => {
+    //             if (res.mensaje) {
+    //                 setEmail(res.email);
+    //                 console.log(res);
+    //             } else {
+    //                 setMessage("El enlace es incorrecto o ha expirado")
+    //                 setShowAlert(true)
+    //                 setTimeout(() => {
+    //                     setShowAlert(false);
+    //                 }, 3000)
                     
-                }
-            })
-
-    }, [])
-    setEmail("gofthet@gmail.com")
+    //             }
+    //         })
+    
+    // }, [])
+    
     //Inserta el nuevo usuario
     const insertUser = async e => {
+        
         e.preventDefault();
-        console.log(e.target.confirmPass.value);
+        console.log(typeof(e.target.surname_.value));
         if (e.target.pass.value === e.target.confirmPass.value) {
             console.log(email);
             var newUser = {
@@ -129,10 +129,10 @@ export const Register = () => {
                         <label>Confirmar password</label>
                         <input type="password" name="confirmPass" minLength="4" maxLength="12" required />
                     </div>
-                    <div>
+                    <div className='messageBox'>
                         {showAlert && <Alert message={message} />}
                     </div>
-                    <input className='contButton' type="submit" value="Confirmar registro" />
+                    <input className='contButton' type="submit" value="Continuar" />
                 </form>
             </div>
         </div>

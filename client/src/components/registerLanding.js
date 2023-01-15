@@ -14,12 +14,13 @@ import { SlideLegal } from './home/slideLegal';
 // import { PopRegister } from './welcome/popRegister';
 import { Register } from './register/register'
 import { ProfileRegister } from './register/profileRegister'
+import { PrefsRegister } from './register/prefsRegister'
 
 
 export const RegisterLanding = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
-    const [display, setDisplay] = useState("register");
+    const [display, setDisplay] = useState("prefs");
     const [userData, setUserData] = useState("")
     return (
 
@@ -42,6 +43,11 @@ export const RegisterLanding = () => {
                 {display === "profile" &&
                     <div>
                         <ProfileRegister />
+                    </div>
+                }
+                {display === "prefs" &&
+                    <div>
+                        <PrefsRegister />
                     </div>
                 }
                 {display === "menu" &&

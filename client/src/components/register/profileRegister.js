@@ -5,13 +5,17 @@ import { GrClose } from 'react-icons/gr'
 import { Alert } from '../modals/alert';
 import { Timeline } from './timeline';
 import { CreateRegisterContext } from '../providers/createRegisterContext';
+import Select from 'react-select'
 
 export const ProfileRegister = () => {
     const { setDisplay, message, setMessage, showAlert, setShowAlert, userData, setUserData } = useContext(CreateRegisterContext);
-    const [email, setEmail] = useState();
-    const navigate = useNavigate();
+    const [ email, setEmai ] = useState();
     const { token } = useParams();
- 
+    const [ gender, setGender ] = useState();
+    const [ region, setRegion ] = useState();
+    const [ language, setLanguage ] = useState();
+    const [ working, setWorking ] = useState();
+    const [ inSpain, setInSpain ] = useState();
 
     // //Comprueba si el toke de la url es válido
     // useEffect(() => {
@@ -30,91 +34,217 @@ export const ProfileRegister = () => {
     //         })
 
     // }, [])
-
-    //Inserta el nuevo usuario
-    const insertUser = async e => {
-        e.preventDefault();
-        console.log(e.target.confirmPass.value);
-        if (e.target.pass.value === e.target.confirmPass.value) {
-            console.log(email);
-            var newUser = {
-                jwt: token,
-                user_name : e.target.name_.value,
-                // surname : "",
-                // about_me : "",
-                // langauges: "",
-                email : email,
-                // phone : "",
-                // studies : "",
-                // country : "",
-                // age : "",
-                // emotional_support : 0,
-                // legal_support : 0,
-                // collab_individual : false,
-                // collab_institution : false,
-                // job : false,
-                password_ : e.target.pass.value,
-                // banned_users : {},
-                // favs : {}
-            }
-            const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
-            if (res.mensaje) {
-                setMessage("Registro correcto, gracias")
-                setShowAlert(true)
-                setTimeout(() => {
-                    setShowAlert(false);
-                    navigate("/")
-                }, 3000)
-
-            } else {
-                setMessage("Ha habido un error, inténtelo de nuevo")
-                setShowAlert(true)
-                setTimeout(() => {
-                    setShowAlert(false);
-                }, 3000)
-            }
-
-        } else {
-            setMessage("Las contraseñas no coinciden")
-            setShowAlert(true)
-            setTimeout(() => {
-                setShowAlert(false);
-            }, 3000)
-        }
+    const handleRegion = (select) => {
+        setRegion(select.value)
     }
+    const handleGender = (select) => {
+        setGender(select.value)
+    }
+    const handleLanguage = (select) => {
+        let selectedOptions = JSON.stringify(select.map(e => {
+           return e.value
+        }))
+        setLanguage(JSON.stringify(selectedOptions))
+    }
+    //Inserta el nuevo usuario
+    // const updateUser = async e => {
+    //     e.preventDefault();
+    //     // if (e.target.pass.value === e.target.confirmPass.value) {
+    //         console.log(email);
+    //         var newUser = {
+    //             jwt: token,
+    //             // user_name: e.target.name_.value,
+    //             // email: email,
+    //             // password_: e.target.pass.value,
+    //             // user_surname: e.target.surname_.value, 
+    //             // about_me: "", 
+    //             year_birth: e.target.birth.value, 
+    //             gender: gender, 
+    //             // country: "", 
+    //             mother_tongue: language.toString(), 
+    //             // years_in: "", 
+    //             working: working, 
+    //             // studies: "", 
+    //             // support_type: "",
+    //             expert: false, 
+    //             area: region, 
+    //             // pic: defaultUser
+    //         } 
+    //         console.log(newUser)
+            // const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
+            // if (res.mensaje) {
+            //     setMessage("Registro correcto, gracias")
+            //     setShowAlert(true)
+            //     setTimeout(() => {
+            //         setShowAlert(false);
+            //         setDisplay("preferences")
+            //     }, 3000)
 
+            // } else {
+            //     setMessage("Ha habido un error, inténtelo de nuevo")
+            //     setShowAlert(true)
+            //     setTimeout(() => {
+            //         setShowAlert(false);
+            //     }, 3000)
+            // }
+
+        // } else {
+        //     setMessage("Las contraseñas no coinciden")
+        //     setShowAlert(true)
+        //     setTimeout(() => {
+        //         setShowAlert(false);
+        //     }, 3000)
+    //     // }
+    // }
+    const optionsGender = [
+        { value: 'femenino', label: 'Femenino' },
+        { value: 'masculino', label: 'Masculino' },
+        { value: 'otro', label: 'No especificar' }
+    ]
+    const optionsRegion = [
+        { value: 'Sierra de la Cabrera', label: 'Sierra de la Cabrera' },
+        { value: 'Valle del Jarama', label: 'Valle del Jarama' },
+        { value: 'Valle Alto del Lozoya', label: 'Valle Alto del Lozoya' },
+        { value: 'Valle Medio del Lozoya', label: 'Valle Medio del Lozoya' },
+        { value: 'Valle Bajo del Lozoya', label: 'Valle Bajo del Lozoya' },
+        { value: 'Sierra del Rincon', label: 'Sierra del Rincon' },
+        { value: 'Otro', label: 'Otro' }
+    ]
+    const optionsLng = [
+        { value: 'Español', label: 'Español' },
+        { value: 'Arabe', label: 'Arabe' },
+        { value: 'Rumano', label: 'Rumano' },
+        { value: 'Ingles', label: 'Ingles' },
+        { value: 'Italiano', label: 'Italiano' },
+        { value: 'Chino', label: 'Chino' },
+        { value: 'Aleman', label: 'Aleman' },
+        { value: 'Portugues', label: 'Portugues' },
+        { value: 'Ucraniano', label: 'Ucraniano' },
+        { value: 'Frances', label: 'Frances' },
+        { value: 'Otro', label: 'Otro' }
+    ]
+    
+    console.log(language)
+    
     return (
 
-        <div className='profile-container'>
-            
-            <div className="profile-header">
-                
-                    
-                    <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
-                    <div className='GrCloseBig'><GrClose/></div>
+        <div className='profileContainer'>
 
-            
+            <div className="profileHeader">
+
+
+                <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
+                <div className='GrCloseBig'><GrClose /></div>
             </div>
-            <div><Timeline/></div>
+            <div><Timeline /></div>
             <div className='formContainer'>
-                {/* <form onSubmit={insertUser}>
+                <form>
                     <div>
-                        <label>Nombre</label>
-                        <input type="text" name='name_' required minLength="5" maxLength="40" />
+                        <label>¿Cuál es tu año de nacimento?</label>
+                        <input type="text" name='birth' required minLength="4" maxLength="4"/>
                     </div>
                     <div>
-                        <label>Password</label>
-                        <input type="password" name="pass" minLength="4" maxLength="12" required />
+                        <label>Género</label>
+                        <Select options={optionsGender}
+                            placeholder="Selecciona género"
+                            components={{ IndicatorSeparator: () => null }}
+                            onChange={handleGender} />
                     </div>
                     <div>
-                        <label>Confirmar password</label>
-                        <input type="password" name="confirmPass" minLength="4" maxLength="12" required />
+                        <label>¿De qué región eres</label>
+                        <Select options={optionsRegion}
+                            placeholder="Selecciona región"
+                            components={{ IndicatorSeparator: () => null }} 
+                            onChange={handleRegion}/>
                     </div>
                     <div>
+                        <label>¿Cuál es tu lengua materna?</label>
+                        <Select options={optionsLng}
+                            placeholder="Selecciona idioma" 
+                            isMulti
+                            onChange={handleLanguage}
+                            components={{ IndicatorSeparator: () => null }}
+                            getOptionValue={option => option.value} />
+                    </div>
+                    <div className='checkContainer'>
+                        <label>¿Trabajas?</label>
+                        <div className='checkBlock'>
+                            <label>Sí</label>
+                            
+                                <input
+                                     type="checkbox"
+                                     name="work"
+                                     checked={working === "Yes"}
+                                     onChange={() => setWorking("Yes")}
+                                />
+                        
+                        </div>
+                        <div className='checkBlock'>
+                            <label>No</label>
+                            <input
+                                type="checkbox"
+                                name="work"
+                                checked={working === "No"}
+                                onChange={() => setWorking("No")}
+                            />
+
+                        </div>
+                        <div className='checkBlock'>
+                            <label>Prefiero no responder</label>
+                            <input
+                                type="checkbox"
+                                name="work"
+                                checked={working === "No answer"}
+                                onChange={() => setWorking("No answer")}
+                            />
+                        </div>
+                    </div>
+                    <div className='checkContainer'>
+                        <label>Años en España</label>
+                        <div className='checkBlock'>
+                            <label>Menos de 6 meses</label>
+                            <input
+                                type="checkbox"
+                                name="work"
+                                checked={inSpain === "Less than 6 months"}
+                                onChange={() => setInSpain("Less than 6 months")}
+                            />
+
+                        </div>
+                        <div className='checkBlock'>
+                            <label>De 6 meses a 1 año</label>
+                            <input
+                                type="checkbox"
+                                name="work"
+                                checked={inSpain === "from 6 to 12 months"}
+                                onChange={() => setInSpain("from 6 to 12 months")}
+                            />
+
+                        </div>
+                        <div className='checkBlock'>
+                            <label>De 1 año a 2 años</label>
+                            <input
+                                type="checkbox"
+                                name="work"
+                                checked={inSpain === "from 12 to 24 months"}
+                                onChange={() => setInSpain("from 12 to 24 months")}
+                            />
+                        </div>
+                        <div className='checkBlock'>
+                            <label>Más de dos años</label>
+                            <input
+                                type="checkbox"
+                                name="work"
+                                checked={inSpain === "more than 24 months"}
+                                onChange={() => setInSpain("more than 24 months")}
+                            />
+                        </div>
+                    </div>
+                    <div className='messageBox'>
                         {showAlert && <Alert message={message} />}
                     </div>
-                    <input className='contButton' type="submit" value="Confirmar registro" />
-                </form> */}
+                    <input className='contButton' type="submit" value="Continuar" />
+                </form>
             </div>
         </div>
     )

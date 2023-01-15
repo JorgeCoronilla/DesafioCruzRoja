@@ -1,0 +1,19 @@
+.profileContainer {
+    width: 390px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.messageBox {
+    height: 50px;
+}
+.profileContainer svg {
+    color: #828282;
+}   
+.checkBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
