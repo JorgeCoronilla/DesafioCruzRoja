@@ -1,5 +1,6 @@
 .navBarCoverLanguage {
     display:flex;
+    position: fixed;
     flex-direction: row;
     background-color: white;
     color:#19274C;
@@ -51,4 +52,8 @@ padding: 0;
     border: none;
     border-bottom: 1px solid #E6E8EF;
     margin:0;
+}
+
+.languagesContainer{
+    padding-top: 10px;
 }

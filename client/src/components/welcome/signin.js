@@ -1,14 +1,15 @@
-import React, {useContext } from 'react'
+
+
+import React, { useContext, useState } from 'react'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { useNavigate } from 'react-router-dom'
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
 export const SignIn = () => {
-    const { message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
+    const { display, setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
     
-
 
     const sigInSub = async e => {
         e.preventDefault();
@@ -37,28 +38,19 @@ export const SignIn = () => {
 
     }
 
-  return (
-    <div>    
+    return (
+        <div>
             {showAlert &&
-                    <Alert message={message} />
-                }
-            <div className="register-header">
-                <div className="register-block">
-                    <h2>Confirmación de correo</h2>
-                    <h4>Regístrate para obtener tu cuenta</h4>
-
-                </div>
-            </div>
-            <div className='formContainer'>
+                <Alert message={message} />
+            }
+            <div className='signinContainer'>
                 <form onSubmit={sigInSub}>
-                    <div>
-                        <label>Email</label>
+                    <h4>Copy marketing para incentivar el registro</h4>
                         <input type="email" required name="email" minLength="5" maxLength="40" />
-                    </div>
-                
-                    <button type="submit" value="Registrarse" >Hazte miembro</button>
+                    <button type="submit" value="Registrarse" className='registerBtn'>Hazte miembro</button>
                 </form>
             </div>
+
         </div>
-  )
+    )
 }

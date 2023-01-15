@@ -22,6 +22,9 @@ const { Sequelize } = require('sequelize');
 const pool = new Sequelize('dbTest', 'root','rootroot', {
     host: process.env.HOST,
     dialect: 'mysql',
+    define: {
+        timestamps: true
+    },
     pool: {
         max: 100,
         min: 0,
