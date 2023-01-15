@@ -7,12 +7,32 @@ const ChannelsModel = sequelize.define('channels', {
         autoIncrement: true,
         primaryKey: true
     },
-    fk_user_id_sender: {
+    user_id_sender: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    fk_user_id_recipient: {
+    pic_sender: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    user_name_sender: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    user_id_recipient: {
         type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    pic_recipient: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    user_name_recipient: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    state: {
+        type: DataTypes.STRING,
         allowNull: false
     },
     created_At: {
@@ -29,3 +49,11 @@ const ChannelsModel = sequelize.define('channels', {
 });
 
 module.exports = ChannelsModel
+
+
+
+ 
+  
+
+ 
+  
