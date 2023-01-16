@@ -15,12 +15,13 @@ import { SlideLegal } from './home/slideLegal';
 import { Register } from './register/register'
 import { ProfileRegister } from './register/profileRegister'
 import { PrefsRegister } from './register/prefsRegister'
+import { Login } from './welcome/login';
 
 
 export const RegisterLanding = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
-    const [display, setDisplay] = useState("prefs");
+    const [display, setDisplay] = useState("register");
     const [userData, setUserData] = useState("")
     return (
 
@@ -48,6 +49,11 @@ export const RegisterLanding = () => {
                 {display === "prefs" &&
                     <div>
                         <PrefsRegister />
+                    </div>
+                }
+                {display === "login" &&
+                    <div>
+                        <Login />
                     </div>
                 }
                 {display === "menu" &&

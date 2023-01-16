@@ -1,28 +1,47 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link, redirect } from 'react-router-dom'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { GrClose } from 'react-icons/gr'
 import { Alert } from '../modals/alert';
 import { Timeline } from './timeline';
+import { CreateRegisterContext } from '../providers/createRegisterContext';
 
 export const PrefsRegister = () => {
-    const [preferences, setPreferences] = useState();
+    const { setDisplay, message, setMessage, showAlert, setShowAlert, userData, setUserData } = useContext(CreateRegisterContext);
+    const [ email, setEmail ] = useState();
+    const { token } = useParams();
     const [emotional, setEmotional] = useState(false);
     const [admin, setAdmin] = useState(false);
     const [legal, setLegal] = useState(false);
     const [labor,setLabor] = useState(false);
+    // Comprueba si el token de la url es válido
+    useEffect(() => {
+        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+            .then((res) => {
+                if (res.mensaje) {
+                    setEmail(res.email);
+                    console.log(res);
+                } else {
+                    setMessage("El enlace es incorrecto o ha expirado")
+                    setShowAlert(true)
+                    setTimeout(() => {
+                        setShowAlert(false);
+                    }, 3000)
+                }
+            })
+
+    }, [])
     const updateUser = async e => {
         e.preventDefault();
         let data = [];
-        console.log(data)
         if (emotional) {data.push("Apoyo emocional")}
         if (admin) {data.push("Orientación sobre trámites")}
         if (legal) {data.push("Orientación laboral")} 
         if (labor) {data.push("Orientación sobre temas legales")}
-        var updateUser = {
-                        // jwt: token,
+        var newUser = {
+                        jwt: token,
                         // user_name: e.target.name_.value,
-                        // email: email,
+                        email: email,
                         // password_: e.target.pass.value,
                         // user_surname: e.target.surname_.value, 
                         // about_me: "", 
@@ -33,11 +52,27 @@ export const PrefsRegister = () => {
                         // // years_in: "", 
                         // working: working, 
                         // studies: "", 
-                        support_type: data,
+                        support_type: data.toString(),
                         // expert: false, 
                         // area: region, 
                         // pic: defaultUser
         }
+        const res = await defaultFetch("http://localhost:3001/registerPrefs", "POST", newUser)
+            if (res.mensaje) {
+                setMessage("Registro completo")
+                setShowAlert(true)
+                setTimeout(() => {
+                    setShowAlert(false);
+                    setDisplay("login")
+                }, 3000)
+
+            } else {
+                setMessage("Ha habido un error, inténtelo de nuevo")
+                setShowAlert(true)
+                setTimeout(() => {
+                    setShowAlert(false);
+                }, 3000)
+            }
     }
     
     return (
@@ -54,7 +89,6 @@ export const PrefsRegister = () => {
             </div>
             <div><Timeline /></div>
             <div className='formContainer'>
-                <form>
                     <input className={!emotional ? "prefsButton": "clicked"}
                             type="button"
                             value="Apoyo emocional"
@@ -75,8 +109,10 @@ export const PrefsRegister = () => {
                             value="Orientación sobre temas legales"
                             onClick={() => setLegal(!legal)} 
                             />
+                    <div className='messageBox'>
+                        {showAlert && <Alert message={message} />}
+                    </div>
                     <input className='contButton' type="button" onClick={updateUser} value="Finalizar" />
-                </form>
             </div>
         </div>
     )

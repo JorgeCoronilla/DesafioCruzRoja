@@ -9,7 +9,7 @@ import Select from 'react-select'
 
 export const ProfileRegister = () => {
     const { setDisplay, message, setMessage, showAlert, setShowAlert, userData, setUserData } = useContext(CreateRegisterContext);
-    const [ email, setEmai ] = useState();
+    const [ email, setEmail ] = useState();
     const { token } = useParams();
     const [ gender, setGender ] = useState();
     const [ region, setRegion ] = useState();
@@ -17,23 +17,23 @@ export const ProfileRegister = () => {
     const [ working, setWorking ] = useState();
     const [ inSpain, setInSpain ] = useState();
 
-    // //Comprueba si el toke de la url es válido
-    // useEffect(() => {
-    //     defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
-    //         .then((res) => {
-    //             if (res.mensaje) {
-    //                 setEmail(res.email);
-    //                 console.log(res);
-    //             } else {
-    //                 setMessage("El enlace es incorrecto o ha expirado")
-    //                 setShowAlert(true)
-    //                 setTimeout(() => {
-    //                     setShowAlert(false);
-    //                 }, 3000)
-    //             }
-    //         })
+    // Comprueba si el token de la url es válido
+    useEffect(() => {
+        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+            .then((res) => {
+                if (res.mensaje) {
+                    setEmail(res.email);
+                    console.log(res);
+                } else {
+                    setMessage("El enlace es incorrecto o ha expirado")
+                    setShowAlert(true)
+                    setTimeout(() => {
+                        setShowAlert(false);
+                    }, 3000)
+                }
+            })
 
-    // }, [])
+    }, [])
     const handleRegion = (select) => {
         setRegion(select.value)
     }
@@ -46,56 +46,47 @@ export const ProfileRegister = () => {
         }))
         setLanguage(JSON.stringify(selectedOptions))
     }
-    //Inserta el nuevo usuario
-    // const updateUser = async e => {
-    //     e.preventDefault();
-    //     // if (e.target.pass.value === e.target.confirmPass.value) {
-    //         console.log(email);
-    //         var newUser = {
-    //             jwt: token,
-    //             // user_name: e.target.name_.value,
-    //             // email: email,
-    //             // password_: e.target.pass.value,
-    //             // user_surname: e.target.surname_.value, 
-    //             // about_me: "", 
-    //             year_birth: e.target.birth.value, 
-    //             gender: gender, 
-    //             // country: "", 
-    //             mother_tongue: language.toString(), 
-    //             // years_in: "", 
-    //             working: working, 
-    //             // studies: "", 
-    //             // support_type: "",
-    //             expert: false, 
-    //             area: region, 
-    //             // pic: defaultUser
-    //         } 
-    //         console.log(newUser)
-            // const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
-            // if (res.mensaje) {
-            //     setMessage("Registro correcto, gracias")
-            //     setShowAlert(true)
-            //     setTimeout(() => {
-            //         setShowAlert(false);
-            //         setDisplay("preferences")
-            //     }, 3000)
+    //Actualiza el usuario que se está registrando
+    const updateUser = async e => {
+        e.preventDefault();
+            console.log(email);
+            var newUser = {
+                jwt: token,
+                // user_name: e.target.name_.value,
+                email: email,
+                // password_: e.target.pass.value,
+                // user_surname: e.target.surname_.value, 
+                // about_me: "", 
+                year_birth: e.target.birth.value, 
+                gender: gender, 
+                // country: "", 
+                mother_tongue: language.toString(), 
+                // years_in: "", 
+                working: working, 
+                // studies: "", 
+                // support_type: "",
+                // expert: false, 
+                // area: region, 
+                // pic: defaultUser
+            } 
+            const res = await defaultFetch("http://localhost:3001/registerProf", "POST", newUser)
+            if (res.mensaje) {
+                setMessage("A continuación ajustaremos sus preferencias")
+                setShowAlert(true)
+                setTimeout(() => {
+                    setShowAlert(false);
+                    setDisplay("prefs")
+                }, 3000)
 
-            // } else {
-            //     setMessage("Ha habido un error, inténtelo de nuevo")
-            //     setShowAlert(true)
-            //     setTimeout(() => {
-            //         setShowAlert(false);
-            //     }, 3000)
-            // }
+            } else {
+                setMessage("Ha habido un error, inténtelo de nuevo")
+                setShowAlert(true)
+                setTimeout(() => {
+                    setShowAlert(false);
+                }, 3000)
+            }
 
-        // } else {
-        //     setMessage("Las contraseñas no coinciden")
-        //     setShowAlert(true)
-        //     setTimeout(() => {
-        //         setShowAlert(false);
-        //     }, 3000)
-    //     // }
-    // }
+        }
     const optionsGender = [
         { value: 'femenino', label: 'Femenino' },
         { value: 'masculino', label: 'Masculino' },
@@ -138,7 +129,7 @@ export const ProfileRegister = () => {
             </div>
             <div><Timeline /></div>
             <div className='formContainer'>
-                <form>
+                <form onSubmit={updateUser}>
                     <div>
                         <label>¿Cuál es tu año de nacimento?</label>
                         <input type="text" name='birth' required minLength="4" maxLength="4"/>
@@ -148,14 +139,16 @@ export const ProfileRegister = () => {
                         <Select options={optionsGender}
                             placeholder="Selecciona género"
                             components={{ IndicatorSeparator: () => null }}
-                            onChange={handleGender} />
+                            onChange={handleGender}
+                            required />
                     </div>
                     <div>
                         <label>¿De qué región eres</label>
                         <Select options={optionsRegion}
                             placeholder="Selecciona región"
                             components={{ IndicatorSeparator: () => null }} 
-                            onChange={handleRegion}/>
+                            onChange={handleRegion}
+                            required/>
                     </div>
                     <div>
                         <label>¿Cuál es tu lengua materna?</label>
@@ -164,7 +157,8 @@ export const ProfileRegister = () => {
                             isMulti
                             onChange={handleLanguage}
                             components={{ IndicatorSeparator: () => null }}
-                            getOptionValue={option => option.value} />
+                            getOptionValue={option => option.value}
+                            required />
                     </div>
                     <div className='checkContainer'>
                         <label>¿Trabajas?</label>
@@ -176,6 +170,7 @@ export const ProfileRegister = () => {
                                      name="work"
                                      checked={working === "Yes"}
                                      onChange={() => setWorking("Yes")}
+                                    
                                 />
                         
                         </div>
@@ -186,6 +181,7 @@ export const ProfileRegister = () => {
                                 name="work"
                                 checked={working === "No"}
                                 onChange={() => setWorking("No")}
+                                
                             />
 
                         </div>
