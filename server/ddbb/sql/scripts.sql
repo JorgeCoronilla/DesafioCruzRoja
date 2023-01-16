@@ -27,8 +27,7 @@
         PRIMARY KEY(user_id)  
     ); 
     
-     #SHOW GLOBAL VARIABLES LIKE 'FOREIGN_KEY_CHECKS';
-     #SET GLOBAL FOREIGN_KEY_CHECKS=1;
+   
  #DROP TABLE channels;
 
     
@@ -146,3 +145,21 @@ select * from users;
 
 select * from channels;
 select * from messages;
+
+
+{
+    about_me: "Hola, soy Gerardo",
+    area: "Sierra de la Cabrera",
+    country: "Spain", 
+    email: "gerardo@gmail.com",
+    expert: false,
+    gender: "Masculino",
+    mother_tongue: "Spanish",
+    pic: "image2.jpg", 
+    studies: "Master",
+    support_type: "Emocional",
+    user_id: 1, 
+    user_name: "Gerardo",
+    user_surname: "Mir",
+    years_in: "Mir"
+}

@@ -6,10 +6,10 @@ import Cookies from 'universal-cookie';
 export const CardOnList = () => {
     const cookies = new Cookies();
     var session = cookies.get("session");
-    const { usersList,setShowCard, refresh, setRefresh } = useContext(CreateProfileContext);
+    const { usersList,setDisplay, refresh, setRefresh } = useContext(CreateProfileContext);
     const checkUser = (e) => {
         localStorage.setItem('currentProfileId', e.target.id);
-       setShowCard("firstView");
+       setDisplay("firstView");
        setRefresh(!refresh)
     }
     return (

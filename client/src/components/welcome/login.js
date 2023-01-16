@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 import { Alert } from '../modals/alert';
 
-export const Login = () => {
+export const Login = ({setDisplay}) => {
 
-    const { setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext);
+    const {  message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext);
     const cookies = new Cookies();
     const navigate = useNavigate();
     const recoverPass = () => {setDisplay("forgot");}
@@ -24,7 +24,7 @@ export const Login = () => {
             if (res.validation) {
                 localStorage.setItem("user", JSON.stringify(res.user));
                 cookies.set('session', res.token, { path: '/' });
-                navigate("/home");
+                navigate("/profile");
             }   else {
                 setMessage("Contraseña o email incorrecto/s")
                 setShowAlert(true)

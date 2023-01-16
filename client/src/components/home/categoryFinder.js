@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import { CreateWelcomeContext } from '../providers/createWelcomeContex';
+import React from 'react'
 import {BsChevronDown} from 'react-icons/bs'
-export const CategoryFinder = () => {
+import { Search } from './search';
+export const CategoryFinder = ({setPop, pop}) => {
 
-    const { setDisplay } = useContext(CreateWelcomeContext);
+   
     const openCatMenu = () => {
-        setDisplay("pop");
+        setPop(!pop);
     }
     return (
         <div>
@@ -16,6 +16,7 @@ export const CategoryFinder = () => {
                         <div className='submitText'>¿En qué necesitas ayuda?</div>
                         <div onClick={openCatMenu}className='findicon'><BsChevronDown/></div>
                     </div>
+                  
                 </div>
             </div>
         </div>

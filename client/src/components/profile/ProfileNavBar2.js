@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import { CreateProfileContext } from '../providers/createProfileContext';
 
 export const ProfileNavBar2 = () => {
-  const { showCard, setShowCard  } = useContext(CreateProfileContext);
+  const { display, setDisplay  } = useContext(CreateProfileContext);
   const inbox = () => {
-    setShowCard("inbox")
+    setDisplay("inbox")
   }
 
   return (

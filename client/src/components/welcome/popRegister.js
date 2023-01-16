@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
-import { CreateWelcomeContext } from '../providers/createWelcomeContex';
+import React from 'react'
 import  popImg  from '../../media/registro-app.png'
-export const PopRegister = () => {
+export const PopRegister = ({setDisplay}) => {
 
-    const { setDisplay } = useContext(CreateWelcomeContext);
+   
     const close = () => { setDisplay("main") }
     const loginLink = () => { setDisplay("login") }
     const signinLink = () => { setDisplay("sign-in") }

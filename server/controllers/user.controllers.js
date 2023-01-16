@@ -34,15 +34,14 @@ const User = {
                     user_id: user.user_id,
                     user_name: user.user_name,
                     user_surname: user.user_surname,
-                    years_in: user.user_surname
+                    years_in: user.user_surname,
+                    email: user.email
                 })
             } catch (error) {
                 console.log(error)
                 res.json({ mensaje: false })
             }
-
         }
-
     },
 
     getCurrentUser: async (req, res) => {
@@ -51,7 +50,7 @@ const User = {
         jwt.verify(token, process.env.JWT_SECRET_KEY, (error, user) => {
             if (error) {
                 console.log("Error del token")
-                res.json({ validation: false })
+                res.json({ mensaje: "token error" })
             } else {
                 userId = user.id
                 console.log("Token correcto")
@@ -75,15 +74,14 @@ const User = {
                     user_id: user.user_id,
                     user_name: user.user_name,
                     user_surname: user.user_surname,
-                    years_in: user.user_surname
+                    years_in: user.user_surname,
+                    email: user.email
                 })
             } catch (error) {
                 console.log(error)
                 res.json({ mensaje: false })
             }
-
         }
-
     },
     getUsers: async (req, res) => {
         let token = req.body.token;
@@ -116,7 +114,8 @@ const User = {
                         user_id: user.user_id,
                         user_name: user.user_name,
                         user_surname: user.user_surname,
-                        years_in: user.user_surname
+                        years_in: user.user_surname,
+                        email: user.email
                     })
                 })
                 res.json(usersList)
@@ -124,9 +123,7 @@ const User = {
                 console.log(error)
                 res.json({ mensaje: false })
             }
-
         }
-
     },
     inRegUpdate2: async (req, res) => {
         try {

@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 export const Firstcontact = () => {
     const cookies = new Cookies();
     var session = cookies.get("session");
-    const { showCard, setShowCard, user, setChannelId, currentUser } = useContext(CreateProfileContext);
+    const { display, setDisplay, user, setChannelId, currentUser } = useContext(CreateProfileContext);
     const [messages, setMessages] = useState();
     const [refresh, setRefresh] = useState(false);
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
