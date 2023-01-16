@@ -1,6 +1,9 @@
 import React from 'react'
 import spain from '../../media/spain.png'
+
+
 export const NavBarCover = ({setDisplay}) => {
+
 
     const navMenu1 = () => {
         setDisplay("menu");

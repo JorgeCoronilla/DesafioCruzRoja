@@ -61,7 +61,7 @@ export const ProfileRegister = () => {
                 gender: gender, 
                 // country: "", 
                 mother_tongue: language.toString(), 
-                // years_in: "", 
+                years_in: inSpain, 
                 working: working, 
                 // studies: "", 
                 // support_type: "",
