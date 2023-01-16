@@ -41,9 +41,7 @@ const User = {
                 console.log(error)
                 res.json({ mensaje: false })
             }
-
         }
-
     },
 
     getCurrentUser: async (req, res) => {
@@ -83,9 +81,7 @@ const User = {
                 console.log(error)
                 res.json({ mensaje: false })
             }
-
         }
-
     },
     getUsers: async (req, res) => {
         let token = req.body.token;
@@ -127,9 +123,7 @@ const User = {
                 console.log(error)
                 res.json({ mensaje: false })
             }
-
         }
-
     },
     inRegUpdate2: async (req, res) => {
         try {
