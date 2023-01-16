@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { CreateWelcomeContext } from './providers/createWelcomeContex'
-import { Cover } from './welcome/cover';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import { CreateWelcomeContext } from './providers/createWelcomeContex';
 import { Login } from './welcome/login';
 import { NavBarCover } from './welcome/navBarCover';
 import { NavBarLanguages } from './welcome/navBarLanguages';
@@ -13,12 +14,30 @@ import { CatMenu } from './welcome/catMenu'
 import { SlideLegal } from './home/slideLegal';
 import { PopRegister } from './welcome/popRegister';
 import { NavBotoom } from './home/navBottom';
+import { defaultFetch } from '../helpers/defaultHelpers';
 
 
 export const Welcome = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
     const [display, setDisplay] = useState("main");
+    const navigate = useNavigate();
+    const cookies = new Cookies();
+
+    useEffect(()=> {
+        var session = cookies.get("session");
+        if(!session) { navigate('/')};
+
+       defaultFetch(`http://localhost:3001/get_current_user`, "post",
+       { token: session })
+       .then((res) => {
+            if (res.mensaje==="token error") { navigate('/')} else {
+                navigate('/profile')
+            }
+       })
+
+
+    },[])
 
     return (
 
@@ -27,7 +46,7 @@ export const Welcome = () => {
 
                 {display === "main" &&
                     <div>
-                        <NavBarCover />
+                        <NavBarCover setDisplay={setDisplay}/>
                         <CategoryFinder/>
                         <SlideEmotional />
                         <SlideLegal />
@@ -37,27 +56,27 @@ export const Welcome = () => {
                 }
                 {display === "menu" &&
                     <div>
-                        <NavBarMenu />
+                        <NavBarMenu setDisplay={setDisplay}/>
                     </div>
                 }
                 {display === "languages" &&
-                    <NavBarLanguages />
+                    <NavBarLanguages setDisplay={setDisplay}/>
                 }
                 { display === "catMenu" &&
-                    <CatMenu />
+                    <CatMenu setDisplay={setDisplay}/>
                 }
                 {display === "login" &&
-                    <Login />
+                    <Login setDisplay={setDisplay}/>
                 }
                 {display === "sign-in" &&
-                    <SignIn />
+                    <SignIn setDisplay={setDisplay}/>
                 }
                 {
                 display === "pop" &&
-                    <PopRegister />
+                    <PopRegister setDisplay={setDisplay}/>
                 }
                 {display === "forgot" && 
-                    <ForgotPass/>
+                    <ForgotPass setDisplay={setDisplay}/>
                 }
             </div>
         </CreateWelcomeContext.Provider>

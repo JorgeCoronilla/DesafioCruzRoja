@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import { CreateProfileContext } from '../providers/createProfileContext';
 
 export const ProfileNavBar3 = () => {
-  const { showCard, setShowCard, user  } = useContext(CreateProfileContext);
+  const { display, setDisplay, user  } = useContext(CreateProfileContext);
   const close = () => {
-    setShowCard("firstView")
+    setDisplay("firstView")
   }
 
   return (
