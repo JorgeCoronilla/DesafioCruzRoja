@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
-import { CreateWelcomeContext } from '../providers/createWelcomeContex';
+import React from 'react'
 
-export const NavBarMenu = () => {
+export const NavBarMenu = ({setDisplay}) => {
 
-    const { setDisplay } = useContext(CreateWelcomeContext);
+  
     const loginLink = () => { setDisplay("login") }
     const signinLink = () => { setDisplay("sign-in") }
     const close = () => {setDisplay("main")}

@@ -142,7 +142,7 @@ const Message = {
         if (userID){
             try {
                 const channels = await ChannelsModel.findAll({ where:  {[Op.or]:[ {user_id_sender: userID},
-                    {user_id_recipient: userID}], state:"active"} })
+                    {user_id_recipient: userID}], state:"archived"} })
                         
 
                 res.json(channels)

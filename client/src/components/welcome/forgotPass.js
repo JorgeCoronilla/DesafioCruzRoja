@@ -4,7 +4,7 @@ import { defaultFetch } from '../../helpers/defaultHelpers';
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
-export const ForgotPass = () => {
+export const ForgotPass = ({setDisplay}) => {
 
     const { message, setMessage, showAlert, setShowAlert
     } = useContext(CreateWelcomeContext);

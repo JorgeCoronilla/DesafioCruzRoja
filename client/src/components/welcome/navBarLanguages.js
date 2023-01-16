@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
-import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
-export const NavBarLanguages = () => {
-    const { setDisplay } = useContext(CreateWelcomeContext);
+export const NavBarLanguages = ( { setDisplay }) => {
+   
     const close = () => { setDisplay("main") }
 
     return (

@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 export const ProfileCard = () => {
   const cookies = new Cookies();
   var session = cookies.get("session");
-  const { showCard, setShowCard, user, setUser, channelId, setChannelId, currentUser } = useContext(CreateProfileContext);
+  const { display, setDisplay, user, setUser, channelId, setChannelId, currentUser } = useContext(CreateProfileContext);
   const profileId = parseInt(localStorage.getItem('currentProfileId'))
 
   const firstMessage = () => {
@@ -15,7 +15,7 @@ export const ProfileCard = () => {
       .then((res) => {
         if (res) {
           localStorage.setItem('currentChannelId', res.id)
-          setShowCard("firstContact");
+          setDisplay("firstContact");
         } else {
           defaultFetch(`http://localhost:3001/msg/create_channel`, "post",
             { token: session, 
@@ -26,7 +26,7 @@ export const ProfileCard = () => {
               recName: user.user_name})
             .then((res) => {
               localStorage.setItem('currentChannelId', res.channelID)
-              setShowCard("firstContact");
+              setDisplay("firstContact");
             })
         }
       })
@@ -34,7 +34,7 @@ export const ProfileCard = () => {
 
 const list = () =>{
   console.log("Entra")
-  setShowCard("list");
+  setDisplay("list");
 }
   return (
     <div>

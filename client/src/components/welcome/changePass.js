@@ -5,7 +5,7 @@ import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 
 
-export const ChangePass = () => {
+export const ChangePass = ({setDisplay}) => {
 
     const { message, setMessage, showAlert, setShowAlert
     } = useContext(CreateWelcomeContext);
