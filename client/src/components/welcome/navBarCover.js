@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
 import spain from '../../media/spain.png'
+
+
 export const NavBarCover = () => {
 
     const { setDisplay } = useContext(CreateWelcomeContext);

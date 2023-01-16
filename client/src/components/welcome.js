@@ -12,6 +12,7 @@ import { SlideEmotional } from './home/slideEmotional';
 import { CatMenu } from './welcome/catMenu'
 import { SlideLegal } from './home/slideLegal';
 import { PopRegister } from './welcome/popRegister';
+import { NavBotoom } from './home/navBottom';
 
 
 export const Welcome = () => {
@@ -31,6 +32,7 @@ export const Welcome = () => {
                         <SlideEmotional />
                         <SlideLegal />
                         <SignIn />
+                        <NavBotoom/>
                     </div>
                 }
                 {display === "menu" &&
