@@ -46,10 +46,13 @@ export const ProfileRegister = () => {
         }))
         setLanguage(JSON.stringify(selectedOptions))
     }
+    const handleYearsIn = (select) => {
+        setGender(select.value)
+    }
     //Actualiza el usuario que se está registrando
     const updateUser = async e => {
         e.preventDefault();
-            console.log(email);
+            console.log(inSpain);
             var newUser = {
                 jwt: token,
                 // user_name: e.target.name_.value,
@@ -76,21 +79,21 @@ export const ProfileRegister = () => {
                 setTimeout(() => {
                     setShowAlert(false);
                     setDisplay("prefs")
-                }, 3000)
+                }, 2000)
 
             } else {
                 setMessage("Ha habido un error, inténtelo de nuevo")
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
-                }, 3000)
+                }, 2000)
             }
 
         }
     const optionsGender = [
-        { value: 'femenino', label: 'Femenino' },
-        { value: 'masculino', label: 'Masculino' },
-        { value: 'otro', label: 'No especificar' }
+        { value: 'Femenino', label: 'Femenino' },
+        { value: 'Masculino', label: 'Masculino' },
+        { value: 'No especificar', label: 'No especificar' }
     ]
     const optionsRegion = [
         { value: 'Sierra de la Cabrera', label: 'Sierra de la Cabrera' },
@@ -115,8 +118,8 @@ export const ProfileRegister = () => {
         { value: 'Otro', label: 'Otro' }
     ]
     
-    console.log(language)
     
+
     return (
 
         <div className='profileContainer'>
@@ -186,12 +189,12 @@ export const ProfileRegister = () => {
 
                         </div>
                         <div className='checkBlock'>
-                            <label>Prefiero no responder</label>
+                            <label>No especificar</label>
                             <input
                                 type="checkbox"
                                 name="work"
-                                checked={working === "No answer"}
-                                onChange={() => setWorking("No answer")}
+                                checked={working === "No especificar"}
+                                onChange={() => setWorking("No Especificar")}
                             />
                         </div>
                     </div>
@@ -201,9 +204,9 @@ export const ProfileRegister = () => {
                             <label>Menos de 6 meses</label>
                             <input
                                 type="checkbox"
-                                name="work"
-                                checked={inSpain === "Less than 6 months"}
-                                onChange={() => setInSpain("Less than 6 months")}
+                                name="inSpain"
+                                checked={inSpain === "Menos de 6 meses"}
+                                onChange={() => setInSpain("Menos de 6 meses")}
                             />
 
                         </div>
@@ -211,9 +214,9 @@ export const ProfileRegister = () => {
                             <label>De 6 meses a 1 año</label>
                             <input
                                 type="checkbox"
-                                name="work"
-                                checked={inSpain === "from 6 to 12 months"}
-                                onChange={() => setInSpain("from 6 to 12 months")}
+                                name="inSpain"
+                                checked={inSpain === "De 6 meses a 1 año"}
+                                onChange={() => setInSpain("De 6 meses a 1 año")}
                             />
 
                         </div>
@@ -221,18 +224,18 @@ export const ProfileRegister = () => {
                             <label>De 1 año a 2 años</label>
                             <input
                                 type="checkbox"
-                                name="work"
-                                checked={inSpain === "from 12 to 24 months"}
-                                onChange={() => setInSpain("from 12 to 24 months")}
+                                name="inSpain"
+                                checked={inSpain === "De 1 año a 2 años"}
+                                onChange={() => setInSpain("De 1 año a 2 años")}
                             />
                         </div>
                         <div className='checkBlock'>
                             <label>Más de dos años</label>
                             <input
                                 type="checkbox"
-                                name="work"
+                                name="inSpain"
                                 checked={inSpain === "more than 24 months"}
-                                onChange={() => setInSpain("more than 24 months")}
+                                onChange={() => setInSpain("Más de 2 años")}
                             />
                         </div>
                     </div>
