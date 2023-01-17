@@ -1,0 +1,78 @@
+.cookiesBanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 312px 15px 0;
+    width: 303px;
+    padding: 28px;
+    background: #FFFFFF;
+box-shadow: -1px 9px 14px rgba(0, 0, 0, 0.1);
+border-radius: 15px;
+z-index: 2;
+}
+
+.cookiesBanner h2 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 148.9%;
+
+
+}
+
+.cookiesBanner p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 148.9%;
+    color: #000000;
+}
+
+
+.signinBtn {
+    margin: 12px 24px;
+    width: 342px;
+    height: 48px;
+    background: #E04848;
+    border-radius: 20px;
+    background: #E04848;
+    border-radius: 20px;
+    border: none;
+    color: white;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.vale {
+    margin: 0px 24px;
+    width: 85%;
+    height: 48px;
+    background: #E04848;
+    border-radius: 20px;
+    border: none;
+    color: white;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+.preferences {
+    background-color: white;
+    width: 85%;
+    height: 48px;
+    border: #E04848 solid 1.5px;
+    color: #E04848;
+    border-radius: 20px;
+    margin: 12px 24px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}

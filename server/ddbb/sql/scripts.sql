@@ -3,7 +3,7 @@
     USE dbTest;
     
         #drop table users
-    CREATE TABLE users(
+    CREATE TABLE  IF NOT EXISTS users(
         user_id INT AUTO_INCREMENT,
         user_name VARCHAR(50),
         user_surname VARCHAR(50),
@@ -17,7 +17,7 @@
         years_in VARCHAR(50),
         working VARCHAR(50),
         studies VARCHAR(50),
-        support_type VARCHAR(50),
+        support_type VARCHAR(250),
         expert BOOLEAN,
         area VARCHAR(50),
         pic VARCHAR(50),
@@ -31,7 +31,7 @@
  #DROP TABLE channels;
 
     
-    CREATE TABLE channels(
+    CREATE TABLE  IF NOT EXISTS channels(
         id INT AUTO_INCREMENT,
         user_id_sender INT,
 		pic_sender VARCHAR(50),
@@ -45,15 +45,15 @@
         PRIMARY KEY(id)
     ); 
     #insert into channels VALUES (null, 3,null,null, 2,null,null, "active","2021-01-12", "2021-01-12");
-    insert into channels VALUES (null, 3,'image2.png','Henalu', 2,'image2.jpg','Jorge', "active","2021-01-12", "2021-01-12");
+    insert into channels VALUES (null, 3,'image2.jpg','Henalu', 2,'image2.jpg','Jorge', "active","2021-01-12", "2021-01-12");
     #insert into channels VALUES (null, 3, 2, "active","2021-01-12", "2021-01-12");
-     #insert into channels VALUES (null, 2, 5, "archived","2021-01-12", "2021-01-12");
+    #insert into channels VALUES (null, 2, 5, "archived","2021-01-12", "2021-01-12");
     
   
     
     
     
-#DROP TABLE messages
+#DROP TABLE  IF NOT EXISTS messages
     CREATE TABLE messages(
         id INT AUTO_INCREMENT,
         fk_user_id_sender INT,
@@ -67,7 +67,7 @@
         FOREIGN KEY (fk_channel_id) REFERENCES channels(id)
     ); 
     
-    CREATE TABLE reviews(
+    CREATE TABLE  IF NOT EXISTS reviews(
         id INT AUTO_INCREMENT,
         fk_user_id_sender INT,
         fk_user_id_recipient INT,
@@ -80,7 +80,7 @@
         FOREIGN KEY (fk_user_id_recipient) REFERENCES users(user_id)
     ); 
     
-     CREATE TABLE favs(
+     CREATE TABLE  IF NOT EXISTS favs(
         id INT AUTO_INCREMENT,
         fk_user_id_sender INT,
         fk_user_id_recipient INT,
@@ -91,7 +91,7 @@
         FOREIGN KEY (fk_user_id_recipient) REFERENCES users(user_id)
     ); 
     
- CREATE TABLE frequent_questions(
+ CREATE TABLE  IF NOT EXISTS frequent_questions(
         id INT AUTO_INCREMENT,
         fk_user_id INT,
         question VARCHAR(200),
@@ -101,7 +101,7 @@
         FOREIGN KEY (fk_user_id) REFERENCES users(user_id)
     ); 
 
-     CREATE TABLE answers (
+     CREATE TABLE  IF NOT EXISTS answers (
     id INT AUTO_INCREMENT,
     fk_user_id_user INT,
     fk_frequent_questions_id INT,

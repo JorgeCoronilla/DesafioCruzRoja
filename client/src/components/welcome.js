@@ -14,14 +14,20 @@ import { CatMenu } from './welcome/catMenu'
 import { SlideLegal } from './home/slideLegal';
 import { PopRegister } from './welcome/popRegister';
 import { defaultFetch } from '../helpers/defaultHelpers';
+import { Search } from './home/search';
+import { CookiesBanner } from './welcome/cookiesBanner';
+
 
 
 export const Welcome = () => {
     const [message, setMessage] = useState("");
     const [showAlert, setShowAlert] = useState("");
+    const [cookiesOn, setCookiesOn] = useState(true);
     const [display, setDisplay] = useState("main");
     const navigate = useNavigate();
+    const [pop, setPop] = useState(false);
     const cookies = new Cookies();
+  
 
     useEffect(()=> {
         var session = cookies.get("session");
@@ -46,7 +52,13 @@ export const Welcome = () => {
                 {display === "main" &&
                     <div>
                         <NavBarCover setDisplay={setDisplay}/>
-                        <CategoryFinder/>
+                        <CategoryFinder  setPop={setPop} pop={pop}/>
+                        {pop &&
+                        <Search setDisplay={setDisplay}/>
+                    }
+                     {cookiesOn &&
+                        <CookiesBanner setCookiesOn={setCookiesOn}/>
+                    }
                         <SlideEmotional />
                         <SlideLegal />
                         <SignIn />
@@ -70,8 +82,8 @@ export const Welcome = () => {
                     <SignIn setDisplay={setDisplay}/>
                 }
                 {
-                display === "pop" &&
-                    <PopRegister setDisplay={setDisplay}/>
+                display === "list" &&
+                    <PopRegister setDisplay={setDisplay}  setPop={setPop} pop={pop}/>
                 }
                 {display === "forgot" && 
                     <ForgotPass setDisplay={setDisplay}/>
