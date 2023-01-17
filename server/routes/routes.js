@@ -28,6 +28,7 @@ router.post("/fav", UserController.User.makeFav)
 router.post("/unfav", UserController.User.takeFav)
 router.get("/getfavs/:profileId", UserController.User.getFavs)
 
+
 //Messages
 router.post("/msg/create_channel", MessagesController.Message.createChannel)
 router.post("/msg/check_channel", MessagesController.Message.checkChannel)

@@ -1,4 +1,14 @@
 import React, { useContext } from 'react'
+import spain from '../../media/españa.png'
+import uk from '../../media/uk.png'
+import arabe from '../../media/arabe.png'
+import rumania from '../../media/rumania.png'
+import italia from '../../media/italia.png'
+import china from '../../media/china.png'
+import alemania from '../../media/alemania.png'
+import francia from '../../media/francia.png'
+import portugal from '../../media/portugal.png'
+import ucrania from '../../media/ucrania.png'
 
 export const NavBarLanguages = ( { setDisplay }) => {
    
@@ -18,7 +28,15 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Español</p>
                             </div>
                             <div>
-                                <p>M</p>
+                                <img src={spain} alt="Spanish flag" />
+                            </div>
+                        </div>
+                        <div className='laguageRow'>
+                            <div>
+                                <p>Español</p>
+                            </div>
+                            <div>
+                            <img src={spain} alt="Spanish flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -27,7 +45,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>English</p>
                             </div>
                             <div>
-                                <p>M</p>
+                            <img src={uk} alt="uk flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -36,7 +54,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Árabe (العربية)</p>
                             </div>
                             <div>
-                                <p>M</p>
+                            <img src={arabe} alt="arabic flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -45,7 +63,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Rumano (Română)</p>
                             </div>
                             <div>
-                                <p>M</p>
+                            <img src={rumania} alt="Romanian flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -54,7 +72,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Italiano</p>
                             </div>
                             <div>
-                                <p>M</p>
+                            <img src={italia} alt="Italian flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -63,7 +81,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Chino</p>
                             </div>
                             <div>
-                                <p>M</p>
+                                <img src={china} alt="Chinese flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -72,7 +90,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Alemán</p>
                             </div>
                             <div>
-                                <p>M</p>
+                                <img src={alemania} alt="German flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -81,7 +99,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Francés</p>
                             </div>
                             <div>
-                                <p>M</p>
+                                <img src={francia} alt="French flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -90,7 +108,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Portugués</p>
                             </div>
                             <div>
-                                <p>M</p>
+                                <img src={portugal} alt="Portuguese flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />
@@ -99,7 +117,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Ucraniano</p>
                             </div>
                             <div>
-                                <p>M</p>
+                                <img src={ucrania} alt="Ukraine flag" />
                             </div>
                         </div>
                         <hr className='rowLine' />

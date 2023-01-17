@@ -1,5 +1,7 @@
 import React from 'react'
-import spain from '../../media/spain.png'
+import spain from '../../media/españa.png'
+import { ReactComponent as LogoNav } from '../../media/logo.svg';
+import { ReactComponent as Menu } from '../../media/hamburguesa.svg';
 
 
 export const NavBarCover = ({setDisplay}) => {
@@ -12,16 +14,19 @@ export const NavBarCover = ({setDisplay}) => {
     const languages = () => {
         setDisplay("languages")
     }
+
+    const joinUs = () => {
+        setDisplay("sign-in")
+    }
     return (
         <div>
             <div className='navBarCover'>
 
-                <div><h6>Ayuda</h6></div>
-                    
-                <div className='rightElements'>  
-                    <div><button onClick={languages}>Unirse</button></div>
+                <div><h6><LogoNav/></h6></div>
+                 <div className='rightElements'>  
+                    <div><button onClick={joinUs}>Unirse</button></div>
                     <div><img onClick={languages} src={spain} alt="Spanish flag" /></div>
-                     <div><p onClick={navMenu1}>&#9776;</p></div>
+                      <div><p onClick={navMenu1}><Menu/></p></div>
                 </div>
 
             </div>
@@ -29,3 +34,4 @@ export const NavBarCover = ({setDisplay}) => {
         </div>
     )
 }
+

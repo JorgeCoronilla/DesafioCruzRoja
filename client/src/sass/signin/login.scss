@@ -1,0 +1,99 @@
+.loginContainer input:-webkit-autofill,
+.loginContainer input:-webkit-autofill:hover,
+.loginContainer input:-webkit-autofill:focus,
+.loginContainer input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.loginContainer h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #19274C;
+    margin-top: 110px;
+    margin-bottom: 12px;
+}
+
+.loginContainer h3 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #19274C;
+    margin-bottom: 54px;
+}
+
+.loginContainer p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.loginContainer label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.loginContainer h4 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration-line: underline;
+    color: #000000;
+    text-align: center;
+    margin-top: 29px;
+}
+
+.loginInput {
+    height: 42px;
+    width:276px;
+    border-radius: 8px;
+    border: 1px solid #8C8C8C;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding:  0 8px;
+    margin-bottom: 19px;
+}
+
+.loginInput2{
+    height: 48px;
+    border-radius: 15px;
+    border: 1px solid #8C8C8C;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding:  0 8px;
+    margin-bottom: 29px;
+}
+
+.loginContainer {
+    margin: 0 53px;
+    
+}
+
+.loginContainer button {
+position: relative;
+right: 24px;
+padding: 13px 87px;
+width: 330px;
+height: 48px;
+background: #E04848;
+border-radius: 20px;
+border: none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+color: #FAFAFA;
+margin-top: 70px;
+}

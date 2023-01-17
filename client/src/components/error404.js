@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import img404 from '../media/404.png'
+
 export const Error404 = () => {
 
   const navigate = useNavigate();
@@ -7,10 +9,15 @@ export const Error404 = () => {
     navigate("/");
   }
   return (
-    <div className='error404'>
-      <h5>Error404</h5>
-      <h6>Parece que ha ocurrido algo :(</h6>
-      <p onClick={home}>Llévame al inicio!</p>
+    <div>
+      <div className='error404'>
+        <h5>Oops!</h5>
+        <h6>No podemos encontrar esta página. Click aquí para volver a la Home.</h6>
+        <button onClick={home}>Volver a la home</button>
+
+      </div>
+
+      <img className='img404' src={img404} alt="404 error" />
     </div>
   )
 }

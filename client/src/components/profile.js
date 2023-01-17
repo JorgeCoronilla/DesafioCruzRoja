@@ -19,6 +19,7 @@ import { NavBarMenu } from './welcome/navBarMenu';
 import { NavBarLanguages } from './welcome/navBarLanguages';
 import { Search } from './home/search';
 import { NavBarMenuLogged } from './home/navBarMenuLogged';
+import { ReviewList } from './profile/reviewList';
 
 export const Profile = () => {
     const cookies = new Cookies();
@@ -45,12 +46,16 @@ export const Profile = () => {
                 if (res.mensaje === "token error") { navigate('/') } else {
                     console.log(res)
                     setCurrentUser(res)
+
+                    console.log(res.user_id)
                     localStorage.setItem('currentProfileId', JSON.stringify(res.user_id))
+                    idq = res.user_id
                 }
             })
 
 
         idq = parseInt(localStorage.getItem('currentProfileId'))
+        //idq = currentUser.user_id
         console.log(idq)
         if (idq) {
             let user = { id: idq, token: session }
@@ -122,6 +127,7 @@ export const Profile = () => {
                 <div>
                     <ProfileNavBar />
                     <ProfileCard />
+                    <ReviewList />
                 </div>
             }
             {(display === "firstContact" && user) &&
