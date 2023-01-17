@@ -1,13 +1,31 @@
 import React from 'react'
-
-export const Search = ({setDisplay}) => {
+import { ReactComponent as Reward } from '../../media/expertos.svg';
+import { ReactComponent as Community } from '../../media/comunidad.svg';
+export const Search = ({ setDisplay }) => {
     const search = () => {
         setDisplay('list')
     }
-  return (
-    <div >
-        <button className='search1' onClick={search}>Expertos</button>
-        <button className='search2'>Comunidad</button>
-    </div>
-  )
+    return (
+        <div >
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+            <div className='search1'>
+                <div><p className='search1P' onClick={search}>Expertos</p></div>
+                <div className='searchIcon'><p ><Reward /></p></div>
+            </div>
+            <div className='search2'>
+            <div><p className='search1P' onClick={search}>Comunidad</p></div>
+                <div className='searchIcon2'><p ><Community /></p></div>
+            </div>
+        </div>
+    )
 }
+
+/*
+<div><p className='search1P' onClick={search}>Comunidad</p></div>
+                <div className='searchIcon'><p ><Reward /></p></div>
+*/

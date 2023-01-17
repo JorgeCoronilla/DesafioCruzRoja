@@ -8,6 +8,7 @@ const User = {
     getUser: async (req, res) => {
         let token = req.body.token;
         let userName
+        
         jwt.verify(token, process.env.JWT_SECRET_KEY, (error, user) => {
             if (error) {
                 console.log("Error del token")
@@ -28,7 +29,7 @@ const User = {
                     expert: user.expert,
                     gender: user.gender,
                     mother_tongue: user.mother_tongue,
-                    pic: user.pic,
+                    pic: `http://localhost:3001/pics/${user.pic}`,
                     studies: user.studies,
                     support_type: user.support_type,
                     user_id: user.user_id,
@@ -68,7 +69,7 @@ const User = {
                     expert: user.expert,
                     gender: user.gender,
                     mother_tongue: user.mother_tongue,
-                    pic: user.pic,
+                    pic: `http://localhost:3001/pics/${user.pic}`,
                     studies: user.studies,
                     support_type: user.support_type,
                     user_id: user.user_id,
@@ -108,7 +109,7 @@ const User = {
                         expert: user.expert,
                         gender: user.gender,
                         mother_tongue: user.mother_tongue,
-                        pic: user.pic,
+                        pic: `http://localhost:3001/pics/${user.pic}`,
                         studies: user.studies,
                         support_type: user.support_type,
                         user_id: user.user_id,

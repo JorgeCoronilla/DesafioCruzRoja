@@ -11,7 +11,7 @@ export const Login = ({setDisplay}) => {
     const cookies = new Cookies();
     const navigate = useNavigate();
     const recoverPass = () => {setDisplay("forgot");}
-
+    const signin = () => {setDisplay("sign-in");}
     //Login
     const sendLogin = async e => {
         e.preventDefault();
@@ -40,20 +40,27 @@ export const Login = ({setDisplay}) => {
          {showAlert &&
         <Alert message={message}/>
         }
-         <div className='formContainer'>
+         <div className='loginContainer'>
                     <form onSubmit={sendLogin}>
                         <div>
-                            <h2>Login</h2>
+            
+                            <h2>Iniciar sesión</h2>
+                            <h3 onClick={signin}>¿Aún no eres miembro? Inscríbete aquí</h3>
                             </div>
                         <div>
-                            <input type="email" name='email' placeholder='Correo electrónico' required minLength="5" maxLength="40"></input>
+                            <p>*Correo electrónico</p>
+                            <input className='loginInput' type="email" name='email' placeholder='Correo electrónico' required minLength="5" maxLength="40"></input>
                         </div>
-                        <div> <input type="password" name='pass' required placeholder='Contraseña'minLength="4" maxLength="12"></input></div>
-                        <div><button type="submit">Log in</button></div>
+                        <p>*Contraseña</p>
+                        <div> 
+                        <input className='loginInput2' type="password" name='pass' required placeholder='Contraseña'minLength="4" maxLength="12"></input></div>
+                        <input type="checkbox" /><label>Recordarme</label>
+                        <h4 onClick={recoverPass}>¿Has olvidado la contraseña?</h4>
+           
+                        <div><button type="submit">Continuar</button></div>
                     </form>
 
-                    <h4 onClick={recoverPass}>¿Olvidaste tu contraseña? Recupérala aquí.</h4>
-                </div>
+                        </div>
     </div>
   )
   }
