@@ -46,6 +46,7 @@ export const Profile = () => {
                 if (res.mensaje === "token error") { navigate('/') } else {
                     console.log(res)
                     setCurrentUser(res)
+
                     console.log(res.user_id)
                     localStorage.setItem('currentProfileId', JSON.stringify(res.user_id))
                     idq = res.user_id

@@ -1,6 +1,8 @@
 const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
+
 const UserModel = require('../ddbb/sql/models/User');
+const FavsModel = require('../ddbb/sql/models/Favs')
 
 // const sendemail = require('../controllers/email.controller');
 
@@ -134,7 +136,7 @@ const User = {
                 gender: req.body.gender, 
                 mother_tongue: req.body.mother_tongue, 
                 working: req.body.working, 
-                years_in: req.body.year_in,
+                years_in: req.body.years_in,
                 area: req.body.area, 
             }
             let user = await UserModel.update( newData , { where: { email: email } })
@@ -157,6 +159,63 @@ const User = {
         } catch (error) {
             res.json({mensaje: false})
             console.log(error)
+        }
+    },
+    makeFav : async(req,res )=> {
+        try {
+            
+            let newFav = {
+                fk_user_id_sender: req.body.sender,
+                fk_user_id_recipient: req.body.recipient,
+            }
+            await FavsModel.create(newFav)
+                .then((data) => { res.json({ mensaje: true }) })
+                .catch(err => {
+                    if (err) {
+                        console.log(err)
+                        res.json({ mensaje: false })
+                    }
+                })
+
+        } catch (error) {
+            res.json({mensaje: false})
+            console.log(error)
+        }
+    },
+    takeFav : async(req,res )=> {
+        try {
+            let sender = req.body.sender
+            let recipient = req.body.recipient
+            await FavsModel.destroy({
+                where: ({ fk_user_id_sender: sender },{ fk_user_id_recipient: recipient })})
+                .then((data) => { res.json({ mensaje: true }) })
+                .catch(err => {
+                    if (err) {
+                        console.log(err)
+                        res.json({ mensaje: false })
+                    }
+                })
+
+        } catch (error) {
+            res.json({mensaje: false})
+            console.log(error)
+        }
+    },
+    getFavs : async(req,res )=> {
+        try {
+            console.log(req.params.profileId)
+            let sender = req.params.profileId;
+            const users = await FavsModel.findAll({ where: { fk_user_id_sender: sender } })
+            let userFavs = []
+            users.map(user => {
+                userFavs.push(
+                    user.fk_user_id_recipient
+                )
+            })
+            res.json(userFavs)
+        } catch (error) {
+            console.log(error)
+            res.json({ mensaje: false })
         }
     }
 }

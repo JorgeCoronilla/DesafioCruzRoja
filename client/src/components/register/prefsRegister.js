@@ -34,10 +34,10 @@ export const PrefsRegister = () => {
     const updateUser = async e => {
         e.preventDefault();
         let data = [];
-        if (emotional) {data.push("Apoyo emocional")}
-        if (admin) {data.push("Orientación sobre trámites")}
+        if (emotional) {data.push("Emocional")}
+        if (admin) {data.push("Administrativo")}
         if (legal) {data.push("Orientación laboral")} 
-        if (labor) {data.push("Orientación sobre temas legales")}
+        if (labor) {data.push("Otro")}
         var newUser = {
                         jwt: token,
                         // user_name: e.target.name_.value,
@@ -64,14 +64,14 @@ export const PrefsRegister = () => {
                 setTimeout(() => {
                     setShowAlert(false);
                     setDisplay("login")
-                }, 3000)
+                }, 2000)
 
             } else {
                 setMessage("Ha habido un error, inténtelo de nuevo")
                 setShowAlert(true)
                 setTimeout(() => {
                     setShowAlert(false);
-                }, 3000)
+                }, 2000)
             }
     }
     

@@ -2,8 +2,7 @@ import React from 'react'
 import {BsChevronDown} from 'react-icons/bs'
 import { Search } from './search';
 export const CategoryFinder = ({setPop, pop}) => {
-
-   
+    
     const openCatMenu = () => {
         setPop(!pop);
     }
@@ -16,7 +15,6 @@ export const CategoryFinder = ({setPop, pop}) => {
                         <div className='submitText'>¿En qué necesitas ayuda?</div>
                         <div onClick={openCatMenu}className='findicon'><BsChevronDown/></div>
                     </div>
-                  
                 </div>
             </div>
         </div>
