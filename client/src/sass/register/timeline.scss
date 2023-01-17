@@ -1,14 +1,16 @@
-$color-white:#fff;
+$color-white: #fff;
 $shadow-clear : #E1FAFF;
-$brand-color-b:#374095;
-$brand-color:#df8625;
+$brand-color-b: #374095;
+$brand-color: #df8625;
+$border : rgba(0, 0, 0, 0.102);;
 
 @mixin respond-to($breakpoint) {
-    @if $breakpoint == "ip12" {
+    @if $breakpoint =="ip12" {
         @media screen and (min-width: 390px) {
-          @content;
+            @content;
         }
     }
+
     // @else if $breakpoint == "sm" {
     //     @media (min-width: 767px) {
     //         @content;
@@ -29,7 +31,7 @@ $brand-color:#df8625;
 .ps-timeline-sec {
     position: relative;
     background: $color-white;
-    width: 270px;
+    width: 240px;
     left: 7px;
 
     .container {
@@ -47,7 +49,7 @@ $brand-color:#df8625;
                 }
 
                 &.ps-timeline {
-                    margin: 130px 0 !important;
+                    margin: 55px 0 !important;
                     border-left: 2px solid #348e80;
                     padding-left: 0 !important;
                     padding-top: 120px !important;
@@ -138,8 +140,7 @@ $brand-color:#df8625;
                             margin-left: 35px !important;
                             margin-bottom: 0 !important;
 
-                            img {
-                            }
+
                         }
 
                         p {
@@ -147,6 +148,7 @@ $brand-color:#df8625;
                             width: 100% !important;
                             margin: 0 auto !important;
                             margin-top: 0px !important;
+
                         }
 
                         .ps-top {
@@ -176,9 +178,9 @@ $brand-color:#df8625;
             }
 
             &.ps-timeline {
-                margin: 130px 0;
+                margin: 55px 0;
                 padding: 0;
-                border-top: 2px solid $brand-color-b;
+                border-top: 1px solid $border;
                 list-style: none;
 
                 li {
@@ -198,26 +200,30 @@ $brand-color:#df8625;
                         text-align: center;
                         line-height: 39px;
                         color: $brand-color-b;
-                        font-size: 18px;
+                        font-size: 16px;
                         font-style: normal;
                         position: absolute;
                         top: -21px;
 
                         &.ps-sp-top01 {
                             left: 0%;
+                            background: #374095;
+                            color: #fff;
                         }
                     }
+
                     span {
                         &.ps-sp-bot02 {
                             left: 50%;
                         }
                     }
+
                     span {
                         &.ps-sp-bot03 {
                             right: 100%;
                         }
                     }
-                    
+
                     .img-handler-top {
                         position: absolute;
                         bottom: 0;
@@ -243,14 +249,17 @@ $brand-color:#df8625;
 
                     p {
                         text-align: center;
-                        width: 80%;
+                        width: 70%;
                         margin: 0 auto;
+                        font-size: 12px;
+                        color: #000;
+                        font-weight: bold;
                     }
 
                     .ps-top {
                         position: absolute;
-                        bottom: 0;
-                        margin-bottom: 100px;
+                        bottom: 100px;
+
                     }
 
                     .ps-bot {
@@ -262,9 +271,31 @@ $brand-color:#df8625;
         }
     }
 }
+
 .ps-timeline-sec .container ol.ps-timeline li span.ps-sp-top02 {
     left: 50%;
 }
+
 .ps-timeline-sec .container ol.ps-timeline li span.ps-sp-top03 {
     right: -22px;
+}
+
+.ps-timeline-sec .container ol.ps-timeline li .ps-top01 {
+    position: absolute;
+    bottom: 64px;
+    left: -67px;
+}
+
+.ps-timeline-sec .container ol.ps-timeline li .ps-top02 {
+    position: absolute;
+    bottom: 64px;
+    left: 11px;
+}
+.ps-timeline-sec .container ol.ps-timeline li .ps-top0 {
+    position: absolute;
+    bottom: 64px;
+    left: 44px;
+}
+.ps-timeline-sec .container ol.ps-timeline li .ps-top0 p {
+    width: 100%;
 }

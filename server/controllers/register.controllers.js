@@ -11,7 +11,6 @@ const Register = {
             
             var passHash = await bcryptjs.hash(req.body.password_, 8)
             let newUser = {
-                
                 user_name: req.body.user_name,
                 email: req.body.email,
                 password_: passHash,

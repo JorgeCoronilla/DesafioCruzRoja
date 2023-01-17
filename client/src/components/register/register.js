@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { defaultFetch } from '../helpers/defaultFetch';
-import { GrClose } from 'react-icons/gr'
 import { Alert } from '../modals/alert';
 import { Timeline } from './timeline';
 import { CreateRegisterContext } from '../providers/createRegisterContext';
 import defaultUser from '../../media/default-avatar.jpg'
-
+import { ReactComponent as Close } from '../../media/cerrar.svg';
+import { ReactComponent as Logo } from '../../media/logo.svg';
 export const Register = () => {
     
     const { setDisplay, message, setMessage, showAlert, setShowAlert} = useContext(CreateRegisterContext);
@@ -86,34 +86,39 @@ export const Register = () => {
     return (
 
         <div className='register-container'>
-
+            <div className="register-nav">
+                <Logo/>
+                <div className='GrCloseBig'><Close /></div>
+            </div>
             <div className="register-header">
-                <div className='regTitle'><h1>Se parte de la comunidad</h1></div>
-                <div className='GrCloseBig'><GrClose /></div>
+                <div className='regTitle'><h1>Sé parte de la comunidad</h1></div>
             </div>
             <div><Timeline /></div>
             <div className='formContainer'>
                 <form onSubmit={insertUser}>
-                    <div>
-                        <label>Nombre</label>
+                    <div className='inputContainer'>
+                        <label><sup>*</sup>Nombre</label>
                         <input type="text" name='name_' required minLength="5" maxLength="50" />
                     </div>
-                    <div>
-                        <label>Apellidos</label>
-                        <input type="text" name='surname_' required minLength="5" maxLength="50" />
+                    <div className='inputContainer'>
+                        <label>Apellido</label>
+                        <input type="text" name='surname_' minLength="5" maxLength="50" />
                     </div>
-                    <div>
-                        <label>Password</label>
+                    <div className='inputContainer'>
+                        <label><sup>*</sup>Contraseña</label>
                         <input type="password" name="pass" required minLength="4" maxLength="12"  />
                     </div>
-                    <div>
-                        <label>Confirmar password</label>
+                    <div className='inputContainer'>
+                        <label><sup>*</sup>Confirmar contraseña</label>
                         <input type="password" name="confirmPass" required minLength="4" maxLength="12" />
                     </div>
-                    <div className='messageBox'>
+                    <div className='messageRegister'>
                         {showAlert && <Alert message={message} />}
                     </div>
-                    <input className='contButton' type="submit" value="Continuar" />
+                    <div className='inputRegister'>
+                        <input className='contButton' type="submit" value="Continuar" />
+                    </div>
+
                 </form>
             </div>
         </div>
