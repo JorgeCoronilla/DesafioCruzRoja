@@ -8,7 +8,7 @@ export const ProfileNavBar2 = ({setDisplay}) => {
 
   return (
     <div>
-    <div className='profileNavBar'>
+    <div className='profileNavBar4'>
     <div><p className='flecha' onClick={close}> &#10094;</p></div>
     <div><h6>Expertos</h6></div>
     <div><p className='iconLupa'></p></div>
