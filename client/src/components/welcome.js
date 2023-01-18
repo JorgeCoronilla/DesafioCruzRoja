@@ -13,7 +13,7 @@ import { SlideEmotional } from './home/slideEmotional';
 import { CatMenu } from './welcome/catMenu'
 import { SlideLegal } from './home/slideLegal';
 import { PopRegister } from './welcome/popRegister';
-import { NavBotoom } from './home/navBottom';
+import { NavBottom } from './home/navBottom';
 import { defaultFetch } from '../helpers/defaultHelpers';
 import { Search } from './home/search';
 import { CookiesBanner } from './welcome/cookiesBanner';
@@ -34,7 +34,7 @@ export const Welcome = () => {
         var session = cookies.get("session");
         if(!session) { navigate('/')};
 
-       defaultFetch(`http://localhost:3001/get_current_user`, "post",
+       defaultFetch(`http://cuevos3.westeurope.cloudapp.azure.com:3001/get_current_user`, "post",
        { token: session })
        .then((res) => {
             if (res.mensaje==="token error") { navigate('/')} else {
@@ -63,7 +63,6 @@ export const Welcome = () => {
                         <SlideEmotional />
                         <SlideLegal />
                         <SignIn />
-                        <NavBotoom/>
                     </div>
                 }
                 {display === "menu" &&

@@ -4,7 +4,6 @@ import { defaultFetch } from '../helpers/defaultFetch';
 import { Alert } from '../modals/alert';
 import { Timeline } from './timeline';
 import { CreateRegisterContext } from '../providers/createRegisterContext';
-import defaultUser from '../../media/default-avatar.jpg'
 import { ReactComponent as Close } from '../../media/cerrar.svg';
 import { ReactComponent as Logo } from '../../media/logo.svg';
 export const Register = () => {
@@ -14,7 +13,7 @@ export const Register = () => {
     const { token } = useParams();
     // Comprueba si el token de la url es válido
     useEffect(() => {
-        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+        defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/check-email", "POST", { token: token })
             .then((res) => {
                 if (res.mensaje) {
                     setEmail(res.email);
@@ -57,7 +56,7 @@ export const Register = () => {
                 area: "",
             
             }
-            const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
+            const res = await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/register", "POST", newUser)
             if (res.mensaje) {
                 setMessage("A continuación rellenaremos tu perfil")
                 setShowAlert(true)
