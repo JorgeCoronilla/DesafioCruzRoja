@@ -20,6 +20,7 @@ import { NavBarLanguages } from './welcome/navBarLanguages';
 import { Search } from './home/search';
 import { NavBarMenuLogged } from './home/navBarMenuLogged';
 import { ReviewList } from './profile/reviewList';
+import { NavBottom } from './home/navBottom';
 
 export const Profile = () => {
     const cookies = new Cookies();
@@ -125,9 +126,10 @@ export const Profile = () => {
 
             {(display === "firstView" && user) &&
                 <div>
-                    <ProfileNavBar />
+                    <ProfileNavBar2 setDisplay={setDisplay}/>
                     <ProfileCard />
                     <ReviewList />
+                    <NavBottom setDisplay={setDisplay}/>
                 </div>
             }
             {(display === "firstContact" && user) &&
@@ -139,8 +141,8 @@ export const Profile = () => {
             }
             {(display === "list" && user) &&
                 <div>
-                    <ProfileNavBar />
-                    <CardOnList />
+                    <ProfileNavBar setDisplay={setDisplay}/>
+                    <CardOnList setDisplay={setDisplay}/>
                 </div>
             }
             {(display === "inbox" && user) &&

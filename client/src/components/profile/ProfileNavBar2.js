@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
-import { CreateProfileContext } from '../providers/createProfileContext';
+import React from 'react'
+import { ReactComponent as LogoNav } from '../../media/logo.svg';
 
-export const ProfileNavBar2 = () => {
-  const { display, setDisplay  } = useContext(CreateProfileContext);
-  const inbox = () => {
+export const ProfileNavBar2 = ({setDisplay}) => {
+   const inbox = () => {
     setDisplay("inbox")
   }
 

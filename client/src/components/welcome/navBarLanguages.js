@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import spain from '../../media/españa.png'
 import uk from '../../media/uk.png'
 import arabe from '../../media/arabe.png'
@@ -9,6 +9,7 @@ import alemania from '../../media/alemania.png'
 import francia from '../../media/francia.png'
 import portugal from '../../media/portugal.png'
 import ucrania from '../../media/ucrania.png'
+import check from '../../media/check.svg'
 
 export const NavBarLanguages = ( { setDisplay }) => {
    
@@ -36,6 +37,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Español</p>
                             </div>
                             <div>
+                            <img src={check} className="check" alt="check" />
                             <img src={spain} alt="Spanish flag" />
                             </div>
                         </div>
