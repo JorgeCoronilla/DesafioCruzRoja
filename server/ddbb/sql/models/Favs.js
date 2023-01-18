@@ -1,7 +1,7 @@
 const { DataTypes} = require('sequelize');
 const sequelize = require('../index');
 
-const FavsModel = sequelize.define('messages', {
+const FavsModel = sequelize.define('favs', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -14,8 +14,7 @@ const FavsModel = sequelize.define('messages', {
     fk_user_id_recipient: {
         type: DataTypes.INTEGER,
         allowNull: false
-    },
-
+    }
 }, {
     timestamps: false
 });

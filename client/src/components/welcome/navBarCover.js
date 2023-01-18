@@ -2,7 +2,10 @@ import React from 'react'
 import spain from '../../media/españa.png'
 import { ReactComponent as LogoNav } from '../../media/logo.svg';
 import { ReactComponent as Menu } from '../../media/hamburguesa.svg';
+
+
 export const NavBarCover = ({setDisplay}) => {
+
 
     const navMenu1 = () => {
         setDisplay("menu");
@@ -31,6 +34,4 @@ export const NavBarCover = ({setDisplay}) => {
         </div>
     )
 }
-/*
- <div><img onClick={languages} src={spain} alt="Spanish flag" /></div>
-                  */
+

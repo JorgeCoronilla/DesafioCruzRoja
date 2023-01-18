@@ -1,0 +1,12 @@
+.unfav, .favorite {
+    float: right;
+    top: 5vh;
+    right: 2vh;
+    position: relative;
+}
+.favorite svg {
+    fill:#E04848;
+}
+.favorite svg path {
+    stroke: #E04848;
+}

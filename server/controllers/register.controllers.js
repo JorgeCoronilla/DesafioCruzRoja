@@ -11,7 +11,6 @@ const Register = {
             
             var passHash = await bcryptjs.hash(req.body.password_, 8)
             let newUser = {
-                
                 user_name: req.body.user_name,
                 email: req.body.email,
                 password_: passHash,
@@ -27,7 +26,7 @@ const Register = {
                 support_type: `support_type`,
                 expert: false, 
                 area: `area`, 
-                pic: `pic`
+                pic: `avatar.jpg`
             }
             UserModel.create(newUser)
                 .then((data) => { res.json({ mensaje: true }) })

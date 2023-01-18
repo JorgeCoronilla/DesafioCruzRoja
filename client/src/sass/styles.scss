@@ -13,10 +13,12 @@
 @import "./cover/navBarCover.scss";
 @import "./cover/navBarMenu.scss";
 @import "./cover/navBarLanguage.scss";
+@import "./home/navBottom.scss";
+
+
 @import "./cover/search.scss";
 @import "./cover/navBarMenuLogged.scss";
 @import "./cover/navBottom.scss";
-
 
 //Register
 @import "./register/register.scss";
@@ -30,4 +32,7 @@
 @import "./profile/inbox.scss";
 @import "./profile/profile.scss";
 @import "./profile/profileNavBar.scss";
+
 @import "./profile/reviews.scss";
+@import "./profile/favs.scss"
+
