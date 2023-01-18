@@ -1,14 +1,12 @@
-import React, { useContext } from 'react'
-import { CreateProfileContext } from '../providers/createProfileContext';
+import React from 'react'
 import { ReactComponent as Lupa } from '../../media/lupa.svg';
 
-export const ProfileNavBar = () => {
-  const { display, setDisplay  } = useContext(CreateProfileContext);
-
+export const ProfileNavBar = ({setDisplay}) => {
+  const close = () =>{setDisplay('main')}
   return (
     <div>
     <div className='profileNavBar'>
-    <div><p className='flecha'> &#10094;</p></div>
+    <div><p className='flecha' onClick={close}> &#10094;</p></div>
     <div><h6>Expertos</h6></div>
     <div><p className='iconLupa'><Lupa/></p></div>
              

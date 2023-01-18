@@ -1,15 +1,16 @@
 
 
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { useNavigate } from 'react-router-dom'
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
+//import cerrar from '../../media/cerrar.svg'
 
-export const SignIn = () => {
+export const SignIn = ({setDisplay}) => {
     const { message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
-    
+    const close = () => {setDisplay("main");}
 
     const sigInSub = async e => {
         e.preventDefault();
@@ -43,6 +44,7 @@ export const SignIn = () => {
             {showAlert &&
                 <Alert message={message} />
             }
+       
             <div className='signinContainer'>
                 <form onSubmit={sigInSub}>
                     <h4>Copy marketing para incentivar el registro</h4>
