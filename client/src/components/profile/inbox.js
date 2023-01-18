@@ -26,7 +26,9 @@ export const Inbox = () => {
                 </div>
                 {showTab === "msg" &&
                     <div>
-                        {channelsAct.map((channel, index) => {
+                        {channelsAct &&
+                        <div>
+                               {channelsAct.map((channel, index) => {
                             return (
                                 <div className='inboxContainer' key={index}>
                                     {channel.user_id_sender === currentUser.user_id ?
@@ -52,12 +54,18 @@ export const Inbox = () => {
 
                             )
                         })}
+                        </div>
+                        }
+                     
                     </div>
                 }
 
                 {showTab === "arch" &&
                       <div>
-                      {channelsArc.map((channel, index) => {
+
+                        {channelsArc &&
+                        <div>
+                              {channelsArc.map((channel, index) => {
                           return (
                               <div className='inboxContainer' key={index}>
                                   {channel.user_id_sender === currentUser.user_id ?
@@ -79,7 +87,10 @@ export const Inbox = () => {
                                   }
                               </div>
                           )
-                      })}
+                      })}   
+                        </div>
+                        }
+                    
                   </div>
                 }
             </div>

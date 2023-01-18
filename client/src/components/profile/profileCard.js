@@ -10,14 +10,14 @@ export const ProfileCard = () => {
 
   const firstMessage = () => {
 
-    defaultFetch(`http://localhost:3001/msg/check_channel`, "post",
+    defaultFetch(`http://cuevos3.westeurope.cloudapp.azure.com:3001/msg/check_channel`, "post",
       { currentProfileId: profileId, token: session })
       .then((res) => {
         if (res) {
           localStorage.setItem('currentChannelId', res.id)
           setDisplay("firstContact");
         } else {
-          defaultFetch(`http://localhost:3001/msg/create_channel`, "post",
+          defaultFetch(`http://cuevos3.westeurope.cloudapp.azure.com:3001/msg/create_channel`, "post",
             { token: session, 
               recipient: profileId , 
               sendPic:  currentUser.pic, 
