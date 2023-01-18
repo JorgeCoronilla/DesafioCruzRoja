@@ -38,3 +38,24 @@
 .messageBox {
     height: 50px;
 }
+.formContainerP {
+    text-align: center;
+    margin-top: 20px;
+
+}
+input.check[type='checkbox'] {
+    accent-color: #132A68 ;
+    width: 22px;
+    height: 22px;
+} 
+.checkBlockPrefs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin: 50px 0;
+}
+.checkBlockPrefs a {
+    color: black
+}

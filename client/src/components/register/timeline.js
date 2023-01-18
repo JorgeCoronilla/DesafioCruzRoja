@@ -1,39 +1,45 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import { useContext } from 'react';
+import { CreateRegisterContext } from '../providers/createRegisterContext';
 
 export const Timeline = () => {
-    const [value, setValue] = useState(0);
-    const [previous, setPrevious] = useState(0);
-    
-    // Values should be only date
-    const VALUES = ["2021-01-01", "2021-01-15"];
-    
-    // Description array corresponding to values
-    const description = [
-      "The event of 1 Jan 2021 : Happy New Year",
-      "The event of 15 Jan 2021 : Festival"
-    ];
-    
+    const [here, setHere] = useState();
+   
+    const { display, setDisplay, message, setMessage, showAlert, setShowAlert} = useContext(CreateRegisterContext);
+
+    useEffect(() => {
+        if (display === "register") {
+            setHere(1)
+        }
+        if (display === "profile") {
+            setHere(2)
+        }
+        if (display === "prefs") {
+            setHere(3)
+        }
+    }, [])
+    console.log(here)
     return (
         <section className="ps-timeline-sec">
         <div className = "container">
             <ol className="ps-timeline">
                 <li>
-                    <div className="ps-top">
+                    <div className="ps-top01">
                         <p>Tus datos de acesso</p>
                     </div>
-                    <span className="ps-sp-top01">1</span>
+                    <span className={here ===1 ? "ps-sp-top01 here": "ps-sp-top01"}>1</span>
                 </li>
                 <li>
-                    <div className="ps-top">
+                    <div className="ps-top02">
                         <p>Tu perfil</p>
                     </div>
-                    <span className="ps-sp-top02">2</span>
+                    <span className={here === 2 ? "ps-sp-top02 here": "ps-sp-top02"}>2</span>
                 </li>
                 <li>
-                    <div className="ps-top">
+                    <div className="ps-top0">
                         <p>Tus preferencias</p>
                     </div>
-                    <span className="ps-sp-top03">3</span>
+                    <span className={here === 3 ? "ps-sp-top03 here": "ps-sp-top03"}>3</span>
                 </li>
             </ol>
         </div>
