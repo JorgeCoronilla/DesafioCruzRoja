@@ -51,7 +51,7 @@ const list = () =>{
 
           <div className='profileBtns'>
             
-            <button className='loginBtn' onClick={list}>55 personas han recibido su ayuda</button>
+            <button className='loginBtn3' onClick={list}>55 personas han recibido su ayuda</button>
             <button className='signinBtn2' onClick={firstMessage}>enviar mensaje</button>
 
           </div>

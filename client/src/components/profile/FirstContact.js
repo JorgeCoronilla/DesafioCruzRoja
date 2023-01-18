@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { defaultFetch } from '../../helpers/defaultHelpers';
 import { CreateProfileContext } from '../providers/createProfileContext';
+import { ReactComponent as Arrow } from '../../media/derechasend.svg';
+
 import Cookies from 'universal-cookie';
 export const Firstcontact = () => {
     const cookies = new Cookies();
@@ -87,7 +89,7 @@ export const Firstcontact = () => {
             <div className='newMessage'>
                     <form onSubmit={sendMessage}>
                         <input name='message' />
-                        <button type='submit'>-></button>
+                        <button type='submit'>&#10151;</button>
                     </form>
                 </div>
         </div>

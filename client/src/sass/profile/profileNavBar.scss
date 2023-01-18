@@ -4,6 +4,7 @@
     justify-content:space-between;
     background-color: #132A68;
     position: fixed;
+    margin-top: 0;
     width: 390px;
     height: 56px;
     color: white;
@@ -70,14 +71,13 @@
     line-height: 20px;
     width: 18px;
     height: 11,67px;
-    color: #19274C;
+      color: white;
     margin: 20px 18px;
 }
 
 .profileNavBar2 img {
-    width: 28px;
-    height: 17px;
-    margin: 18px 18px;
+    width: 106px;
+    margin: 18px 0 0 18px;
 }
 
 //
@@ -87,10 +87,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: white;
-    position: fixed;
+    color: white;
+    position: absolute;
+    top: 0;
     width: 390px;
     height: 56px;
+    background-color: #19274C;
 }
 
 .profileNavBar3 h6 {
@@ -99,7 +101,8 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #19274C;
+   
+   
     margin-top: 18px;
 }
 
@@ -111,7 +114,7 @@
     line-height: 20px;
     width: 18px;
     height: 11,67px;
-    color: #19274C;
+    color: white;
     margin: 20px 18px;
 }
 

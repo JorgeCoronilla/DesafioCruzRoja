@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import { ReactComponent as Heart } from '../../media/heart.svg';
 import { CreateProfileContext } from '../providers/createProfileContext';
 import Cookies from 'universal-cookie';
-import { Favs } from './favs';
 
 export const CardOnList = ({setDisplay}) => {
 

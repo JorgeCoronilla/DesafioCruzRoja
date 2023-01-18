@@ -4,15 +4,15 @@ import { CreateProfileContext } from '../providers/createProfileContext';
 export const ProfileNavBar3 = () => {
   const { display, setDisplay, user  } = useContext(CreateProfileContext);
   const close = () => {
-    setDisplay("firstView")
+    setDisplay("main")
   }
 
   return (
     <div>
     <div className='profileNavBar3'>
-    <div><p onClick={close}> &#10094;</p></div>
-        <div><h6>{user.user_name}</h6></div>
-        <div><p>P</p></div>
+    <div><p className='flecha' onClick={close}> &#10094;</p></div>
+    <div><h6>Expertos</h6></div>
+    <div><p className='iconLupa'></p></div>
     </div>
 </div>
   )

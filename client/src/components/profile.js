@@ -109,6 +109,7 @@ export const Profile = () => {
                     {pop &&
                         <Search setDisplay={setDisplay}/>
                     }
+                    <NavBottom setDisplay={setDisplay} display ={display}/>
                     <SlideEmotional />
                     <SlideLegal />
                 </div>
@@ -126,30 +127,31 @@ export const Profile = () => {
 
             {(display === "firstView" && user) &&
                 <div>
-                    <ProfileNavBar2 setDisplay={setDisplay}/>
+                    <ProfileNavBar3 setDisplay={setDisplay}/>
                     <ProfileCard />
                     <ReviewList />
-                    <NavBottom setDisplay={setDisplay}/>
+                    <NavBottom setDisplay={setDisplay} display ={display}/>
                 </div>
             }
             {(display === "firstContact" && user) &&
                 <div>
-                    <ProfileNavBar2 />
-                    <ProfileNavBar3 />
+                     <ProfileNavBar3 setDisplay={setDisplay}/>
                     <Firstcontact />
+                    <NavBottom setDisplay={setDisplay} display ={display}/>
                 </div>
             }
             {(display === "list" && user) &&
                 <div>
                     <ProfileNavBar setDisplay={setDisplay}/>
                     <CardOnList setDisplay={setDisplay}/>
+                    <NavBottom setDisplay={setDisplay} display ={display}/>
                 </div>
             }
             {(display === "inbox" && user) &&
                 <div>
-                    <ProfileNavBar2 />
-                    <ProfileNavBar />
-                    <Inbox />
+                   <ProfileNavBar setDisplay={setDisplay}/>
+                    <Inbox setDisplay={setDisplay}/>
+                    <NavBottom setDisplay={setDisplay} display ={display}/>
                 </div>
             }
         </CreateProfileContext.Provider>
