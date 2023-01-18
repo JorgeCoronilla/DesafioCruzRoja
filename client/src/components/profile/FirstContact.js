@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { defaultFetch } from '../../helpers/defaultHelpers';
 import { CreateProfileContext } from '../providers/createProfileContext';
+import { ReactComponent as Arrow } from '../../media/derechasend.svg';
+
 import Cookies from 'universal-cookie';
 export const Firstcontact = () => {
     const cookies = new Cookies();
@@ -12,7 +14,7 @@ export const Firstcontact = () => {
     const channelId = parseInt(localStorage.getItem('currentChannelId'))
     useEffect(() => {
         console.log(user)
-        defaultFetch(`http://cuevos3.westeurope.cloudapp.azure.com:3001/msg/read_messages`, "post",
+        defaultFetch(`http://localhost:3001/msg/read_messages`, "post",
             { token: session, channelId: channelId })
             .then((res) => {
                 if (res.length > 0) {
@@ -24,7 +26,7 @@ export const Firstcontact = () => {
 
     const sendMessage = (e) => {
         e.preventDefault();
-        defaultFetch(`http://cuevos3.westeurope.cloudapp.azure.com:3001/msg/create_message`, "post",
+        defaultFetch(`http://localhost:3001/msg/create_message`, "post",
             { token: session, fk_channel_id: channelId, recipient: profileId, message: e.target.message.value })
             .then((res) => {
                 if (res.length > 0) { setMessages(res) }
@@ -87,7 +89,7 @@ export const Firstcontact = () => {
             <div className='newMessage'>
                     <form onSubmit={sendMessage}>
                         <input name='message' />
-                        <button type='submit'>-></button>
+                        <button type='submit'>&#10151;</button>
                     </form>
                 </div>
         </div>

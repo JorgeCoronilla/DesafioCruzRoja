@@ -23,7 +23,7 @@ export const Login = ({setDisplay}) => {
             email: e.target.email.value,
             pass: e.target.pass.value
         };
-        await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/login", "POST", user).then((res) => {
+        await defaultFetch("http://localhost:3001/login", "POST", user).then((res) => {
             if (res.validation) {
                 localStorage.setItem("user", JSON.stringify(res.user));
                 cookies.set('session', res.token, { path: '/' });

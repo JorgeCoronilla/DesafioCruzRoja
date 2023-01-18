@@ -27,13 +27,13 @@ export const Favs = () => {
                 sender: profileId,
                 recipient: recipient
             }
-            const res = defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/fav", "POST", newFav)
+            const res = defaultFetch("http://localhost:3001/fav", "POST", newFav)
         } else if (favD !== undefined ){
             let fav = {
                 sender: profileId,
                 recipient: recipient
             }
-            const res = defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/unfav", "POST", fav)
+            const res = defaultFetch("http://localhost:3001/unfav", "POST", fav)
         }
     }, [favD, recipient])
 

@@ -19,9 +19,9 @@ const pool = new Sequelize(
     host: process.env.HOST,
     port: 3306,
     dialect: 'mysql',
-   dialectOptions: {  ssl: {
-        ca: serverCa
-    }},
+//    dialectOptions: {  ssl: {
+//         ca: serverCa
+//     }},
     pool: {
         max: 100,
         min: 0,
