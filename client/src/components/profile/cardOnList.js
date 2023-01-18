@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ReactComponent as Heart } from '../../media/heart.svg';
 import { CreateProfileContext } from '../providers/createProfileContext';
 import Cookies from 'universal-cookie';
@@ -9,7 +9,6 @@ export const CardOnList = ({setDisplay}) => {
     const { usersList, refresh, setRefresh } = useContext(CreateProfileContext);
     const cookies = new Cookies();
     var session = cookies.get("session");
-    const { usersList, setDisplay, refresh, setRefresh } = useContext(CreateProfileContext);
     const [favD, setFavD] = useState([]);
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
     

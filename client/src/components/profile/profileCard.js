@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { defaultFetch } from '../../helpers/defaultHelpers';
 import { CreateProfileContext } from '../providers/createProfileContext';
 import Cookies from 'universal-cookie';
+import { Favs } from './favs';
 export const ProfileCard = () => {
   const cookies = new Cookies();
   var session = cookies.get("session");
@@ -31,7 +32,7 @@ export const ProfileCard = () => {
         }
       })
   }
-
+console.log(user.id)
 const list = () =>{
   console.log("Entra")
   setDisplay("list");
@@ -41,8 +42,10 @@ const list = () =>{
       <div className='profile'>
         <div className='profileCont1'>
 
-
-          <img className='profilePic' src={user.pic} alt="user 1" />
+          <div>
+            <img className='profilePic' src={user.pic} alt="user 1" />
+            <div className='likeBg' id={user.user_id}><Favs/></div>
+          </div>
           <h3>{user.user_name}</h3>
           <h5>22 reseñas Verificado</h5>
 

@@ -28,15 +28,15 @@ export const SlideEmotional = () => {
 
           Autoplay#play()
           <SplideSlide>
-            <img className='thumbnail' src="image1.jpg" alt="user 1" />
+            <img className='thumbnail' src="../image1.jpg" alt="user 1" />
             <h3>Marta Gonzalez</h3>
           </SplideSlide>
           <SplideSlide>
-            <img className='thumbnail' src="image2.jpg" alt="user 2" />
+            <img className='thumbnail' src="../image2.jpg" alt="user 2" />
             <h3>Ayat Hassan</h3>
           </SplideSlide>
           <SplideSlide>
-            <img className='thumbnail' src="image3.jpg" alt="user 3" />
+            <img className='thumbnail' src="../image3.jpg" alt="user 3" />
           </SplideSlide>
         </Splide>
 

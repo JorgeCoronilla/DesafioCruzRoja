@@ -37,7 +37,7 @@ export const NavBarLanguages = ( { setDisplay }) => {
                                 <p>Español</p>
                             </div>
                             <div>
-                            <img src={check} className="check" alt="check" />
+                            <img src={check} className="checkLan" alt="check" />
                             <img src={spain} alt="Spanish flag" />
                             </div>
                         </div>

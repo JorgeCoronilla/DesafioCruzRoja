@@ -1,12 +1,34 @@
-.unfav, .favorite {
+.cardBack .unfav, .cardBack .favorite {
     float: right;
     top: 5vh;
     right: 2vh;
-    position: relative;
+    position: absolute;
 }
 .favorite svg {
     fill:#E04848;
 }
 .favorite svg path {
     stroke: #E04848;
+}
+.unfav svg path {
+    stroke: black;
+}
+.cardBack .unfav svg path {
+    stroke: #fff;
+}
+.likeBg .unfav, .likeBg .favorite {
+    float: right;
+    top: 5vh;
+    right: 2vh;
+    position: absolute;
+}
+.likeBg {
+    float: right;
+    position: relative;
+    top: -23vh;
+    left: -7vw;
+}
+.likeBg .unfav, .likeBg .favorite {
+    top: 1.8vh;
+    right: 1.3vh;
 }

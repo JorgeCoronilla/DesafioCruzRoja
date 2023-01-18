@@ -1,15 +1,12 @@
 .signinContainer {
     background-color: #F0F0F0;
-    height:fit-content;
     margin-bottom: 0;
     color:#19274C;
-    margin-top: -22 px;
 }
 
 .signinContainer button {
 width: 342px;
 height: 48px;
-margin-left: 23px;
 border: none;
 background: #E04848;
 border-radius: 20px;
@@ -19,7 +16,8 @@ font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 20px;
-margin-bottom: 40px;
+margin-top: 16px;
+margin-bottom: 72px;
 /* identical to box height */
 
 text-align: center;
@@ -34,19 +32,22 @@ font-weight: 700;
 font-size: 20px;
 line-height: 24px;
 text-align: center;
-    padding: 60px 45px 30px;
+padding: 60px 45px 30px;
 }
-
-
-
+.signinContainer form {
+    text-align: center;
+}
 .signinContainer input {
-width: 332px;
+width: 322px;
 height: 48px;
 background: #FBFBFB;
 border: 1.5px solid #DBDBDB;
 border-radius: 10px;
-margin: 0 23px 15px;
 font-family: 'Montserrat';
 font-size: 16px;
+font-weight: bold;
 padding-left: 20px;
+}
+.loginContainer .sigText {
+    margin-top: 52px;
 }

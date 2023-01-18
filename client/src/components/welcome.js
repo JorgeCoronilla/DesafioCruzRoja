@@ -13,11 +13,11 @@ import { SlideEmotional } from './home/slideEmotional';
 import { CatMenu } from './welcome/catMenu'
 import { SlideLegal } from './home/slideLegal';
 import { PopRegister } from './welcome/popRegister';
-import { NavBotoom } from './home/navBottom';
+import { NavBottom } from './home/navBottom';
 import { defaultFetch } from '../helpers/defaultHelpers';
 import { Search } from './home/search';
 import { CookiesBanner } from './welcome/cookiesBanner';
-
+import { SignInMenu } from './welcome/signinMenu';
 
 
 export const Welcome = () => {
@@ -63,7 +63,6 @@ export const Welcome = () => {
                         <SlideEmotional />
                         <SlideLegal />
                         <SignIn />
-                        <NavBotoom/>
                     </div>
                 }
                 {display === "menu" &&
@@ -81,7 +80,7 @@ export const Welcome = () => {
                     <Login setDisplay={setDisplay}/>
                 }
                 {display === "sign-in" &&
-                    <SignIn setDisplay={setDisplay}/>
+                    <SignInMenu setDisplay={setDisplay}/>
                 }
                 {
                 display === "list" &&

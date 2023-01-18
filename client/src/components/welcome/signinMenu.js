@@ -1,16 +1,17 @@
 
-
 import React, { useContext } from 'react'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { useNavigate } from 'react-router-dom'
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
-//import cerrar from '../../media/cerrar.svg'
-
-export const SignIn = ({setDisplay}) => {
+import cerrar from '../../media/cerrar.svg'
+import logo from '../../media/cruz_roja_svg.svg'
+import logoText from '../../media/Frame.png'
+import { RiHeart3Line } from 'react-icons/ri';
+export const SignInMenu = ({ setDisplay }) => {
     const { message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
-    const close = () => {setDisplay("main");}
+    const close = () => { setDisplay("main"); }
 
     const sigInSub = async e => {
         e.preventDefault();
@@ -40,19 +41,26 @@ export const SignIn = ({setDisplay}) => {
     }
 
     return (
-        <div>
+        <div className='login-block'>
             {showAlert &&
                 <Alert message={message} />
             }
-       
-            <div className='signinContainer'>
+            <div className='loginContainer'>
+                <img className='cerrar' src={cerrar} alt="close" onClick={close} />
+                <img className='cross' src={logo} alt="redcross logo" />
+                <img className='crossText' src={logoText} alt="redcross logo" />
                 <form onSubmit={sigInSub}>
-                    <h4>Copy marketing para incentivar el registro</h4>
-                        <input type="email" required name="email" minLength="5" maxLength="40" placeholder="Dirección de email"/>
-                    <button type="submit" value="Registrarse" className='registerBtn'>Hazte miembro</button>
+                    <div>
+                        <h3 className='sigText'>Para terminar de configurar tu cuenta y empezar a conectar con nuestros usuarios, confirma que tu correo electrónico es correcto.</h3>
+                    </div>
+                    <div>
+                        <p>*Correo electrónico</p>
+                        <input className ="loginInput" type="email" required name="email" minLength="5" maxLength="40"/>
+                        <button type="submit" value="Registrarse" className='registerBtn'>Hazte miembro</button>
+                    </div>
                 </form>
-            </div>
 
+            </div>
         </div>
     )
 }

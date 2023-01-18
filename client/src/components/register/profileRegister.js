@@ -18,7 +18,8 @@ export const ProfileRegister = () => {
     const [language, setLanguage] = useState();
     const [working, setWorking] = useState();
     const [inSpain, setInSpain] = useState();
-
+    const close = () => {setDisplay("main")}
+    
     // Comprueba si el token de la url es válido
     useEffect(() => {
         defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
@@ -127,7 +128,7 @@ export const ProfileRegister = () => {
         <div className='register-container'>
             <div className="register-nav">
                 <Logo />
-                <div className='GrCloseBig'><Close /></div>
+                <div onClick={close} className='GrCloseBig'><Close/></div>
             </div>
             <div className="register-header">
                 <div className='regTitle'><h1>Sé parte de la comunidad</h1></div>
