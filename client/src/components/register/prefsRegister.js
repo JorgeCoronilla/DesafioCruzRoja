@@ -17,6 +17,8 @@ export const PrefsRegister = () => {
     const [legal, setLegal] = useState(false);
     const [labor, setLabor] = useState(false);
     const [disable, setDisable] = useState(true)
+
+    const close = () => {setDisplay("main");} 
     // Comprueba si el token de la url es válido
     useEffect(() => {
         defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
@@ -85,7 +87,7 @@ export const PrefsRegister = () => {
         <div className='register-container'>
             <div className="register-nav">
                 <Logo />
-                <div className='GrCloseBig'><Close /></div>
+                <div className='GrCloseBig'onClick={close}><Close /></div>
             </div>
             <div className="register-header">
                 <div className='regTitle'><h1>Sé parte de la comunidad</h1></div>

@@ -3,12 +3,14 @@ import { defaultFetch } from '../helpers/defaultFetch';
 import { useNavigate } from 'react-router-dom'
 import { Alert } from '../modals/alert';
 import { CreateWelcomeContext } from '../providers/createWelcomeContex';
-//import cerrar from '../../media/cerrar.svg'
+import cerrar from '../../media/cerrar.svg'
+import logo from '../../media/logo-mail.png'
+import logoText from '../../media/Frame.png'
 
-export const SignIn = ({setDisplay}) => {
+export const SignInScreen = ({ setDisplay }) => {
     const { message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
-    const close = () => {setDisplay("main");}
+    const close = () => { setDisplay("main"); }
 
     const sigInSub = async e => {
         e.preventDefault();
@@ -38,19 +40,23 @@ export const SignIn = ({setDisplay}) => {
     }
 
     return (
-        <div>
+        <div className='login-block'>
             {showAlert &&
                 <Alert message={message} />
             }
-       
-            <div className='signinContainer'>
+            <div className='sigContainer'>
+                <img className='cerrar' src={cerrar} alt="close" onClick={close} />
+                <img className='cross' src={logo} alt="redcross logo" />
                 <form onSubmit={sigInSub}>
-                    <h4>Copy marketing para incentivar el registro</h4>
-                    <input type="email" required name="email" minLength="5" maxLength="40" placeholder='Dirección de email'/>
-                    <button type="submit" value="Registrarse" className='registerBtn' >Hazte miembro</button>
+                    <h4 className='sigText'>Para configurar tu cuenta y empezar a conectar con nuestros usuarios, te enviaremos un email para confirmar que tu dirección de correo electrónico es correcta.</h4>
+                    <label>*Dirección de correo electrónico</label>
+                    <input type="email" required name="email" minLength="5" maxLength="40" />
+                    <div>
+                        <button type="submit" value="Registrarse" className='sigBtn'>Hazte miembro</button>
+                    </div>
                 </form>
-            </div>
 
+            </div>
         </div>
     )
 }
