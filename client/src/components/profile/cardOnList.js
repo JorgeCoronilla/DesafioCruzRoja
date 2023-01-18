@@ -42,7 +42,7 @@ export const CardOnList = () => {
                                 <div className="unfav" >
                                     <Heart />
                                 </div>
-                                <img className='cardPic' src={"../" + user.pic} alt="user 1" onClick={checkUser} />
+                                <img className='cardPic' src={user.pic} alt="user 1" onClick={checkUser} />
                             </div>
                             <h3>{user.user_name}</h3>
                             <h5>22 reseñas</h5>

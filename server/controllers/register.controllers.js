@@ -26,7 +26,7 @@ const Register = {
                 support_type: `support_type`,
                 expert: false, 
                 area: `area`, 
-                pic: `pic`
+                pic: `avatar.jpg`
             }
             UserModel.create(newUser)
                 .then((data) => { res.json({ mensaje: true }) })

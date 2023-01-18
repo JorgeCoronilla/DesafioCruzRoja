@@ -207,8 +207,7 @@ $border : rgba(0, 0, 0, 0.102);;
 
                         &.ps-sp-top01 {
                             left: 0%;
-                            background: #374095;
-                            color: #fff;
+                            color: #374095;;
                         }
                     }
 
@@ -298,4 +297,10 @@ $border : rgba(0, 0, 0, 0.102);;
 }
 .ps-timeline-sec .container ol.ps-timeline li .ps-top0 p {
     width: 100%;
+}
+.ps-timeline-sec .container ol.ps-timeline li span.ps-sp-top01.here, 
+.ps-timeline-sec .container ol.ps-timeline li span.ps-sp-top02.here,
+.ps-timeline-sec .container ol.ps-timeline li span.ps-sp-top03.here {
+    background: $brand-color-b;
+    color: #fff;
 }
