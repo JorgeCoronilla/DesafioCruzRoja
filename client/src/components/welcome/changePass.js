@@ -20,7 +20,7 @@ export const ChangePass = ({setDisplay}) => {
                 token: token,
                 password_: e.target.pass.value
             }
-            const res = await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/change-pass", "post", newUser)
+            const res = await defaultFetch("http://localhost:3001/change-pass", "post", newUser)
             if (res.mensaje) {
                 setMessage("Contraseña actualizada correctamente")
                 setShowAlert(true)

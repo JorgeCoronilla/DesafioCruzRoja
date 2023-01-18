@@ -34,7 +34,7 @@ export const Welcome = () => {
         var session = cookies.get("session");
         if(!session) { navigate('/')};
 
-       defaultFetch(`http://cuevos3.westeurope.cloudapp.azure.com:3001/get_current_user`, "post",
+       defaultFetch(`http://localhost:3001/get_current_user`, "post",
        { token: session })
        .then((res) => {
             if (res.mensaje==="token error") { navigate('/')} else {

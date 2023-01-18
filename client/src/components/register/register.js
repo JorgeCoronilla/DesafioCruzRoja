@@ -13,7 +13,7 @@ export const Register = () => {
     const { token } = useParams();
     // Comprueba si el token de la url es válido
     useEffect(() => {
-        defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/check-email", "POST", { token: token })
+        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
             .then((res) => {
                 if (res.mensaje) {
                     setEmail(res.email);
@@ -56,7 +56,7 @@ export const Register = () => {
                 area: "",
             
             }
-            const res = await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/register", "POST", newUser)
+            const res = await defaultFetch("http://localhost:3001/register", "POST", newUser)
             if (res.mensaje) {
                 setMessage("A continuación rellenaremos tu perfil")
                 setShowAlert(true)

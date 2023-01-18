@@ -16,7 +16,7 @@ export const ForgotPass = ({setDisplay}) => {
     const recover = async e => {
         e.preventDefault();
         var userEmail = { email: e.target.email.value };
-        const res = await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/recover-pass", "POST", userEmail);
+        const res = await defaultFetch("http://localhost:3001/recover-pass", "POST", userEmail);
         if (res.mensaje) {
           setMessage("Correo enviado correctamente " + e.target.email.value)
           setShowAlert(true)

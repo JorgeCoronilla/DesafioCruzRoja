@@ -12,7 +12,7 @@ export const ReviewList = () => {
                 </div>
             </div>
             <div>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+            <h6>Mil gracias por la ayuda!! Me he ahorrado un montón de llamadas de teléfono al consulado.</h6>
             </div>
         </div>
         <div className='reviewContainer'>
@@ -24,7 +24,7 @@ export const ReviewList = () => {
                 </div>
             </div>
             <div>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+            <h6>Muy educado y conoce perfectamente todo el proceso. Siempre tiene tips estupendos.</h6>
             </div>
         </div>
         <div className='reviewContainer'>
@@ -36,7 +36,7 @@ export const ReviewList = () => {
                 </div>
             </div>
             <div>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+            <h6>En mi caso me ha ayudado porque entiende perfectamente las diferencias culturales entre España y nuestro país. Un 10 de mi parte.</h6>
             </div>
         </div>
         <div className='reviewContainer'>
@@ -48,7 +48,7 @@ export const ReviewList = () => {
                 </div>
             </div>
             <div>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+            <h6>Por fin alguien que entiende mis dificultades con toda esta burocracia. Sus indicaciones han sido siempre la solución más rápida, parece conocer el proceso mejor que los propios funcionarios. Es una muy buena persona y ha ayudado a mucha gente ya.</h6>
             </div>
         </div>
         <div className='reviewContainer'>
@@ -60,7 +60,7 @@ export const ReviewList = () => {
                 </div>
             </div>
             <div>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+            <h6>Sin duda un ahorro de tiempo enorme. Si tienes dudas con el proceso de adquisición de la nacionalidad esta es la persona correcta.</h6>
             </div>
         </div>
         <div className='reviewContainer'>
@@ -72,7 +72,7 @@ export const ReviewList = () => {
                 </div>
             </div>
             <div>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+            <h6>Muchas gracias. Excelente en las explicaciones. Desafortunadamente no he podido solucionar todavía la solicitud. </h6>
             </div>
         </div>
     </div>
