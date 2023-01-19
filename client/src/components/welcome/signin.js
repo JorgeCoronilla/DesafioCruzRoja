@@ -15,7 +15,7 @@ export const SignIn = ({setDisplay}) => {
         var userEmail = { email: e.target.email.value };
 
         //Envía correo de confirmación
-        const res = await defaultFetch("http://localhost:3001/sign-in", "POST", userEmail);
+        const res = await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/sign-in", "POST", userEmail);
 
         if (res) {
             setMessage("Correo enviado correctamente")

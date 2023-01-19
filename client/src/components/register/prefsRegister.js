@@ -22,7 +22,7 @@ export const PrefsRegister = () => {
     
     // Comprueba si el token de la url es válido
     useEffect(() => {
-        defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
+        defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/check-email", "POST", { token: token })
             .then((res) => {
                 if (res.mensaje) {
                     setEmail(res.email);
@@ -63,7 +63,7 @@ export const PrefsRegister = () => {
             // area: region, 
             // pic: defaultUser
         }
-        const res = await defaultFetch("http://localhost:3001/registerPrefs", "POST", newUser)
+        const res = await defaultFetch("http://cuevos3.westeurope.cloudapp.azure.com:3001/registerPrefs", "POST", newUser)
         if (res.mensaje) {
             setMessage("Registro correcto! Haz login en tu cuenta")
             setShowAlert(true)
