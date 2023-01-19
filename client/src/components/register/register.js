@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState, useContext  } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import { defaultFetch } from '../helpers/defaultFetch';
 import { Alert } from '../modals/alert';
 import { Timeline } from './timeline';
@@ -11,6 +11,9 @@ export const Register = () => {
     const { setDisplay, message, setMessage, showAlert, setShowAlert } = useContext(CreateRegisterContext);
     const [email, setEmail] = useState("gofthet@gmail.com");
     const { token } = useParams();
+    const navigate = useNavigate()
+    const close = () => {navigate('/')}
+    
     // Comprueba si el token de la url es válido
     useEffect(() => {
         defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
@@ -87,7 +90,7 @@ export const Register = () => {
         <div className='register-container'>
             <div className="register-nav">
                 <Logo />
-                <div className='GrCloseBig'><Close /></div>
+                <div className='GrCloseBig'onClick={close}><Close /></div>
             </div>
             <div className="register-header">
                 <div className='regTitle'><h1>Sé parte de la comunidad</h1></div>

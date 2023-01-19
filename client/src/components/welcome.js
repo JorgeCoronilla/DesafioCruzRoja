@@ -17,7 +17,7 @@ import { NavBottom } from './home/navBottom';
 import { defaultFetch } from '../helpers/defaultHelpers';
 import { Search } from './home/search';
 import { CookiesBanner } from './welcome/cookiesBanner';
-
+import { SignInScreen } from './welcome/signInScreen';
 
 
 export const Welcome = () => {
@@ -80,7 +80,7 @@ export const Welcome = () => {
                     <Login setDisplay={setDisplay}/>
                 }
                 {display === "sign-in" &&
-                    <SignIn setDisplay={setDisplay}/>
+                    <SignInScreen setDisplay={setDisplay}/>
                 }
                 {
                 display === "list" &&

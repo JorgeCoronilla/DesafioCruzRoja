@@ -18,7 +18,9 @@ export const ProfileRegister = () => {
     const [language, setLanguage] = useState();
     const [working, setWorking] = useState();
     const [inSpain, setInSpain] = useState();
-
+    const navigate = useNavigate()
+    const close = () => {navigate('/')}
+    
     // Comprueba si el token de la url es válido
     useEffect(() => {
         defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
@@ -48,9 +50,9 @@ export const ProfileRegister = () => {
         }))
         setLanguage(JSON.stringify(selectedOptions))
     }
-    const handleYearsIn = (select) => {
-        setGender(select.value)
-    }
+    // const handleYearsIn = (select) => {
+    //     setGender(select.value)
+    // }
     //Actualiza el usuario que se está registrando
     const updateUser = async e => {
         e.preventDefault();
@@ -76,7 +78,7 @@ export const ProfileRegister = () => {
         }
         const res = await defaultFetch("http://localhost:3001/registerProf", "POST", newUser)
         if (res.mensaje) {
-            setMessage("A continuación ajustaremos sus preferencias")
+            setMessage("Ahora ajustaremos tus preferencias")
             setShowAlert(true)
             setTimeout(() => {
                 setShowAlert(false);
@@ -127,7 +129,7 @@ export const ProfileRegister = () => {
         <div className='register-container'>
             <div className="register-nav">
                 <Logo />
-                <div className='GrCloseBig'><Close /></div>
+                <div className='GrCloseBig'onClick={close}><Close /></div>
             </div>
             <div className="register-header">
                 <div className='regTitle'><h1>Sé parte de la comunidad</h1></div>
@@ -203,7 +205,7 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="work"
-                                checked={working === "No especificar"}
+                                checked={working === "No Especificar"}
                                 onChange={() => setWorking("No Especificar")}
                                 className="check"
                             />
@@ -248,7 +250,7 @@ export const ProfileRegister = () => {
                             <input
                                 type="checkbox"
                                 name="inSpain"
-                                checked={inSpain === "more than 24 months"}
+                                checked={inSpain === "Más de 2 años"}
                                 onChange={() => setInSpain("Más de 2 años")}
                                 className="check"
                             />

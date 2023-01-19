@@ -12,7 +12,7 @@ export const CardOnList = ({setDisplay}) => {
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
     
     const checkUser = (e) => {
-        localStorage.setItem('currentProfileId', e.target.parentElement.id);
+        localStorage.setItem('recipientId', e.target.id);
         setDisplay("firstView");
         setRefresh(!refresh)
     }
@@ -24,12 +24,12 @@ export const CardOnList = ({setDisplay}) => {
                 <p>344 personas encontradas que te pueden ayudar</p>
                 {usersList.map((user, index) => {
                     return (
-                        <div className='cardBack' key={index}>
-                            <div id={user.user_id}>
-                                <div className="unfav" >
+                        <div className='cardBack'  key={index}>
+                            <div>
+                                <div className={user.user_id % 2 === 0? "favorite": "unfav"}  >
                                     <Heart />
                                 </div>
-                                <img className='cardPic' src={user.pic} alt="user 1" onClick={checkUser} />
+                                <img id={user.user_id} className='cardPic' src={user.pic} alt="user 1" onClick={checkUser} />
                             </div>
                             <h3>{user.user_name}</h3>
                             <h5>22 reseñas</h5>
