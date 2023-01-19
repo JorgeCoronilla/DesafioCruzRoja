@@ -12,7 +12,7 @@ export const Favs = () => {
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
     const [favD, setFavD] = useState()
     const [recipient, setRecipient] = useState()
-    console.log(favD)
+   
     const handleFav = (e) => {
         e.preventDefault();
         setFavD(!favD)

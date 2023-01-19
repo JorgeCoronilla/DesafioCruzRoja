@@ -12,7 +12,7 @@ export const NavBarMenuLogged = ({setDisplay}) => {
     return (
         <div>
             <div className='navBarMenu'>
-                <div><h6>Inmi</h6></div>
+                <div><h6></h6></div>
                 <div><p onClick={close}>&#10005;</p></div>
             </div>
             <div className='userCardNav'>

@@ -67,14 +67,13 @@ export const Firstcontact = () => {
                                                 <div className='msgContainer'>
                                                     <p className='msgTime'>Ahora</p>
                                                     <div className='textPicBox'>
-                                                        <img className='textPic' src={currentUser.pic} alt="user 1" />
+                                                        <img className='textPic' src={currentUser.pic} alt="user 1" />       
                                                         <p className='sentMsg'>{message.message}</p>
                                                     </div>
                                                 </div>
                                             :
                                             <div className='msgContainer'>
                                                 <p className='msgTime'>Ahora</p>
-                                                <p>user {profileId}</p>
                                                 <div className='textPicBox'>
                                                     <p className='recMsg'>{message.message}</p>
                                                     <img className='textPic' src={user.pic} alt="user 1" />

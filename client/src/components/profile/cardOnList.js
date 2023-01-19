@@ -12,7 +12,9 @@ export const CardOnList = ({setDisplay}) => {
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
     
     const checkUser = (e) => {
-        localStorage.setItem('recipientId', e.target.id);
+        e.preventDefault()
+        console.log(e.currentTarget.id)
+        localStorage.setItem('recipientId', e.currentTarget.id);
         setDisplay("firstView");
         setRefresh(!refresh)
     }
@@ -29,7 +31,7 @@ export const CardOnList = ({setDisplay}) => {
                                 <div className={user.user_id % 2 === 0? "favorite": "unfav"}  >
                                     <Heart />
                                 </div>
-                                <img id={user.user_id} className='cardPic' src={user.pic} alt="user 1" onClick={checkUser} />
+                                <img className='cardPic' src={user.pic} alt="user 1" onClick={checkUser} id={user.user_id}></img>
                             </div>
                             <h3>{user.user_name}</h3>
                             <h5>22 reseñas</h5>
