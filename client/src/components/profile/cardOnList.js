@@ -12,7 +12,7 @@ export const CardOnList = ({setDisplay}) => {
     const profileId = parseInt(localStorage.getItem('currentProfileId'))
     
     const checkUser = (e) => {
-        localStorage.setItem('recipientId', e.target.id);
+        localStorage.setItem('currentProfileId', e.target.id);
         setDisplay("firstView");
         setRefresh(!refresh)
     }
