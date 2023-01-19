@@ -61,9 +61,11 @@ label {
   box-sizing: border-box;
 }
  .submitText, .findicon {
-   justify-content: center;
    align-items: center; 
    display: flex;
+}
+.submitText {
+  padding-left: 20px;
 }
 .findicon {
   background-color: #E04848;
@@ -72,6 +74,7 @@ label {
   border-radius: 12px;
   color: #fff;
   font-size: 24px;
+  justify-content: center;
 }
 
 .buttonContainer button {

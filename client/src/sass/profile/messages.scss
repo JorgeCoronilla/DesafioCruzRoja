@@ -139,7 +139,10 @@
     padding: 11px 24px;
     
 }
-
+.newMessage form {
+    display: flex;
+    align-items: center;
+}
 .newMessage input{
     width: 74%;
     height: 48px;

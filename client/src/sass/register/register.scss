@@ -106,22 +106,31 @@ input:focus {
 .messageRegister {
     height: 15px;
 }
-.messageRegister p {
+.messageRegister {
     position: absolute;
-    left: 14%;
-    bottom: 200px;
+    font-size: 14px;
+    font-weight: 500;
+    bottom: -37%;
+    right: 18%;
 }
-.messageRegisterR p {
+.messageRegisterR  {
     position: absolute;
-    left: 14%;
+    bottom: 17%;
+    left: 13%;
+    font-size: 14px;
+    font-weight: 500;
 }
 form .inputContainer {
     padding: 0 52px;
 }
-.inputRegister, .messageBox {
-    text-align: center;
-    margin-bottom: 56px;
-}
 .inputRegister {
-    margin: 30px 0 56px 0;
+    margin: 56px 0 56px 0;
+    text-align: center;
+}
+.messageRegisterP {
+    position: absolute;
+    bottom: 10%;
+    left: 16%;
+    font-size: 14px;
+    font-weight: 500;
 }

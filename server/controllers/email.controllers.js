@@ -19,10 +19,10 @@ const email = {
         var username = email.split("@")[0]
         console.log("enviando correo")
         var mailOptions = {
-            from: 'teleQuizz@gmail.com',
+            from: 'Ayuda inmigrantes',
             to: email,
-            subject: 'Verifica tu correo electrónico para teleQuizz',
-            text: "",
+            subject: 'Ayuda inmigrantes: Verifica tu correo electrónico',
+            text: "Conecta con personas que te pueden ayudarán",
             html: `<!doctype html>
             <html ⚡4email>
             
@@ -45,7 +45,7 @@ const email = {
                                             style="border-collapse:collapse">
                                             <tbody>
                                                 <tr>
-                                                    <td align="center"><img src="http://localhost:3001/pics/logo-mail.png"
+                                                    <td align="center"><img src="https://i.ibb.co/KD7Q5FQ/logo-mail.png"
                                                             height="175" border="0" alt=""
                                                             style="border:0;line-height:100%;outline:none;text-decoration:none"
                                                             class="CToWUd a6T" data-bit="iit" tabindex="0">

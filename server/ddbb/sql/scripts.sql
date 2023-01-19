@@ -144,7 +144,27 @@ select * from users;
 
 select * from channels;
 select * from messages;
-
+insert into messages VALUES (null, 1, 2, 1, "Buenos días!","2021-01-12", "2021-01-12");
+    insert into messages VALUES (null, 2, 1, 1, "Hola, en qué puedo ayudarte","2021-01-12", "2021-01-12");
+    insert into messages VALUES (null, 1, 2, 1, "Gracias por tu rápida respuesta. Estoy con el proceso de empadronamiento pero tengo muchas dudas con los papeles que me están pidiendo. Ya sabes que el consulado tampoco es muy claro.","2021-01-12", "2021-01-12");
+    insert into messages VALUES (null, 2, 1, 1, "Sí, te entiendo perfectamente. Envíame una lista con lo que tienes. A ver cómo puedo ayudarte.","2021-01-12", "2021-01-12");
+    
+	insert into messages VALUES (null, 1, 6, 2, "Hola!","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 6, 1, 2, "Qué tal, otra vez por aquí. En que puedo ayudarte esta vez.","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 1, 6, 2, "Sigo con el trámite para la nacionalida. ¡Ya me han contestado! Pero ahora me piden de nuevo la partida de nacimiento. ¿Sabes si es posible enviarla por email?","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 6, 1, 2, "CLaro, que sñi. Estoy liado con el trabajo ahora pero te lo busco esta tarde.","2021-01-12", "2021-01-12");
+    insert into messages VALUES (null, 1, 6, 2, "¡Mil gracias!","2021-01-12", "2021-01-12");
+    
+    insert into messages VALUES (null, 1, 5, 3, "Buenas","2021-01-12", "2021-01-12");
+    insert into messages VALUES (null, 5, 1, 3, "Hola, justo contigo quería hablar. ¿Cómo van los trámites?","2021-01-12", "2021-01-12");
+    
+    insert into messages VALUES (null, 1, 4, 4, "Bunos días, me encantaría explicarte contigo para ver si me puedes ayudar con la cita al consulado. Veo que tienes experiencia y muy buenas reseñas.","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 4, 1, 4, "Hola, en este momento no estoy en España. Vuelvo la próxima semana, hablamos entonces.","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 1, 4, 4, "Perfecto. Hablamos entonces.","2021-01-12", "2021-01-12");
+    
+    insert into messages VALUES (null, 5, 1, 4, "Hola. Qué tal? Quería contactar contigo sobre el tema del pasaporte. ¿Lo has sacado aquí en Madrid?","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 1, 5, 4, "No, perdona. No tengo ni idea.","2021-01-12", "2021-01-12");
+	insert into messages VALUES (null, 1, 5, 5, "Ok, si sabes de akguien que me pueda ayuda te lo agradecería.","2021-01-12", "2021-01-12");
 
 {
     about_me: "Hola, soy Gerardo",

@@ -12,7 +12,7 @@ export const CategoryFinder = ({setPop, pop}) => {
                 <div className='homeSection1'>
                     <h2>Encuentra a una<br />persona que te<br />pueda ayudar</h2>
                     <div className='submitContainer'>
-                        <div className='submitText'>¿En qué necesitas ayuda?</div>
+                        <div className='submitText'>Selecciona categoría</div>
                         <div onClick={openCatMenu}className='findicon'><BsChevronDown/></div>
                     </div>
                 </div>

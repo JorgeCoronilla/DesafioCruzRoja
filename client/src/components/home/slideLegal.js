@@ -7,10 +7,10 @@ export const SlideLegal = () => {
 
       <div className='slideContainer legal'>
         <div className='slideTitle'>
-          <h2>Recomendados en ayuda legal</h2>
+          <h2>Ellos pueden orientarte a enfocar tu vida laboral</h2>
         </div>
         <div className='slideText'>
-          <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+          <p>Nuestra comunidad te puede asesorar en el proceso de búsqueda de trabajo.</p>
         </div>
         <Splide
           options={{
@@ -26,15 +26,16 @@ export const SlideLegal = () => {
         >
           Autoplay#play()
           <SplideSlide>
-            <img className='thumbnail' src="image1.jpg" alt="user 1" />
+            <img className='thumbnail' src="../image1.jpg" alt="user 1" />
             <h3>Marta Gonzalez</h3>
           </SplideSlide>
           <SplideSlide>
-            <img className='thumbnail' src="image2.jpg" alt="user 2" />
+            <img className='thumbnail' src="../image2.jpg" alt="user 2" />
             <h3>Ayat Hassan</h3>
           </SplideSlide>
           <SplideSlide>
-            <img className='thumbnail' src="image3.jpg" alt="user 3" />
+            <img className='thumbnail' src="../image3.jpg" alt="user 3" />
+            <h3>Yasmina Boujti</h3>
           </SplideSlide>
         </Splide>
         

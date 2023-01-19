@@ -39,7 +39,7 @@ export const Inbox = ({setDisplay}) => {
                                 <div id={channel.id} type="button" className='inboxContainer' key={index} onClick={goChannel}>
                                     {channel.user_id_sender === currentUser.user_id ?
                                         <div id={channel.id} className='inboxRow'>
-                                            <img id={channel.id} className='textPic' src={channel.pic_sender} alt="user 1" />
+                                            <img id={channel.id} className='textPic' src={channel.pic_recipient} alt="user 1" />
                                             <div>
                                                 <h3 id={channel.id}  key={index}>{channel.user_name_recipient}</h3>
                                                 <p id={channel.id} >Hola! Qué tal estás?</p>
@@ -47,7 +47,7 @@ export const Inbox = ({setDisplay}) => {
                                         </div>
                                         :
                                         <div  id={channel.id} type="button" className='inboxRow' onClick={goChannel}>
-                                            <img  id={channel.id} className='textPic' src={channel.pic_recipient} alt="user 1" />
+                                            <img  id={channel.id} className='textPic' src={channel.pic_sender} alt="user 1" />
                                             <div>
                                                 <h3 id={channel.id}  key={index}>{channel.user_name_sender}</h3>
                                                 <p  id={channel.id}>Buenas tardes, me encantaría contactar contigo para un te,a relacionado con....</p>

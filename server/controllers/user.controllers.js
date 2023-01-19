@@ -100,7 +100,7 @@ const User = {
         })
         if (userName) {
             try {
-                const users = await UserModel.findAll()
+                const users = await UserModel.findAll( {where: { country: 'Romania' } })
                 console.log(users);
                 let usersList = []
                 users.map(user => {

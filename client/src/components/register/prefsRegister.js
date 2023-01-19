@@ -17,8 +17,9 @@ export const PrefsRegister = () => {
     const [legal, setLegal] = useState(false);
     const [labor, setLabor] = useState(false);
     const [disable, setDisable] = useState(true)
-
-    const close = () => {setDisplay("main");} 
+    const navigate = useNavigate()
+    const close = () => {navigate('/')}
+    
     // Comprueba si el token de la url es válido
     useEffect(() => {
         defaultFetch("http://localhost:3001/check-email", "POST", { token: token })
@@ -64,7 +65,7 @@ export const PrefsRegister = () => {
         }
         const res = await defaultFetch("http://localhost:3001/registerPrefs", "POST", newUser)
         if (res.mensaje) {
-            setMessage("Registro completo")
+            setMessage("Registro correcto! Haz login en tu cuenta")
             setShowAlert(true)
             setTimeout(() => {
                 setShowAlert(false);
@@ -127,7 +128,7 @@ export const PrefsRegister = () => {
                 <div className='inputRegister'>
                     <input className='pcontButton' type="button" onClick={updateUser} disabled={disable} value="Finalizar" />
                 </div>
-                <div className='messageRegister'>
+                <div className='messageRegisterR'>
                     {showAlert && <Alert message={message} />}
                 </div>
             </div>

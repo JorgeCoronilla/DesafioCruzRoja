@@ -9,7 +9,7 @@ export const SignIn = ({setDisplay}) => {
     const { message, setMessage, showAlert, setShowAlert } = useContext(CreateWelcomeContext)
     const navigate = useNavigate();
     const close = () => {setDisplay("main");}
-
+    
     const sigInSub = async e => {
         e.preventDefault();
         var userEmail = { email: e.target.email.value };

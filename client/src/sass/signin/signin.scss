@@ -2,6 +2,7 @@
     background-color: #F0F0F0;
     margin-bottom: 0;
     color: #19274C;
+    width: 390px;
 }
 
 .sigContainer {
@@ -75,7 +76,7 @@
 }
 
 .signinContainer input {
-    width: 332px;
+    width: 312px;
     height: 48px;
     background: #FBFBFB;
     border: 1.5px solid #DBDBDB;
@@ -94,4 +95,13 @@
     margin-bottom: 30px;
     font-family: "Montserrat";
     font-size: 14px;
+}
+
+.login-block .alertContainer {
+    position: absolute;
+    bottom: 35.2%;
+    left: 21%;
+    color: currentcolor;
+    font-size: 14px;
+    font-weight: 500;
 }

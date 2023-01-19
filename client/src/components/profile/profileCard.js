@@ -8,8 +8,8 @@ export const ProfileCard = () => {
   const cookies = new Cookies();
   var session = cookies.get("session");
   const { display, setDisplay, user, setUser, channelId, setChannelId, currentUser } = useContext(CreateProfileContext);
-  const profileId = parseInt(localStorage.getItem('currentProfileId'))
-
+  const profileId = parseInt(localStorage.getItem('recipientId'))
+  
   const firstMessage = () => {
 
     defaultFetch(`http://localhost:3001/msg/check_channel`, "post",
@@ -53,7 +53,7 @@ const list = () =>{
 
           <div className='profileBtns'>
             
-            <button className='loginBtn3' onClick={list}>55 personas han recibido su ayuda</button>
+            <button className='loginBtn3' onClick={list}>50+ personas han recibido su ayuda</button>
             <button className='signinBtn2' onClick={firstMessage}>enviar mensaje</button>
 
           </div>

@@ -7,10 +7,10 @@ export const SlideEmotional = () => {
 
       <div className='slideContainer emotional'>
         <div className='slideTitle'>
-          <h2>Recomendados en ayuda emocional</h2>
+          <h2>¿Necesitas apoyo en tu proceso de llegada e integración?</h2>
         </div>
         <div className='slideText'>
-          <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+          <p>Aquí encontrarás personas dispuestas a escucharte y ayudarte. Contacta con ellas.</p>
         </div>
 
         <Splide
@@ -28,15 +28,16 @@ export const SlideEmotional = () => {
 
           Autoplay#play()
           <SplideSlide>
-            <img className='thumbnail' src="image1.jpg" alt="user 1" />
+            <img className='thumbnail' src="../image1.jpg" alt="user 1" />
             <h3>Marta Gonzalez</h3>
           </SplideSlide>
           <SplideSlide>
-            <img className='thumbnail' src="image2.jpg" alt="user 2" />
+            <img className='thumbnail' src="../image2.jpg" alt="user 2" />
             <h3>Ayat Hassan</h3>
           </SplideSlide>
           <SplideSlide>
-            <img className='thumbnail' src="image3.jpg" alt="user 3" />
+            <img className='thumbnail' src="../image3.jpg" alt="user 3" />
+            <h3>Yasmina Boujti</h3>
           </SplideSlide>
         </Splide>
 
