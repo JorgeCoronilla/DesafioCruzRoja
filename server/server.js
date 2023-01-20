@@ -12,6 +12,13 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cors());
+const path = require('path')
+
+
+//Endpoint para visualizar imágenes
+app.get('/pics/:file', (req, res) => {
+    res.sendFile(`${__dirname}/static/${req.params.file}`);
+});
 
 //Routers
 app.use("/", router);
@@ -20,4 +27,3 @@ app.use("/", router);
 app.listen(PORT || 3002, () => {
     console.log(`Server started at http://127.0.0.1:${PORT}`);
 });
-

@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+.register-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E6E8EF;
+    width: inherit;
+}
+.register-nav svg {
+    margin-left: 4%;
+}
+
+.register-container {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register-header {
+    width: inherit;
+    margin-bottom: 70px;
+}
+
+.regTitle h1 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #19274C;
+    padding: 30px;
+    margin: 0;
+}
+
+.GrCloseBig {
+    font-size: 14px;
+    color: #19274C;
+    padding: 4px;
+}
+
+.regTitle {
+    width: 238px;
+    height: 64px;
+}
+
+.formContainer, .regContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 25px;
+}
+.regContainer {
+    margin-top: 0px;
+}
+.formContainer label {
+    color: black;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+.register-container input[type="text"],
+.register-container input[type="password"]
+{
+    border: 1px solid #8C8C8C;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 286px;
+    padding: 11px;
+    margin-top: 12px;
+    margin-bottom: 30px;
+    font-family: "Montserrat";
+    font-size: 14px;
+}
+
+input:focus {
+    outline: 1px solid #19274C;
+}
+
+.contButton, .pcontButton {
+    border-radius: 20px;
+    border: 0;
+    width: 330px;
+    height: 48px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    background: #E04848;
+    color: #fff;
+}
+.pcontButton:disabled,
+.pcontButton[disabled]{
+  border: 0px;
+  background-color: #E6E6E6;
+  color:  #999999;
+}
+.contButton:hover {
+    background: #AE1E1E;
+
+}
+.messageRegister {
+    height: 15px;
+}
+.messageRegister {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    bottom: -37%;
+    right: 18%;
+}
+.messageRegisterR  {
+    position: absolute;
+    bottom: 17%;
+    left: 13%;
+    font-size: 14px;
+    font-weight: 500;
+}
+form .inputContainer {
+    padding: 0 52px;
+}
+.inputRegister {
+    margin: 56px 0 56px 0;
+    text-align: center;
+}
+.messageRegisterP {
+    position: absolute;
+    bottom: 10%;
+    left: 16%;
+    font-size: 14px;
+    font-weight: 500;
+}

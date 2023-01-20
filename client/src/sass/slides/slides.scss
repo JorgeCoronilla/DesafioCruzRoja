@@ -1,0 +1,26 @@
+.slideContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    width: 390px;
+}
+.slideContainer.emotional {
+    background: #F5F5F5;
+}
+.slideContainer.legal {
+    background-color: #fff;
+}
+.splide01-slide02,
+.splide01-slide02,
+.splide01-slide03 {
+    width: inherit;
+}
+.slideTitle, .slideText, .slide {
+    padding: 0 4%;
+}
+.splide {
+    width: 90%;
+    padding: 0 4%;
+}

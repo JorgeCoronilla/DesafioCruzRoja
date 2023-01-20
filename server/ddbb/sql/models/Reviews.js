@@ -10,12 +10,10 @@ const ReviewsModel = sequelize.define('messages', {
     
     fk_user_id_sender: {
         type: DataTypes.INTEGER,
-        unique: true,
         allowNull: false
     },
     fk_user_id_recipient: {
         type: DataTypes.INTEGER,
-        unique: true,
         allowNull: false
     },
     title: {
@@ -26,13 +24,11 @@ const ReviewsModel = sequelize.define('messages', {
 
     review: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false
     },
 
     stars: {
         type: DataTypes.INTEGER,
-        unique: true,
         allowNull: false
     },
 

@@ -4,3 +4,5 @@
 server/node_modules
 client/node_modules
 server/.env
+
+server/ddbb/sql/DigiCertGlobalRootCA.crt.pem

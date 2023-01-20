@@ -1,0 +1,47 @@
+
+.popContainer {
+    width: 390px;;
+}
+.popReg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.siginButton, .regButton {
+    border-radius: 20px;
+    border: 0;
+    width: 342px;
+    height: 48px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+.siginButton {
+    background: #E04848;
+    color: #fff;
+     margin: 12px 0;    
+}
+.regButton {
+    background: #fff;
+    border: 1px solid #E04848;
+    color: #E04848;
+}
+.emptySpace {
+    background-color: #DFE1F5;
+    height: 300px ;
+}
+.popText {
+    width: 300px;
+}
+.whiteSpace {
+    background-color: #fff;
+    border-radius: 30px 30px 0 0;
+    height: 30px;
+    width: 100%;
+}
+.curve {
+    background-color: #DFE1F5;
+    height: 30px;
+    width: 100%;
+}

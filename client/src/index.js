@@ -7,21 +7,22 @@ import { Home } from './components/home';
 import { Profile } from './components/profile';
 import { Welcome } from './components/welcome';
 import { ChangePass } from './components/welcome/changePass';
-
-import { Register } from './components/welcome/register';
-
+import { RegisterLanding } from './components/registerLanding';
+import './sass/styles.scss'
+import { CardOnList } from './components/profile/cardOnList';
+import { Inbox } from './components/profile/inbox';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
     <BrowserRouter>
       <div>
         <Routes>
 
           {/*Inicio y registro*/}
           <Route path="/" element={<Welcome />} />
-          <Route path="/register/:token" element={<Register/>} />
+          <Route path="/registro/:token" element={<RegisterLanding/>} />
           <Route path="/change-pass/:token" element={<ChangePass/>} />
 
           {/*Home*/}
@@ -36,9 +37,13 @@ root.render(
           {/*Error 404*/}
           <Route path="*" element={<Error404 />} />
 
+
+          <Route path="/test" element={<Profile />} />
+          <Route path="/test2" element={<Inbox />} />
+
         </Routes>
       </div>
     </BrowserRouter>
-  </React.StrictMode>
+
 );
 

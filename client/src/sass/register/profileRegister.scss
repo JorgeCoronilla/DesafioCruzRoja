@@ -1,0 +1,36 @@
+
+.profileContainer svg {
+    color: #828282;
+}   
+.checkBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: inherit;
+    margin: 21px 0px;
+}
+.inputContainer .react-select-container .react-select__control, .inputContainer .react-select-container .react-select__control.react-select__control--is-focused {
+    border-color: #8C8C8C;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    margin-top: 12px;
+}
+.inputContainer .react-select-container .react-select__menu {
+    font-size: 14px;
+}
+.react-select__value-container {
+    padding: 6px 8px;
+}
+.checkContainer {
+    padding: 0 52px;
+}
+.formContainer .checkBlock .scdLabel {
+    font-weight: 400;
+    color: #19274C;
+    font-weight: 500;
+    margin: 0;
+}
+.formContainer .checkBlock .primLabel {
+    margin-bottom: 12px;
+}

@@ -1,0 +1,76 @@
+
+.inboxBtnContainer{
+    margin:56px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.inboxBtnContainer .inboxBtn1 {
+    display: flex;
+    margin:0;
+    width: 195px;
+    height: 43px;
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;    
+    background: #132A68;
+    border: none;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+
+.inboxBtnContainer .inboxBtn2 {
+    display: flex;
+    margin:0;
+    width: 195px;
+    height: 43px;
+    color: #102356;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;    
+    background: white;
+    border: 1px solid #D0D4E1;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inboxRow{
+    padding: 25px 24px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    margin: 0;
+}
+
+.inboxRow img{
+    width: 42px;
+height: 49px;
+border-radius: 10px;
+margin: 0 20px 0 0;
+ }
+
+ .inboxRow h3{
+    font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+color: black;
+margin: 0;
+ }
+
+ .inboxRow p{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+color: black;
+margin: 0;
+ }
+

@@ -1,5 +1,61 @@
-h1{}
-h2{}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+div {
+    margin: 0;
+}
+
+//Provisional
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    color: #132A68;
+}
+
+.error404 {
+    margin: 150px 40px 0;
+}
+
+.error404 h5 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #132A68;
+    text-align: center;
+}
+
+.error404 h6 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #132A68;
+}
+
+.error404 button {
+    width: 253px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FAFAFA;
+    background: #E04848;
+    border-radius: 20px;
+    border: none;
+    margin:30px 28px;
+}
 
 
-
+.img404 {
+    display: block;
+    margin: 30px auto 100px;
+    width: 200px;
+}
